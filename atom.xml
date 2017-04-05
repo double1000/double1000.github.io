@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>胡温柔写字的地方</title>
-  <subtitle>一点都不酷</subtitle>
-  <link href="//atom.xml" rel="self"/>
+  <title>Haojen</title>
   
-  <link href="http://yoursite.com/"/>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://haojen.github.io/"/>
   <updated>2017-04-04T15:39:32.060Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>http://haojen.github.io/</id>
   
   <author>
-    <name>double1000</name>
-    
+    <name>Haojen Ma</name>
+    <email>HaojenMa@gmail.com</email>
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
     <title>你是我唯一想要的了解</title>
-    <link href="http://yoursite.com/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
-    <id>http://yoursite.com/2017/04/04/你是我唯一想要的了解/</id>
+    <link href="http://haojen.github.io/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
+    <id>http://haojen.github.io/2017/04/04/你是我唯一想要的了解/</id>
     <published>2017-04-04T15:38:05.000Z</published>
     <updated>2017-04-04T15:39:32.060Z</updated>
     
@@ -35,14 +35,14 @@
     
     </summary>
     
-      <category term="life" scheme="http://yoursite.com/categories/life/"/>
+      <category term="life" scheme="http://haojen.github.io/categories/life/"/>
     
     
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="http://haojen.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="http://haojen.github.io/tags/%E6%9D%82%E8%B0%88/"/>
     
-      <category term="测试" scheme="http://yoursite.com/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="http://haojen.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
