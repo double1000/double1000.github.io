@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://double1000.github.io/blog/"/>
-  <updated>2017-04-05T15:14:39.688Z</updated>
+  <updated>2017-04-05T16:09:06.121Z</updated>
   <id>https://double1000.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,36 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>你是我唯一想要的了解2</title>
+    <link href="https://double1000.github.io/blog/2017/04/06/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A32/"/>
+    <id>https://double1000.github.io/blog/2017/04/06/你是我唯一想要的了解2/</id>
+    <published>2017-04-05T16:00:34.000Z</published>
+    <updated>2017-04-05T16:09:06.121Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="你是我唯一想要的了解-测试-2"><a href="#你是我唯一想要的了解-测试-2" class="headerlink" title="你是我唯一想要的了解 测试 2"></a>你是我唯一想要的了解 测试 2</h2><p><img src="1.png" class="full-image"></p>
+<div class="warning" style="font-size:" 50px"="">卧槽 这都可以</div>
+<div class="danger" style="font-size:" 30px"="">卧槽 这都可以</div>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;你是我唯一想要的了解-测试-2&quot;&gt;&lt;a href=&quot;#你是我唯一想要的了解-测试-2&quot; class=&quot;headerlink&quot; title=&quot;你是我唯一想要的了解 测试 2&quot;&gt;&lt;/a&gt;你是我唯一想要的了解 测试 2&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; c
+    
+    </summary>
+    
+      <category term="寄蜉蝣于天地" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0/"/>
+    
+    
+      <category term="生活" scheme="https://double1000.github.io/blog/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
     <title>你是我唯一想要的了解</title>
     <link href="https://double1000.github.io/blog/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
     <id>https://double1000.github.io/blog/2017/04/04/你是我唯一想要的了解/</id>
     <published>2017-04-04T15:38:05.000Z</published>
-    <updated>2017-04-05T15:14:39.688Z</updated>
+    <updated>2017-04-05T15:59:21.888Z</updated>
     
     <content type="html"><![CDATA[<h1 id="我是测试文件的头部部分"><a href="#我是测试文件的头部部分" class="headerlink" title="我是测试文件的头部部分"></a>我是测试文件的头部部分</h1><blockquote>
 <p>我是简单的测试文件</p>
@@ -39,9 +64,7 @@
     
     </summary>
     
-      <category term="life" scheme="https://double1000.github.io/blog/categories/life/"/>
-    
-      <category term="哀吾生之须臾" scheme="https://double1000.github.io/blog/categories/life/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE/"/>
+      <category term="哀吾生之须臾" scheme="https://double1000.github.io/blog/categories/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE/"/>
     
     
       <category term="生活" scheme="https://double1000.github.io/blog/tags/%E7%94%9F%E6%B4%BB/"/>
