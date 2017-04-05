@@ -2,11 +2,11 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>胡温柔’瞎扯的地方</title>
   <subtitle>醉后不知天在水,满船清梦压星河</subtitle>
-  <link href="/atom.xml" rel="self"/>
+  <link href="/blog/atom.xml" rel="self"/>
   
-  <link href="https://double1000.github.io/"/>
+  <link href="https://double1000.github.io/blog/"/>
   <updated>2017-04-05T15:14:39.688Z</updated>
-  <id>https://double1000.github.io/</id>
+  <id>https://double1000.github.io/blog/</id>
   
   <author>
     <name>胡温柔</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>你是我唯一想要的了解</title>
-    <link href="https://double1000.github.io/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
-    <id>https://double1000.github.io/2017/04/04/你是我唯一想要的了解/</id>
+    <link href="https://double1000.github.io/blog/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
+    <id>https://double1000.github.io/blog/2017/04/04/你是我唯一想要的了解/</id>
     <published>2017-04-04T15:38:05.000Z</published>
     <updated>2017-04-05T15:14:39.688Z</updated>
     
@@ -39,16 +39,16 @@
     
     </summary>
     
-      <category term="life" scheme="https://double1000.github.io/categories/life/"/>
+      <category term="life" scheme="https://double1000.github.io/blog/categories/life/"/>
     
-      <category term="哀吾生之须臾" scheme="https://double1000.github.io/categories/life/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE/"/>
+      <category term="哀吾生之须臾" scheme="https://double1000.github.io/blog/categories/life/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE/"/>
     
     
-      <category term="生活" scheme="https://double1000.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="生活" scheme="https://double1000.github.io/blog/tags/%E7%94%9F%E6%B4%BB/"/>
     
-      <category term="杂谈" scheme="https://double1000.github.io/tags/%E6%9D%82%E8%B0%88/"/>
+      <category term="杂谈" scheme="https://double1000.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
-      <category term="测试" scheme="https://double1000.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="测试" scheme="https://double1000.github.io/blog/tags/%E6%B5%8B%E8%AF%95/"/>
     
   </entry>
   
