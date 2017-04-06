@@ -1,0 +1,900 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="hURnC-1VtFyi-v7OYQhy-5eOj-XZW3BAIs6iqzQcQj8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,Notes,prototype,继承," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="胡温柔 | 瞎扯的地方" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一.相关概念 面对对象是一种大家很熟悉的程序设计思想，是对真实世界的抽象 面对对象的基础是类，通过类的封装继承来映射真实世界 JS也是面对对象编程语言，只不过它实现面对对象的思路是基于原型（prototype),而不是类，这种思路也叫对象关联 每个对象都有一个原型（Object除外）这个原型，大概就像java中的父类 创建对象的方法，字面量，工厂模式，构造函数，原型，混合，ES6提供的class">
+<meta name="keywords" content="JavaScript,Notes,prototype,继承">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Notes | 面对对象">
+<meta property="og:url" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-面对对象/index.html">
+<meta property="og:site_name" content="胡温柔 | 瞎扯的地方">
+<meta property="og:description" content="一.相关概念 面对对象是一种大家很熟悉的程序设计思想，是对真实世界的抽象 面对对象的基础是类，通过类的封装继承来映射真实世界 JS也是面对对象编程语言，只不过它实现面对对象的思路是基于原型（prototype),而不是类，这种思路也叫对象关联 每个对象都有一个原型（Object除外）这个原型，大概就像java中的父类 创建对象的方法，字面量，工厂模式，构造函数，原型，混合，ES6提供的class">
+<meta property="og:image" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-面对对象/1.jpg">
+<meta property="og:updated_time" content="2017-04-06T06:20:42.283Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Notes | 面对对象">
+<meta name="twitter:description" content="一.相关概念 面对对象是一种大家很熟悉的程序设计思想，是对真实世界的抽象 面对对象的基础是类，通过类的封装继承来映射真实世界 JS也是面对对象编程语言，只不过它实现面对对象的思路是基于原型（prototype),而不是类，这种思路也叫对象关联 每个对象都有一个原型（Object除外）这个原型，大概就像java中的父类 创建对象的方法，字面量，工厂模式，构造函数，原型，混合，ES6提供的class">
+<meta name="twitter:image" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-面对对象/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":50,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://double1000.github.io/blog/2017/04/06/javascript-notes-面对对象/"/>
+
+
+
+
+
+  <title> JavaScript Notes | 面对对象 | 胡温柔 | 瞎扯的地方 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-67800719-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7a046e8db6a48f2ab46b7812ba612789";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">胡温柔 | 瞎扯的地方</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">醉后不知天在水,满船清梦压星河</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://double1000.github.io/blog/2017/04/06/javascript-notes-面对对象/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="胡温柔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡温柔 | 瞎扯的地方">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript Notes | 面对对象
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T14:12:35+08:00">
+                2017-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/寄蜉蝣于天地-渺沧海之一粟/" itemprop="url" rel="index">
+                    <span itemprop="name">寄蜉蝣于天地,渺沧海之一粟</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="1.jpg" class="full-image"></p>
+<h4 id="一-相关概念"><a href="#一-相关概念" class="headerlink" title="一.相关概念"></a>一.相关概念</h4><ul>
+<li>面对对象是一种大家很熟悉的<code>程序设计思想</code>，是对真实世界的<code>抽象</code></li>
+<li>面对对象的基础是<code>类</code>，通过类的封装继承来映射真实世界</li>
+<li>JS也是面对对象编程语言，只不过它实现面对对象的思路是<code>基于原型（prototype),而不是类</code>，这种思路也叫<code>对象关联</code></li>
+<li>每个对象都有一个<code>原型</code>（Object除外）这个原型，大概就像java中的父类</li>
+<li>创建对象的方法，字面量，工厂模式，构造函数，原型，混合，<code>ES6提供的class类</code></li>
+<li><strong>相关术语</strong>：<code>多态</code>/<code>动态绑定</code>/<code>继承</code>/<code>封装</code>/<code>属性</code>/<code>方法</code>/<code>消息</code>/<code>接口</code>/<code>对象持久性</code>/<code>原型链</code>/</li>
+</ul>
+<h4 id="二-术语解释"><a href="#二-术语解释" class="headerlink" title="二.术语解释"></a>二.术语解释</h4><ol>
+<li><strong>多态</strong>：一个对象变量<code>可以引用多种实际类型</code>的现象叫做多态。在java和c++语言中指的是可以用子类对象赋给父类对象，说到多态，就要说说覆盖。<code>覆盖</code>实际上指在同一个函数原型的情况下，将父类的一个实现替换为子类的一个实现</li>
+<li><strong>动态绑定</strong>：在运行时能够<code>自动选择</code>调用那个方法的现象叫做动态绑定</li>
+<li><p><strong>继承</strong>：</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="bullet">1. </span>公共操作和域放在超类</div><div class="line"><span class="bullet">2. </span>不要使用受保护的域 使用继承实现'is-a'关系</div><div class="line"><span class="bullet">3. </span>除非所有继承的方法都有意义，否则不要使用继承</div><div class="line"><span class="bullet">4. </span>在覆盖方法时，不要改变预期的行为</div><div class="line"><span class="bullet">5. </span>使用多态，而非类型信息</div><div class="line"><span class="bullet">6. </span>不要使用过多的反射</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>全局数据</strong>：如果设计合理，OO设计中根本不会出现<code>全局数据子类</code>的东西，这一点保证了OO系统中的<code>高度数据完整性</code>。</p>
+</li>
+<li><strong>数据隐藏</strong>：在OO术语中，数据表示为<code>属性</code>，行为表示为<code>方法</code>，限制对某些数据或方法的访问叫做<code>数据隐藏</code>，为了支持数据隐藏的概念，方法里提出了<code>访问方法</code>，和<code>设置方法</code>两种特殊方法</li>
+<li><strong>封装</strong>：通过把<code>数据和方法合并到一个对象</code>里，以<code>控制对数据和方法的访问</code>，通常，一个对象不应该对另一个对象的内部数据进行操作，应该设计完成特定任务的小对象，而不是设计完成许多功能的大对象<ol>
+<li><strong>对象数据方法表达方式</strong> ： <code>属性(attribute)</code>,特性(property)/<code>方法(method)</code>,行为(behavior)</li>
+<li><strong>类和对象的关系</strong>：<code>类是创建对象的模板</code>，我们使用类来创建对象。当一个对象被创建时，我们说<code>对象被实例化</code>。<strong>对象被实例化后，才会在内存中存在</strong>。例子：在关系型数据库中，表的定义就是类，表中的行数据是对象</li>
+<li><strong>消息</strong>：消息是<code>对象之间的通讯机制</code>。当对象A调用对象B的一个方法时，就是对象A在向对象B发送一个消息。</li>
+<li><strong>接口</strong>： 最终<code>为用户提供服务的集合</code>。理想情况下，应该只为最终用户提供它们需要的服务。<code>接口要最小化</code>。</li>
+<li><strong>对象持久性</strong>:指<code>保存对象的状态</code>。从而可以在以后恢复且使用。</li>
+<li><strong>原型链</strong>:实例对象与原型之间的连接，叫做<code>原型链</code></li>
+</ol>
+</li>
+</ol>
+<h4 id="三-设计原则"><a href="#三-设计原则" class="headerlink" title="三.设计原则"></a>三.设计原则</h4><ul>
+<li>找出变化之处，封装起来，不要把它们和不需要变化的代码混在一起<code>(策略模式)</code></li>
+<li><code>针对接口编程</code>，而不是针对实现编程(策略模式)</li>
+<li>多用<code>组合</code>，少用<code>继承</code>(策略模式)</li>
+<li>设计具有<code>松耦合关系</code>的对象(观察者模式)</li>
+<li>对<code>扩展开放</code>，对<code>修改封闭</code>(装饰者模式)</li>
+<li>依赖倒置原则：要依赖抽象，不要依赖具体类(工厂模式)</li>
+<li>最少知识原则：只和你的密友聊天(也叫黛尔特法则)</li>
+<li>好莱坞原则：别调用我们，我们会调用你，即底层组件将自己挂钩到系统中，由高层组件决定合适和如果用底层组件(模板方法模式中由超类控制一切，当它们需要的时候，自然会去调用子类)</li>
+<li><p>单一责任原则：<code>一个类应该只有一个引起变化的原因</code>。该原则体现了面对对象中的类聚概念。</p>
+<h4 id="四-对象的创建"><a href="#四-对象的创建" class="headerlink" title="四.对象的创建"></a>四.对象的创建</h4><figure class="highlight qml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>字面量</div><div class="line"><span class="built_in">var</span> Person = &#123;</div><div class="line"><span class="attribute">name</span> : <span class="string">"name"</span>,</div><div class="line"><span class="attribute">age</span> : <span class="string">"Age"</span>,</div><div class="line"><span class="attribute">method</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">   <span class="built_in">console</span>.log(<span class="keyword">this</span>.name)</div><div class="line">   &#125;</div><div class="line">&#125;</div><div class="line">注意:创建一个类似的对象，会产生大量的代码</div><div class="line"></div><div class="line"><span class="number">2.</span>工厂模式</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="built_in">var</span> obj = <span class="keyword">new</span> <span class="built_in">Object</span>(); <span class="comment">//1.原料</span></div><div class="line">    obj.name = name;<span class="comment">//2.加工</span></div><div class="line">    obj.age = age;</div><div class="line">    obj.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">       <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line">    <span class="keyword">return</span> obj;<span class="comment">//3.出场</span></div><div class="line">&#125;</div><div class="line"><span class="number">2</span><span class="number">-1.</span>解决多个类似对象声明问题。解决了实例化对象产生大量重复问题</div><div class="line"><span class="number">2</span><span class="number">-2.</span>识别问题，根本无法搞清楚它们到底是那个对象的实例</div><div class="line"></div><div class="line"><span class="number">3.</span>构造函数</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">this</span>.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;;</div><div class="line">&#125;;</div><div class="line"><span class="number">3</span><span class="number">-1.</span>解决了重复实例化的问题,又解决了对象识别问题</div><div class="line"><span class="number">3</span><span class="number">-2.</span>有显示的创建对象,直接将属性和方法赋值给<span class="keyword">this</span>对象</div><div class="line"><span class="number">3</span><span class="number">-3.</span>没有<span class="keyword">return</span>语句,调用的时候前必须加<span class="keyword">new</span>调用,不然就是普通函数调用</div><div class="line"></div><div class="line"><span class="number">4.</span>原型方式</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params"></span>)</span>&#123;&#125;;</div><div class="line">Person.prototype.name = <span class="string">"name"</span>; <span class="comment">//1.原型添加属性</span></div><div class="line">Person.prototype.age = <span class="string">"age"</span>;</div><div class="line">Person.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);    <span class="comment">//2.原型上添加方法</span></div><div class="line">&#125;</div><div class="line"><span class="number">4</span><span class="number">-1.</span>创建的每个函数都有一个prototype属性,这个属性是个对象</div><div class="line"><span class="number">4</span><span class="number">-2.</span>原型的好处可以让所有对象实例共享它所有包含的属性和方法</div><div class="line"><span class="number">4</span><span class="number">-3.</span>缺点是传参问题。</div><div class="line"></div><div class="line"><span class="number">5.</span>组合构造函数 + 原型模式</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name; <span class="comment">// 1.属性写在构造函数里面</span></div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;;</div><div class="line">Person.prototype = &#123;  <span class="comment">// 2.方法写在原型里面</span></div><div class="line">    <span class="attribute">constructor</span> : Person,</div><div class="line">    <span class="attribute">method</span> : <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="number">5</span><span class="number">-1.</span>这种混合模式很好解决了传参和引用共享的难题。</div><div class="line"><span class="number">5</span><span class="number">-2.</span>原型模式,不管是否调用了原型中的共享方法,都会初始化原型中的方法.</div><div class="line"><span class="number">5</span><span class="number">-3.</span>在声明一个对象时构造函数+原型部分让人感觉怪异,最好就是把构造函数和原型封装到一起</div><div class="line"></div><div class="line"><span class="number">6.</span>动态原型模式</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name,age</span>)</span>&#123; <span class="comment">//1.将所有信息封装到函数体内</span></div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="keyword">this</span>.method != <span class="string">'function'</span>)&#123; <span class="comment">// 2.仅在第一次调用时初始化</span></div><div class="line">        Person.prototype.method = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="number">6</span><span class="number">-1.</span>注意：不可以再使用字面量的方式重写原型，因为会切断实例和新原型之间的联系</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="五-继承"><a href="#五-继承" class="headerlink" title="五.继承"></a>五.继承</h4><blockquote>
+<p>继承是面对对象中一个比较核心的概念，其它面对对象语言都会用两种方式实现继承，<em>一个是接口实现</em>/<em>一个是继承</em>/ ES只支持继承，不支持接口实现，而实现继承的方式是依靠原型链完成</p>
+</blockquote>
+<ol>
+<li>JavaScript里,被继承的函数被称为超类（父类,基类也行）</li>
+<li>继承的函数称为子类型（子类，派生类）</li>
+<li><p>继承也有之前问题,字面量重写原型会中断关系,使用引用类型的原型,并且子类型还无法给超类型传递参数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div></pre></td><td class="code"><pre><div class="line"><span class="number">1.</span>对象冒充(伪造对象/经典继承)</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Father</span>(<span class="params">name,age</span>)</span>&#123; <span class="comment">// 父类</span></div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">    <span class="keyword">this</span>.age = age;</div><div class="line">&#125;;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">SubClass</span>(<span class="params">birth,name,age</span>)</span>&#123; <span class="comment">// 子类</span></div><div class="line">    Father.call(<span class="keyword">this</span>,name,age,birth); <span class="comment">//对象冒充，给超类传参</span></div><div class="line">&#125;</div><div class="line"><span class="number">1</span><span class="number">-1.</span>这种继承解决了引用共享和超类无法传参的问题。但没有原型,复用则无从谈起。</div><div class="line"></div><div class="line"><span class="number">2.</span>原型式继承</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">     <span class="keyword">this</span>.name = name;</div><div class="line"> &#125;</div><div class="line"> Parent.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">'parent name:'</span>, <span class="keyword">this</span>.name);</div><div class="line"> &#125;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">     <span class="keyword">this</span>.name = name;</div><div class="line"> &#125;</div><div class="line"> Child.prototype = <span class="keyword">new</span> Parent(<span class="string">'father'</span>);</div><div class="line"> Child.prototype.constructor = Child;</div><div class="line"> Child.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">     <span class="built_in">console</span>.log(<span class="string">'child name:'</span>, <span class="keyword">this</span>.name);</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> <span class="keyword">var</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>);</div><div class="line"> child.sayName();    <span class="comment">// child name: son</span></div><div class="line"></div><div class="line"><span class="number">2</span><span class="number">-1.</span>子类型无法给超类型传递参数,在面向对象的继承中,我们总希望通过 <span class="keyword">var</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>, <span class="string">'father'</span>).让子类去调用父类的构造器来完成继承。而不是通过像这样 <span class="keyword">new</span> Parent(<span class="string">'father'</span>) 去调用父类。</div><div class="line"><span class="number">2</span><span class="number">-2.</span>Child.prototype.sayName 必须写在 Child.prototype = <span class="keyword">new</span> Parent(<span class="string">'father'</span>); 之后，不然就会被覆盖掉。</div><div class="line"></div><div class="line"><span class="number">3.</span> 类式继承</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Parent.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'parent name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line">Parent.prototype.doSomthing = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'parent do something!'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, parentName</span>) </span>&#123;</div><div class="line">    Parent.call(<span class="keyword">this</span>, parentName);</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'child name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>);</div><div class="line">child.sayName();      <span class="comment">// child name: son</span></div><div class="line">child.doSomthing();   <span class="comment">// TypeError: child.doSomthing is not a function</span></div><div class="line"></div><div class="line"><span class="number">3</span><span class="number">-1.</span>相当于 Parent 这个函数在 Child 函数中执行了一遍，并且将所有与 <span class="keyword">this</span> 绑定的变量都切换到了 Child 上，这样就克服了第一种方式带来的问题。</div><div class="line"><span class="number">3</span><span class="number">-2.</span>缺点：没有原型,每次创建一个 Child 实例对象时候都需要执行一遍 Parent 函数,无法复用一些公用函数。</div><div class="line"></div><div class="line"><span class="number">4.</span> 组合式继承：前两种方式的结合</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Parent.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'parent name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line">Parent.prototype.doSomething = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'parent do something!'</span>);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, parentName</span>) </span>&#123;</div><div class="line">    Parent.call(<span class="keyword">this</span>, parentName); <span class="comment">//第二次调用</span></div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'child name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"></div><div class="line">Child.prototype = <span class="keyword">new</span> Parent();</div><div class="line">Child.prototype.construtor = Child;</div><div class="line"></div><div class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>); <span class="comment">//第一次调用</span></div><div class="line">child.sayName();       <span class="comment">// child name: son</span></div><div class="line">child.doSomething();   <span class="comment">// parent do something!</span></div><div class="line"></div><div class="line"><span class="number">4</span><span class="number">-1.</span>组合式继承是比较常用的一种继承方法,其背后的思路是使用原型链实现对原型属性和方法的继承,而通过借用构造函数来实现对实例属性的继承。</div><div class="line"><span class="number">4</span><span class="number">-2.</span>通过在原型上定义方法实现了函数复用,又保证每个实例都有它自己的属性。</div><div class="line"><span class="number">4</span><span class="number">-3.</span>缺点:组合式继承是 JS 最常用的继承模式,但组合继承使用过程中会被调用两次：一次是创建子类型的时候，另一次是在子类型构造函数的内部。</div><div class="line"></div><div class="line"><span class="number">5.</span>  寄生组合式继承</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line">Parent.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'parent name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params">name, parentName</span>) </span>&#123;</div><div class="line">    Parent.call(<span class="keyword">this</span>, parentName);</div><div class="line">    <span class="keyword">this</span>.name = name;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">create</span>(<span class="params">proto</span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">F</span>(<span class="params"></span>)</span>&#123;&#125;</div><div class="line">    F.prototype = proto;</div><div class="line">    F.prototype.construtor = F;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> F();</div><div class="line">&#125;</div><div class="line">Child.prototype = create(Parent.prototype);</div><div class="line">Child.prototype.sayName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'child name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line">Child.prototype.construtor = Child;</div><div class="line"><span class="keyword">var</span> parent = <span class="keyword">new</span> Parent(<span class="string">'father'</span>);</div><div class="line">parent.sayName();    <span class="comment">// parent name: father</span></div><div class="line"><span class="keyword">var</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>, <span class="string">'father'</span>);</div><div class="line">child.sayName();     <span class="comment">// child name: son</span></div><div class="line"></div><div class="line"><span class="number">5</span><span class="number">-1.</span>这就是所谓的寄生组合式继承方式,跟组合式继承的区别在于,他不需要在一次实例中调用两次父类的构造函数,假如说父类的构造器代码很多,还需要调用两次的话对系统肯定会有影响，</div><div class="line"><span class="number">5</span><span class="number">-2.</span>寄生组合式继承的思想在于,用一个 F 空的构造函数去取代执行了 Parent 这个构造函数。</div><div class="line"></div><div class="line">在上面的代码中,我们手动创建了一个 create 函数,但是其实是存在于 <span class="built_in">Object</span> 对象中,不需要我们手动去创建</div><div class="line"></div><div class="line"><span class="number">6.</span>  ES <span class="number">6</span> 继承</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Parent</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name) &#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    doSomething() &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'parent do something!'</span>);</div><div class="line">    &#125;</div><div class="line">    sayName() &#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">'parent name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Child</span> <span class="keyword">extends</span> <span class="title">Parent</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name, parentName) &#123;</div><div class="line">	<span class="keyword">super</span>(parentName);</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">    &#125;</div><div class="line">    sayName() &#123;</div><div class="line"> 	<span class="built_in">console</span>.log(<span class="string">'child name:'</span>, <span class="keyword">this</span>.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">const</span> child = <span class="keyword">new</span> Child(<span class="string">'son'</span>, <span class="string">'father'</span>);</div><div class="line">child.sayName();            <span class="comment">// child name: son</span></div><div class="line">child.doSomething();        <span class="comment">// parent do something!</span></div><div class="line"></div><div class="line"><span class="keyword">const</span> parent = <span class="keyword">new</span> Parent(<span class="string">'father'</span>);</div><div class="line">parent.sayName();           <span class="comment">// parent name: father</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="六-方法"><a href="#六-方法" class="headerlink" title="六.方法"></a>六.方法</h4><ul>
+<li>Object.getPrototypeof(),查看一个对象的原型。跟<code>__proto__(隐式引用)</code>返回结果一样</li>
+<li>Object.setPrototypeOf(obj,prototype),obj要设置其原型的对象,该对象的新原型</li>
+<li>Obj.constructor 查看对象的构造函数</li>
+<li>Obj.hasOwnProperty(),判断属性是在构造函数的实例里,还是在原型链</li>
+</ul>
+<h4 id="七-难点"><a href="#七-难点" class="headerlink" title="七.难点"></a>七.难点</h4><ol>
+<li><strong>proto</strong>与prototype的区别？</li>
+</ol>
+<ul>
+<li>无论对象是如何创建的,默认的原型都是Object,通过构造函数来创建对象,函数本身也是一个对象。函数的<code>prototype</code>属性只有在当作构造函数创建的时候，把自身的prototype属性值赋给对象的原型,而实际上,作为函数本身,它的原型应该是<code>function</code>，然后function对象的原型才是Object,建议使用ES6推荐的查看原型和设置原型的方法。<code>instance.constructor.prototype = instance.__proto__</code></li>
+<li>只有<code>函数对象才有prototype</code>属性。</li>
+</ul>
+<ol>
+<li>new 操作符具体干了什么呢？</li>
+</ol>
+<ul>
+<li><code>创建</code>一个新对象</li>
+<li>将构造函数的<code>作用域赋给新对象</code>(因此this就指向了这个新对象)</li>
+<li><code>执行</code>构造函数中的代码(为这个新对象添加属性和方法)</li>
+<li><code>返回</code>新对象</li>
+</ul>
+<ol>
+<li>构造函数与普通函数的区别？</li>
+</ol>
+<ul>
+<li>构造函数本身也是函数，只不过可以用来<code>构建对象</code>而已</li>
+<li>调用方式不同,任何函数只要通过<code>new操作符</code>来调用,那它就可以作为构造函数,而任何函数如果不通过new操作符来调用,跟普通函数并无二致。如果不使用new操作符,属性和方法都被添加给window对象了。当在全局作用域调用一个函数时,this对象总是指向<code>Global对象</code>(在浏览器中就是window对象)</li>
+</ul>
+<ol>
+<li>基于类的面对对象和基于原型的面对对象方式不同之处？</li>
+</ol>
+<ul>
+<li>在基于类的面对对象方式中,对象(Object)依靠<code>类(class)</code>来产生。</li>
+<li>在基于原型的面对对象方式中,对象则是依靠<code>构造器(constructor)</code>利用<code>原型(prototype)</code>构造出来的。</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+            <a href="/tags/prototype/" rel="tag"># prototype</a>
+          
+            <a href="/tags/继承/" rel="tag"># 继承</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/06/javascript-notes-json/" rel="next" title="JavaScript Notes | JSON">
+                <i class="fa fa-chevron-left"></i> JavaScript Notes | JSON
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/06/javascript-notes-字符串/" rel="prev" title="JavaScript Notes | 字符串">
+                JavaScript Notes | 字符串 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="胡温柔" />
+          <p class="site-author-name" itemprop="name">胡温柔</p>
+           
+              <p class="site-description motion-element" itemprop="description">快点好起来呀!混蛋</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/double1000" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/2650993492" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/hu-bu-lai/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-相关概念"><span class="nav-number">1.</span> <span class="nav-text">一.相关概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-术语解释"><span class="nav-number">2.</span> <span class="nav-text">二.术语解释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-设计原则"><span class="nav-number">3.</span> <span class="nav-text">三.设计原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#四-对象的创建"><span class="nav-number">4.</span> <span class="nav-text">四.对象的创建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五-继承"><span class="nav-number">5.</span> <span class="nav-text">五.继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#六-方法"><span class="nav-number">6.</span> <span class="nav-text">六.方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#七-难点"><span class="nav-number">7.</span> <span class="nav-text">七.难点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">胡温柔</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
