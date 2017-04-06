@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>胡温柔&#39;瞎扯的地方</title>
+  <title>胡温柔|瞎扯的地方</title>
   <subtitle>醉后不知天在水,满船清梦压星河</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://double1000.github.io/blog/"/>
-  <updated>2017-04-05T16:09:06.121Z</updated>
+  <updated>2017-04-06T03:53:38.789Z</updated>
   <id>https://double1000.github.io/blog/</id>
   
   <author>
@@ -16,62 +16,294 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>你是我唯一想要的了解2</title>
-    <link href="https://double1000.github.io/blog/2017/04/06/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A32/"/>
-    <id>https://double1000.github.io/blog/2017/04/06/你是我唯一想要的了解2/</id>
-    <published>2017-04-05T16:00:34.000Z</published>
-    <updated>2017-04-05T16:09:06.121Z</updated>
+    <title>JavaScript Notes|字符串</title>
+    <link href="https://double1000.github.io/blog/2017/04/06/javascript-notes-%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    <id>https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/</id>
+    <published>2017-04-06T03:48:28.000Z</published>
+    <updated>2017-04-06T03:53:38.789Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="你是我唯一想要的了解-测试-2"><a href="#你是我唯一想要的了解-测试-2" class="headerlink" title="你是我唯一想要的了解 测试 2"></a>你是我唯一想要的了解 测试 2</h2><p><img src="1.png" class="full-image"></p>
-<div class="warning" style="font-size:" 50px"="">卧槽 这都可以</div>
-<div class="danger" style="font-size:" 30px"="">卧槽 这都可以</div>
+    <content type="html"><![CDATA[<p><img src="1.jpg" class="full-image"></p>
+<h4 id="一-字符串的属性"><a href="#一-字符串的属性" class="headerlink" title="一.字符串的属性"></a>一.字符串的属性</h4><ol>
+<li>length:字符串的每个实例都有一个length属性,表示字符串中的字符个数,由于字符串是不变的，所以字符串的长度也不可变<blockquote>
+<p>特性:字符串的length属性不会再<code>for/in</code>循环中枚举,也不能通过<code>delete</code>删除,索引从0开始</p>
+<h4 id="二-字符串通用方法"><a href="#二-字符串通用方法" class="headerlink" title="二.字符串通用方法"></a>二.字符串通用方法</h4><p><code>String</code>类型是与字符串对象的包装类型,继承了Object的通用方法</p>
+</blockquote>
+</li>
+<li>toString();该方法返回string的原始字符串值。</li>
+<li>toLocaleString();该方法返回string的原始字符串值。</li>
+<li>valueOf();该方法返回string的原始字符串值<h4 id="三-字符串实例方法"><a href="#三-字符串实例方法" class="headerlink" title="三.字符串实例方法"></a>三.字符串实例方法</h4><h5 id="1-访问字符方法"><a href="#1-访问字符方法" class="headerlink" title="1. 访问字符方法"></a>1. 访问字符方法</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.charAt(number);</div><div class="line">1-1. charAt()方法接受一个基于0的字符串位置的参数,返回指定位置的字符。</div><div class="line">1-2. 当参数为空或者NaN时,默认参数为0</div><div class="line">1-3. 当参数超出范围时,则返回一个空字符串</div><div class="line"></div><div class="line">var str = &apos;hello&apos;;</div><div class="line">console.log(str.charAt(NaN)); // h</div><div class="line">注意：charAt()方法涉及到Number()函数的隐式类型转换,如果转换为数值,如果转换为NaN,则输出第0个字符</div><div class="line">注意: str.charAt(pos)与str.substring(pos, pos+1)、str.substr(pos,1)、str.slice(pos,pos+1)的结果相等</div><div class="line"></div><div class="line">2. [number]中括号</div><div class="line">2-1. ES5,使用方括号加数字索引来访问字符串中的特定字符。</div><div class="line">2-2. 如果参数超出范围或是NaN时,则输出undefined;没有参数,会报错</div><div class="line">2-3. 该方法没有Number()转型函数的隐式转换,但参数为单数值数组时可转换为数值</div><div class="line"></div><div class="line">3. String.prototype.charCodeAt(number);</div><div class="line">3-1. 类似charAt()方法,返回的是指定位置的字符16位Unicode编码</div><div class="line">3-2. 返回值是一个16位的整数,在0~65525之间,即0x0000 - 0xffff之间</div><div class="line">3-3. 参数为空或NaN时,默认参数为0,当参数超出范围时,则返回NaN</div><div class="line">3-4. 注意:charCodeAt()方法涉及到Number()函数的隐式类型转换,如果转换为数值,则按照上述规则输出相应值;如果转换为NaN,则输出第0个字符的字符编码</div><div class="line"></div><div class="line">4. String.fromCharCode();</div><div class="line">4-1. 这是一个属于String的静态方法</div><div class="line">4-2. 这个方法的任务是接受一个或多个字符编码,然后把它们转换成一个字符串。</div><div class="line">4-3. 从本质上看,这个方法与实例方法charCodeAt()执行的是相反的操作,若参数为空NaN时,则返回空字符串</div><div class="line">4-4. 若参数超出0~65535的范围,则输出字符不可控</div><div class="line">注意:如果一个字符占用四字节,则需要拆分两个字符表示</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="2-字符串拼接"><a href="#2-字符串拼接" class="headerlink" title="2.字符串拼接"></a>2.字符串拼接</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.concat();</div><div class="line">1-1. concat()方法用于将一个或多个字符串拼接起来,返回拼接得到的新字符串</div><div class="line">1-2. 返回拼接得到的新字符串,而源字符串不发生改变</div><div class="line">1-3. 若参数(第一个参数除外)不是字符串,则听过String()方法隐士转换为字符串,再进行字符串拼接</div><div class="line">注意:第一个参数只能是字符串,如果是其他类型(数组除外)则报错</div><div class="line">注意:由于数组也存在concat()方法,参数会按照首先出现的参数是数组还是字符串来决定如何转换</div><div class="line"></div><div class="line">2. +(加号运算符)</div><div class="line">2-1. 实践中使用更多的还是加号运算符。使用加号运算符再许多时候都比concat简单易行</div><div class="line">注意:当操作数其中一个是字符串,或者对象转换为字符串时,才进行字符串拼接</div></pre></td></tr></table></figure>
+<h5 id="3-创建子字符串"><a href="#3-创建子字符串" class="headerlink" title="3.创建子字符串"></a>3.创建子字符串</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.slice();</div><div class="line">1-1. slice(start,end),返回这个字符串中从start位置的字符到(但不包含)end位置的字符的一个子字符串.</div><div class="line">1-2. 如果end为end为undefined或不存在,则返回从start位置到字符串结尾的所有字符</div><div class="line">1-3. 如果start是负数,则start=max(length + start,0);</div><div class="line">1-4. 如果end是负数,则end=max(length + end,0);</div><div class="line">注意:slice()方法涉及到Number()转型函数的隐式类型转换，当start被转换为NaN时，相当于start = 0；当end被转换为NaN时(end为undefined除外)，则输出空字符串</div><div class="line"></div><div class="line">2. String.prototype.substring();</div><div class="line">2-1. substring(start,end)返回这个字符串中从start位置的字符到(但不包含)end位置的字符的一个子字符串；</div><div class="line">2-2. 如果end为undefined或不存在，则返回从start位置到字符串结尾的所有字符。</div><div class="line">2-3. 同样地，substring()方法也涉及到Number()转型函数的隐式类型转换</div><div class="line">注意:如果任一参数是NaN或负数，则被0取代</div><div class="line">注意:如果任一参数大于字符串长度，则被字符串长度取代</div><div class="line">注意:如果start 大于 end，则交换它们的值</div><div class="line"></div><div class="line">3.String.prototype.substr();</div><div class="line">3-1. substr(start,end)end代表返回的子字符串的字符个数,该方法返回这个字符串中从start位置的字符开始的end个字符的一个子字符串</div><div class="line">3-2. 如果end为undefined或不存在，则返回从start位置到字符串结尾的所有字符</div><div class="line">3-3. 如果start是负数，则start = max(length + start,0)</div><div class="line">3-4. 如果start是NaN，则相当于start = 0</div><div class="line">注意:如果end是负数或NaN，则end = 0，因此会返回空字符串</div><div class="line">注意:start和end无法交换位置</div><div class="line">注意:该方法不是ECMAScript标准，已经被弃用</div><div class="line">注意:substr()方法也涉及到Number()转型函数的隐式类型转换</div></pre></td></tr></table></figure>
+<h5 id="3-大小写转换"><a href="#3-大小写转换" class="headerlink" title="3.大小写转换"></a>3.大小写转换</h5><ol>
+<li>toUpperCase()方法将字符串转换成大写;</li>
+<li>toLowerCase()方法将字符串转换成小写;</li>
+<li>toLocaleUpperCase()方法将字符串转换成大写(针对地区);</li>
+<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="keyword">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="4-查找子串位置"><a href="#4-查找子串位置" class="headerlink" title="4.查找子串位置"></a>4.查找子串位置</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">有两个从字符串中查找子字符串位置的方法:indexOf()和lastIndexOf()。</div><div class="line">查找子串位置的方法同访问字符方法charAt()和中括号[]方法有相反的地方，一个通过字符串查找位置，一个则是通过位置查找字符</div><div class="line"></div><div class="line">1. String.prototype.indexOf();</div><div class="line">1-1. indexOf(searchString,start)方法接收searchString和start两个参数，返回searchString首次出现的位置，如果没有找到则返回-1</div><div class="line">1-2. 该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">1-3. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN或负数时，start = 0</div><div class="line"></div><div class="line">2.String.prototype.lastIndexOf();</div><div class="line">2-1. 与indexOf()不同，lastIndexOf()从右向左查找</div><div class="line">2-2. lastIndexOf(searchString,start)方法接收searchString和start两个参数，返回searchString第一次出现的位置，如果没有找到则返回-1</div><div class="line">2-3. 同样地，该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">2-4. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN时，start = length - 1；若start为负数，start = 0</div><div class="line"></div><div class="line">**例子:查找出字符串所有符合条件的子字符串**</div><div class="line">function allIndexOf(str,value)&#123;</div><div class="line">    var result = [];</div><div class="line">    var pos = str.indexOf(value);</div><div class="line">    while(pos &gt; -1)&#123;</div><div class="line">        result.push(pos);</div><div class="line">        pos = str.indexOf(value,pos+value.length);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(allIndexOf(&apos;helllhelllhelll&apos;,&apos;ll&apos;));//[2,7,12]</div></pre></td></tr></table></figure>
+<h5 id="5-正则匹配方法"><a href="#5-正则匹配方法" class="headerlink" title="5.正则匹配方法"></a>5.正则匹配方法</h5><p>javascript中的一些正则操作如查找和测试等可以通过RegExp的方法实现，而切分和替换等另一些操作可以通过String类的方法实现String类共有match()、search()、replace()、split()这4种正则匹配方法<br><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.match();</div><div class="line">1-2. match()方法只接受一个为正则或字符串的参数，并以数组的形式返回匹配的内容。</div><div class="line">1-3. 这个方法类似于正则表达式RegExp的exec()方法，只是调换了RegExp和String对象的位置</div><div class="line">1-4. 若匹配失败,则match()方法返回null</div><div class="line"></div><div class="line">&apos;x&apos;.match(/y/);//null</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var pattern = /.at/g;</div><div class="line">var matches = string.match(pattern);</div><div class="line">console.log(matches,matches.index,matches.input);//[&quot;cat&quot;, &quot;bat&quot;, &quot;sat&quot;, &quot;fat&quot;] undefined undefined</div><div class="line">var matches = string.match(pattern);</div><div class="line">console.log(matches,matches.index,matches.input);//[&quot;cat&quot;, &quot;bat&quot;, &quot;sat&quot;, &quot;fat&quot;] undefined undefined</div><div class="line"></div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var pattern = /.at/;</div><div class="line">var exec = pattern.exec(string);</div><div class="line">console.log(exec,exec.index,exec.input);//[&apos;cat&apos;] 0 &apos;cat,bat,sat,fat&apos;</div><div class="line">var exec = pattern.exec(string);</div><div class="line">console.log(exec,exec.index,exec.input);//[&apos;cat&apos;] 0 &apos;cat,bat,sat,fat&apos;</div><div class="line"></div><div class="line">例子：找出字符串中所有的数字</div><div class="line">var str1 = &apos;j1h342jg24g234j 3g24j1&apos;;</div><div class="line">array = str1.match(/\d+/g);</div><div class="line">console.log(array);//[&quot;1&quot;, &quot;342&quot;, &quot;24&quot;, &quot;234&quot;, &quot;3&quot;, &quot;24&quot;, &quot;1&quot;]</div><div class="line"></div><div class="line">注意:若不设置全局标志，match()方法和exec()方法结果相同</div><div class="line">注意:设置全局标志后,exec()方法依然返回单次的匹配结果，而match()方法会返回一个字符串数组,其中包括各次成功匹配的文本，但没有index和input属性</div><div class="line">注意:match()方法作为字符串String的方法，接受参数为字符串，结果与不设置全局标志的正则表达式为参数相同，只返回第一个匹配项，且具有index和input属性</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">2. String.prototype.search();</div><div class="line">2-1. search()方法接受一个正则或字符串的参数,返回匹配的内容在字符串中首次出现的位置,</div><div class="line">2-2.类似于不能设置起始位置的indexOf,找不到返回-1</div><div class="line">注意:search()方法不执行全局匹配，忽略全局标志g，也会忽略RegExp对象的lastIndex属性，总是从字符串的开始位置开始搜索</div><div class="line"></div><div class="line">例子：找出匹配的所有位置</div><div class="line">function fnAllSearch(str,pattern)&#123;</div><div class="line">    var pos = str.search(pattern);</div><div class="line">    var length = str.match(pattern)[0].length;</div><div class="line">    var index = pos+length;</div><div class="line">    var result = [];</div><div class="line">    var last = index;</div><div class="line">    result.push(pos);</div><div class="line">    while(true)&#123;</div><div class="line">        str = str.substr(index);</div><div class="line">        pos = str.search(pattern);</div><div class="line">        if(pos === -1)&#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">        length = str.match(pattern)[0].length;</div><div class="line">        index = pos+length;</div><div class="line">        result.push(last+pos);</div><div class="line">        last += index;</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(fnAllSearch(&apos;cat23fbat246565sa3dftf44at&apos;,/\d+/));//[3,9,17,22]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">3. String.prototype.replace();</div><div class="line">3-1. replace()方法用于替换一个或多个子字符串。它接收两个参数：第一个是正则表达式或字符串，表示待查找的内容；第二个是字符串或函数，表示替换内容。</div><div class="line">3-2. 返回替换后的字符串</div><div class="line"></div><div class="line">注意:字符串替换，只能替换第一个子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(&apos;at&apos;,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bat,sat,fat&apos;</div><div class="line">注意:不设置全局标志g，也只能替换第一个子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(/at/,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bat,sat,fat&apos;</div><div class="line">注意:设置全局标志g，替换所有匹配的子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(/at/g,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bond,sond,fond&apos;</div><div class="line"></div><div class="line">replace()方法的第二个参数可以是函数，这样文本的处理更加灵活</div><div class="line">如果在只有一个匹配项的情况下，该方法会向这个函数传递3个参数：模式的匹配项、模式匹配项在字符串中的位置、原始字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var index = 0;</div><div class="line">var matchArray = [];</div><div class="line">var posArray = [];</div><div class="line">var text = &apos;&apos;;</div><div class="line">var result = string.replace(/at/g,function(match,pos,originalText)&#123;</div><div class="line">    matchArray.push(match);</div><div class="line">    posArray.push(pos);</div><div class="line">    text = originalText;</div><div class="line">    index++;</div><div class="line">    if(index % 2)&#123;</div><div class="line">        return &apos;wow&apos;;</div><div class="line">    &#125;else&#123;</div><div class="line">        return &apos;0&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">console.log(matchArray);//[&quot;at&quot;, &quot;at&quot;, &quot;at&quot;, &quot;at&quot;]</div><div class="line">console.log(posArray);//[1, 5, 9, 13]</div><div class="line">console.log(text);//&apos;cat,bat,sat,fat&apos;</div><div class="line">console.log(result);//&apos;cwow,b0,swow,f0&apos;</div><div class="line"></div><div class="line">例子:日期格式化</div><div class="line">var array = [&apos;2015.7.28&apos;,&apos;2015-7-28&apos;,&apos;2015/7/28&apos;,&apos;2015.7-28&apos;,&apos;2015-7.28&apos;,&apos;2015/7---28&apos;];</div><div class="line">function formatDate(date)&#123;</div><div class="line">    return date.replace(/(\d+)\D+(\d+)\D+(\d+)/,&apos;$1年$2月$3日&apos;)</div><div class="line">&#125;</div><div class="line">var result = [];</div><div class="line">for(var i = 0 ; i &lt; array.length; i++)&#123;</div><div class="line">    result.push(formatDate(array[i]));</div><div class="line">&#125;</div><div class="line">console.log(result);//[&quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;]</div><div class="line">例子:找出重复项最多的字符和个数</div><div class="line">var str = &apos;aaaaabbbbbdddddaaaaaaaffffffffffffffffffgggggcccccce&apos;;</div><div class="line">var pattern = /(\w)\1+/g;</div><div class="line">var maxLength = 0;</div><div class="line">var maxValue = &apos;&apos;;</div><div class="line">var result = str.replace(pattern,function(match,match1,pos,originalText)&#123;</div><div class="line">    if(match.length &gt; maxLength)&#123;</div><div class="line">        maxLength = match.length;</div><div class="line">        maxValue = match1;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">console.log(maxLength,maxValue);//18 &quot;f&quot;</div></pre></td></tr></table></figure>
+<h5 id="六-split-方法"><a href="#六-split-方法" class="headerlink" title="六.split()方法"></a>六.split()方法</h5><ol>
+<li>split()方法基于指定的分隔符将一个字符串分割成多个字符串，并将结果放在一个数组中，分隔符可以是字符串，也可以是一个RegExp</li>
+<li>该方法可以接受第二个参数(可选)用于指定数组的大小，如果第二个参数为0-array.length范围内的值时按照指定参数输出，其他情况将所有结果都输出</li>
+<li>若指定分隔符没有出现在字符串中，则以数组的形式返回原字符串的值</li>
+<li>参数中的正则表达式是否使用全局标志g对结果没有影响<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var colorText = &apos;red,blue,green,yellow&apos;;</div><div class="line">console.log(colorText.split(&apos;&apos;));//[&quot;r&quot;, &quot;e&quot;, &quot;d&quot;, &quot;,&quot;, &quot;b&quot;, &quot;l&quot;, &quot;u&quot;, &quot;e&quot;, &quot;,&quot;, &quot;g&quot;, &quot;r&quot;, &quot;e&quot;, &quot;e&quot;, &quot;n&quot;, &quot;,&quot;, &quot;y&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;, &quot;w&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;,2));//[&quot;red&quot;, &quot;blue&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;,6));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(&apos;-&apos;));//[&quot;red,blue,green,yellow&quot;]</div><div class="line">console.log(colorText.split(/\,/));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(/e/));//[&quot;r&quot;, &quot;d,blu&quot;, &quot;,gr&quot;, &quot;&quot;, &quot;n,y&quot;, &quot;llow&quot;]</div><div class="line">console.log(colorText.split(/[^\,]+/));//将除去逗号以外的字符串变为分隔符[&quot;&quot;, &quot;,&quot;, &quot;,&quot;, &quot;,&quot;, &quot;&quot;],IE8-会识别为[&quot;,&quot;,&quot;,&quot;,&quot;,&quot;]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="七-去除首尾空格trim"><a href="#七-去除首尾空格trim" class="headerlink" title="七.去除首尾空格trim()"></a>七.去除首尾空格trim()</h5><ol>
+<li>ECMAScript5为所有字符串定义了trim()方法。这个方法会创建一个字符串的副本，删除前置及后缀的所有空白字符，然后返回结果</li>
+<li>由于trim()方法返回的是字符串的副本，所以原始字符串中的前置及后缀空格会保持不变,意思就是不改变原字符串<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">正则模拟去除字符串首尾空格</div><div class="line">function fnTrim(str)&#123;</div><div class="line">    return str.replace(/^\s+|\s+$/,&apos;&apos;)</div><div class="line">&#125;</div><div class="line">console.log(fnTrim(&apos;hello world&apos;));//&apos;hello world&apos;</div></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;你是我唯一想要的了解-测试-2&quot;&gt;&lt;a href=&quot;#你是我唯一想要的了解-测试-2&quot; class=&quot;headerlink&quot; title=&quot;你是我唯一想要的了解 测试 2&quot;&gt;&lt;/a&gt;你是我唯一想要的了解 测试 2&lt;/h2&gt;&lt;p&gt;&lt;img src=&quot;1.png&quot; c
+      &lt;p&gt;&lt;img src=&quot;1.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;一-字符串的属性&quot;&gt;&lt;a href=&quot;#一-字符串的属性&quot; class=&quot;headerlink&quot; title=&quot;一.字符串的属性&quot;&gt;&lt;/a&gt;一.字符串的属性&lt;/h4&gt;&lt;ol&gt;
+
     
     </summary>
     
-      <category term="寄蜉蝣于天地" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0/"/>
+      <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
-      <category term="生活" scheme="https://double1000.github.io/blog/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
+    
+      <category term="字符串" scheme="https://double1000.github.io/blog/tags/%E5%AD%97%E7%AC%A6%E4%B8%B2/"/>
+    
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
     
   </entry>
   
   <entry>
-    <title>你是我唯一想要的了解</title>
-    <link href="https://double1000.github.io/blog/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
-    <id>https://double1000.github.io/blog/2017/04/04/你是我唯一想要的了解/</id>
-    <published>2017-04-04T15:38:05.000Z</published>
-    <updated>2017-04-05T15:59:21.888Z</updated>
+    <title>JavaScript Notes | 函数</title>
+    <link href="https://double1000.github.io/blog/2017/04/06/javascript-notes-%E5%87%BD%E6%95%B0/"/>
+    <id>https://double1000.github.io/blog/2017/04/06/javascript-notes-函数/</id>
+    <published>2017-04-06T03:23:02.000Z</published>
+    <updated>2017-04-06T03:33:59.135Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="我是测试文件的头部部分"><a href="#我是测试文件的头部部分" class="headerlink" title="我是测试文件的头部部分"></a>我是测试文件的头部部分</h1><blockquote>
-<p>我是简单的测试文件</p>
+    <content type="html"><![CDATA[<p><img src="1.jpg" class="full-image"></p>
+<h4 id="一-函数定义"><a href="#一-函数定义" class="headerlink" title="一.函数定义"></a>一.函数定义</h4><ul>
+<li>函数是一段代码,它只定义一次，但可以被执行或调用多次</li>
+<li>函数即对象,每个函数都是Function构造函数的实例,因此函数名实际上也是一个指向函数对象的指针,不会与某个函数绑定</li>
+</ul>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名<span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span><span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="function"><span class="keyword">Function</span>构造函数<span class="params">(不推荐)</span></span></div><div class="line"><span class="title">var</span> 函数名 = <span class="title">new</span> <span class="title">Function</span><span class="params">(形参,返回值)</span>;</div></pre></td></tr></table></figure>
+<h4 id="二-函数特性"><a href="#二-函数特性" class="headerlink" title="二.函数特性"></a>二.函数特性</h4><ol>
+<li>由于函数名仅仅是指向函数的指针,因此函数名与包含对象指针的其他变量没有声什么不同,换句话说。一个函数可能会有多个名字</li>
+<li>函数没有重载,后声明的函数会覆盖前面的函数</li>
+<li>作为值的函数</li>
+</ol>
+<h4 id="三-函数声明与函数表达式"><a href="#三-函数声明与函数表达式" class="headerlink" title="三.函数声明与函数表达式"></a>三.函数声明与函数表达式</h4><ol>
+<li>解析器在向执行环境中加载数据时对[函数声明][函数表达式]不一样.</li>
+<li>解析器会率先读取<strong>函数声明</strong>,并让其在执行代码之前可用</li>
+<li>解析器对于<strong>函数表达式</strong>则必须等到执行到它所在的代码行,才会真正被解释执行</li>
+</ol>
+<h4 id="四-arguments和this"><a href="#四-arguments和this" class="headerlink" title="四.arguments和this"></a>四.arguments和this</h4><ul>
+<li>函数的内部有两个特殊对象<code>arguments</code>和<code>this</code></li>
+<li>其中<code>arguments</code>是一个类数组对象,包含传入函数中的所有参数(形参)<blockquote>
+<p>Array.prototype.slice.call(argumets) / [].slice.call(arguments);</p>
 </blockquote>
-<blockquote class="blockquote-center"><p>我是测试文本1</p>
-</blockquote>
-<blockquote class="blockquote-center"><p>我是测试文本二</p>
-</blockquote>
-<blockquote class="blockquote-center">我是测试文本三</blockquote>]]></content>
+</li>
+<li><p><code>arguments</code>对象下面有一个<code>callee</code>的属性,该属性是一个指针,指向拥有这个<code>arguments</code>对象的函数</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line">function factorial(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">num</span>*arguments.callee(<span class="built_in">num</span><span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>this</code>引用的是函数据以执行的环境对象</p>
+</li>
+</ul>
+<h4 id="五-函数的属性"><a href="#五-函数的属性" class="headerlink" title="五.函数的属性"></a>五.函数的属性</h4><ol>
+<li>每个函数都包含两个属性<code>length</code>和<code>prototype</code></li>
+<li><p><code>length</code>属性表示函数希望接受的<strong>命名参数的个数</strong></p>
+<figure class="highlight scilab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span><span class="params">(num1,num2)</span>&#123;</span></div><div class="line">    <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;;</div><div class="line">console.<span class="built_in">log</span>(sum.<span class="built_in">length</span>) <span class="comment">// 2</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>prototype</code>对于js的引用类型,<code>prototype</code>是它们所有实例方法的真正所在,诸如<code>toString()</code>,<code>valueOf()</code>都保存在prototype名下,只不过是通过各自对象的实例访问罢了,在创建<code>自定义引用类型</code>以及实现<code>继承</code>是很重要的。<code>prototype</code>属性是不可枚举的,因此使用<code>for-in</code>无法发现</p>
+</li>
+</ol>
+<h4 id="六-函数的方法"><a href="#六-函数的方法" class="headerlink" title="六.函数的方法"></a>六.函数的方法</h4><ol>
+<li>每个函数都包含<strong>非继承</strong>而来的方法:<code>apply()</code>,<code>call()</code>这两个方法的用途都是在特定的作用域中调用函数,实际上等于设置函数体内<code>this</code>对象的值.</li>
+<li><p><code>apply()</code>方法接受两个参数,一个是<code>在其运行函数中的作用域</code>,另一个是<code>参数数组||Array实例||arguments对象</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">sum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> num1+num2;</div><div class="line">&#125;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">callSum</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">   <span class="keyword">return</span> sum.apply(<span class="keyword">this</span>.arguments);<span class="comment">//传入arguments对象</span></div><div class="line">&#125;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">callSum2</span>(<span class="params">num1,num2</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> sum.apply(<span class="keyword">this</span>.[num1,num2]);<span class="comment">//传入数组</span></div><div class="line"> &#125;</div><div class="line"> <span class="built_in">console</span>.log(callSum(<span class="number">10</span>,<span class="number">10</span>));<span class="comment">//  20</span></div><div class="line"> <span class="built_in">console</span>.log(callSum2(<span class="number">10</span>,<span class="number">10</span>));<span class="comment">// 20</span></div></pre></td></tr></table></figure>
+</li>
+<li><p><code>call()</code>方法跟<code>apply()</code>作用相同,第一个<code>this</code>值没变化,其余的参数都必须<code>直接传递给函数</code>传递给函数的参数必须逐个列举出来</p>
+</li>
+<li>事实上,传递参数并非<code>call()</code>方法跟<code>apply()</code>真正的用武之地;它们真正强大的地方是<code>能够扩充函数赖以运行的作用域</code></li>
+</ol>
+<h4 id="七-函数返回值-return"><a href="#七-函数返回值-return" class="headerlink" title="七.函数返回值 return"></a>七.函数返回值 return</h4><ol>
+<li><code>return</code>就是<code>函数返回值</code>,作用把东西返回到函数外面来,在哪儿调用就返回到哪</li>
+<li>函数<code>不仅可以返回数字,返回字符串,返回算式</code></li>
+<li>函数参数,一次可以写多个进去,但是return返回值只能返回一个出去</li>
+<li>函数可以没有return,结果:<code>undefined</code></li>
+<li>函数返回值(函数可以把一些东西传到外面来)和函数传参(把一些东西传到函数里边去)</li>
+</ol>
+]]></content>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;我是测试文件的头部部分&quot;&gt;&lt;a href=&quot;#我是测试文件的头部部分&quot; class=&quot;headerlink&quot; title=&quot;我是测试文件的头部部分&quot;&gt;&lt;/a&gt;我是测试文件的头部部分&lt;/h1&gt;&lt;blockquote&gt;
-&lt;p&gt;我是简单的测试文件&lt;/p&gt;
-&lt;/block
+      &lt;p&gt;&lt;img src=&quot;1.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;一-函数定义&quot;&gt;&lt;a href=&quot;#一-函数定义&quot; class=&quot;headerlink&quot; title=&quot;一.函数定义&quot;&gt;&lt;/a&gt;一.函数定义&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;函数是一
     
     </summary>
     
-      <category term="哀吾生之须臾" scheme="https://double1000.github.io/blog/categories/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE/"/>
+      <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
-      <category term="生活" scheme="https://double1000.github.io/blog/tags/%E7%94%9F%E6%B4%BB/"/>
+      <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
-      <category term="杂谈" scheme="https://double1000.github.io/blog/tags/%E6%9D%82%E8%B0%88/"/>
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
     
-      <category term="测试" scheme="https://double1000.github.io/blog/tags/%E6%B5%8B%E8%AF%95/"/>
+      <category term="函数" scheme="https://double1000.github.io/blog/tags/%E5%87%BD%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript Notes | 数组</title>
+    <link href="https://double1000.github.io/blog/2017/04/06/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A32/"/>
+    <id>https://double1000.github.io/blog/2017/04/06/你是我唯一想要的了解2/</id>
+    <published>2017-04-05T16:00:34.000Z</published>
+    <updated>2017-04-06T03:01:29.242Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="1.png" class="full-image"></p>
+<ul>
+<li>数组：相同数据类型按照一定顺序排列的集合</li>
+<li>稀疏数组：所谓稀疏数组就是数组中大部分的内容值都未被使用(或为零),在数组中仅有少部分的空间使用</li>
+<li>二维数组：二维数组本质上是以数组作为数组元素的数组，即“数组的数组”。</li>
+<li>多维数组：二维数组以上的数组。既非线性也非平面的数组。</li>
+<li>栈：栈作为一种数据结构，是一种只能在一端进行插入和删除操作的特殊线性表。它按照<code>先进后出</code>的原则存储数据，先进入的数据被压入栈底，最后的数据在栈顶，需要读数据的时候从栈顶开始弹出数据（最后一个数据被第一个读出来）。栈具有记忆作用，对栈的插入与删除操作中，不需要改变栈底指针。插入一般称为进栈（PUSH），删除则称为退栈（POP）。栈也称为后进先出表。</li>
+<li>堆：一类特殊的数据结构的统称。堆通常是一个可以被看做一棵树的数组对象。在队列中，调度程序反复提取队列中第一个作业并运行，因为实际情况中某些时间较短的任务将等待很长时间才能结束，或者某些不短小，但具有重要性的作业，同样应当具有优先权。堆即为解决此类问题设计的一种数据结构。</li>
+<li>队列：是先进先出（FIFO, First-In-First-Out）的线性表。在具体应用中通常用链表或者数组来实现。队列只允许在后端（称为rear）进行插入操作，在前端（称为front）进行删除操作。队列的操作方式和堆栈类似，唯一的区别在于队列只允许新数据在后端进行添加。</li>
+<li>类数组：<code>拥有length属性</code>和<code>对应非负整数属性</code>的对象叫做<code>类数组</code></li>
+</ul>
+<h4 id="一-声明数组的方式"><a href="#一-声明数组的方式" class="headerlink" title="一.声明数组的方式"></a>一.声明数组的方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!--空的数组--&gt;</div><div class="line">var colors = new Array()</div><div class="line">&lt;!--数组长度为3--&gt;</div><div class="line">var colors = new Array(3)</div><div class="line">&lt;!--长度为2,两个项--&gt;</div><div class="line">var colors = new Array(&apos;red&apos;,&apos;blue&apos;)</div><div class="line">&lt;!--字面量方式--&gt;</div><div class="line">var colors = [&apos;red&apos;,&apos;blue&apos;,&apos;yellow&apos;];</div></pre></td></tr></table></figure>
+<h4 id="二-数组的属性-基本方法"><a href="#二-数组的属性-基本方法" class="headerlink" title="二.数组的属性/基本方法"></a>二.数组的属性/基本方法</h4><ul>
+<li>Array.length 数组的length,不是只读的,可以用来增删数组</li>
+<li>Array.toString(),Array.toLocaleString(),Array.toValueOf();将数组转换成一个字符串</li>
+<li>Array.concat(),连接数组。</li>
+<li>Array.reverse(),数组反序。</li>
+<li>Array.sort(),数组排序。</li>
+<li>Array.join(),将数组元素连接起来以构建一个<code>字符串</code>跟<code>split</code>相反,不会更改原数组</li>
+</ul>
+<h4 id="三-数组相关操作"><a href="#三-数组相关操作" class="headerlink" title="三.数组相关操作"></a>三.数组相关操作</h4><ol>
+<li><p>数组位置操作</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Array.indexof(search,<span class="keyword">start</span>);search参数表示搜索的项，<span class="keyword">start</span>表示搜索的位置。从左至右</div><div class="line">Array.lastIndexOf(<span class="keyword">search</span>,<span class="keyword">start</span>)从右到左</div></pre></td></tr></table></figure>
+</li>
+<li><p>数组slice()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var colors = [&apos;red&apos;,&apos;blue&apos;,&apos;yellow&apos;,&apos;white&apos;,&apos;black&apos;];</div><div class="line">1.Array.slice(start,end) 返回一个新数组，不会改变原来的的数组</div><div class="line">2.从start处截取end个字符长度(包含start不包含end)</div><div class="line">3.如果是负数,它声明从数组尾部开始算起的位置。也就是说,-1指最后一个元素,-2指倒数第二个元素</div><div class="line">例子：var color2 = colors.slice(1,3);//[&apos;blue&apos;,&apos;yellow&apos;];</div></pre></td></tr></table></figure>
+</li>
+<li><p>数组的splice()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">Array.splice(start, deleteCount, value, ...)</div><div class="line">原数组var arr = [1,2,3,4,5,6,7,8]</div><div class="line">注意:这个方法会修改原数组</div><div class="line">1.start 开始插入和(或)删除的数组元素的下标。</div><div class="line">2.deleteCount 从start开始，包括start所指的元素在内要删除的元素个数，</div><div class="line">3.如果没有指定它，如果没有指定它。splice()将删除从start开始到原数组结尾的所有元素</div><div class="line">4.value  要插入数组的零个或多个值，从start所指的小标处开始插入</div><div class="line">一个删除表示删除 var arrb = arr.splice(4) 返回b[5,6,7,8] a变成[1,2,3,4]</div><div class="line">两个值表示从start开始删除end个, var arrc = arr.splice(1,2) arrc返回[2,3] arr 返回 [1,4,6,7,8]</div><div class="line">两个值以上指定位置插入，var arrd = arr.splice(1,0,2,3)    arrb返回[] arr返回[1,2,3,2,3,4,5,6,7,8]</div></pre></td></tr></table></figure>
+</li>
+<li><p>栈和队列方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">栈方法:操作数组最后的元素</div><div class="line">Array.push(),方法从数组尾部添加（都会改变原数组,都返回数组的新length长度值)</div><div class="line">Array.pop(),方法从数组尾部删除</div><div class="line">队列方法:操作数组头部首元素</div><div class="line">Array.unshift(),方法是从数组的头部添加</div><div class="line">Array.shift(),方法shift()将把array的第—个元素移出数组，返回那个元素的值</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="四-数组函数"><a href="#四-数组函数" class="headerlink" title="四.数组函数"></a>四.数组函数</h4><ol>
+<li><p>数组归并方法：reduce(化简函数,初值),reduceRight(化简函数,初值);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">返回值:是一个单数组，与传入初值的类型相同</div><div class="line">化简函数(initValue,nextValue[,index][,array]);</div><div class="line">1. initValue 初始变量,默认为数组的第一个元素，函数第一次执行后的返回值作为函数第二次执行的初始变量</div><div class="line">2. nextValue 当前变量，如果指定了第二个参数，则该变量为数组的第一个元素的值</div><div class="line">3. index 当前变量对应元素在数组中的索引(从0开始);</div><div class="line">4. array 原数组对象</div><div class="line">-  reduce()从左到右,reduceRight()从右到左</div></pre></td></tr></table></figure>
+</li>
+<li><p>数组迭代方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">1. 数组定义了5个迭代方法,map,forEach,filter,some,every</div><div class="line">2. 每个方法接受两个参数,要在每一项上运行的函数和运行该函数的作用域对象(可选的) -- 影响this的值</div><div class="line">3. 运行的函数项会接受三个参数(数组项中的值,该项在数组中的位置,数组对象);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">Array.prototype.map();</div><div class="line">var users = [</div><div class="line">    &#123;name:&apos;t1&apos;,email:&apos;t1@qq.com&apos;&#125;,</div><div class="line">    &#123;name:&apos;t2&apos;,email:&apos;t2@qq.com&apos;&#125;,</div><div class="line">    &#123;name:&apos;t3&apos;,email:&apos;t3@qq.com&apos;&#125;</div><div class="line">];</div><div class="line">1. 返回值:数组,方法对数组的每一项给定函数,返回每次函数调用结果组成的数组</div><div class="line">2. 语法糖:map()方法还可以用于类数组对象</div><div class="line">3. 注意:对于稀疏数组,map()方法不会实际上不存在的元素序号上调用函数</div><div class="line"></div><div class="line">例子：语法糖类数组</div><div class="line">Array.prototype.map.call(&apos;abc&apos;,function(item,index,arr)&#123;</div><div class="line">    return item.toUpperCase(); // [A,B,C]</div><div class="line">&#125;);</div><div class="line"></div><div class="line">例子:获取方法对象数组中的特定属性值</div><div class="line">var arr2 = user.map(function(item,index,arr)&#123;</div><div class="line">    return item.email;</div><div class="line">&#125;);</div><div class="line">// 返回 [&quot;t1@qq.com&quot;,&quot;t2@qq.com&quot;,&quot;t3@qq.com&quot;];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">Array.prototype.forEach();</div><div class="line">1. 没有返回值,本质上跟for循环没有什么不同,如果需要返回值,一般使用map方法</div><div class="line">2. forEach()方法除了接受一个必须回掉函数参数,第二个参数还可以接受一个可选的上下文参数(改变回调函数this指向);</div><div class="line">3. [注意:] 对于稀疏数组,forEach()方法不会再实际上不存在元素序号上调用函数</div><div class="line">4. [注意:] forEach()方法无法在所有元素都传递给调用的函数之前终止遍历,也就是说,没有像for循环中使用相应的break语句,如果提前终止,必须把forEach()方法放在一个try块中,并能抛出异常</div><div class="line"></div><div class="line">例子:改变函数的上下文</div><div class="line">var out = [];</div><div class="line">[1,2,3].forEach(function(elem)&#123;</div><div class="line">    this.push(elem*elem);</div><div class="line">&#125;,out);</div><div class="line">console.log(out); [1,4,9];</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Array.prototype.filter();</div><div class="line">1. 返回值:数组,返回给定条件为true的项组成的数组.</div><div class="line">2. 该方法常用于查询符合条件的所有数组项。</div><div class="line">3. 注意:filter()会跳过稀疏数组中缺少的元素,它返回的数组总是稠密的，所以可以用来压缩稀疏数组的空缺</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Array.prototype.some();</div><div class="line">Array.prototype.every();</div><div class="line">1. 返回值。Boolean</div><div class="line">2. some():对数组中的每一项运行给定函数,如果该函数对数组中任意一项返回true,则返回true,否则返回false</div><div class="line">3. every():对数组中的每一项运行给定函数,数组中全部项返回true,则返回true,否则false</div></pre></td></tr></table></figure>
+<h4 id="五-检测数组的方法"><a href="#五-检测数组的方法" class="headerlink" title="五.检测数组的方法"></a>五.检测数组的方法</h4> <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">var arr</span> = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>];</div></pre></td></tr></table></figure>
+<ol>
+<li>console.log(typeof arr); // Object<ul>
+<li><code>数组的本质是一种特殊的对象</code>所以返回<code>object</code>,<code>typeof</code>运算符只能用来区分<code>原始类型</code>和<code>对象类型</code>,对于<code>更具体的对象类型是无法鉴别的</code></li>
+</ul>
+</li>
+<li>console.log(arr instanceof Array);// true</li>
+</ol>
+<ul>
+<li><code>instanceof</code>运算符用来判断一个<code>对象是否特定构造函数的实例</code>,如果网页中包含多个框架</li>
+</ul>
+<ol>
+<li>console.log(arr instaceof Object);// true</li>
+<li>console.log(Array.isArray(arr));// true</li>
+</ol>
+<ul>
+<li>为了数组检测方便,ES新增了<code>Array.isArray()</code>方法,该方法的目的地是最终确定某个值到底是不是<code>数组</code>,而不管它在那个全局环境中创建的</li>
+</ul>
+<ol>
+<li>console.log(Object.prototype.toString.call(arr) === ‘[Object Array]’;</li>
+<li>console.log(Object.prototype.toString.call(arr).slice(8,-1).toLowerCase === ‘array’;</li>
+</ol>
+<ul>
+<li>通过引用<code>Object的toString()</code>方法来检查对象的类属性.</li>
+</ul>
+<h4 id="六-类数组"><a href="#六-类数组" class="headerlink" title="六.类数组"></a>六.类数组</h4><blockquote>
+<p>拥有length属性和对应非负整数属性的对象叫做类数组<br><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">三类常见的类数组对象。</div><div class="line"><span class="number">1.</span>arguments对象</div><div class="line"><span class="number">2.</span>DOM方法(如document.getElementsByTagName()方法)返回的对象</div><div class="line"><span class="number">3.</span>字符串</div><div class="line">注意:字符串是不可变值，故当把它们作为数组看待时，它们是只读的。如push()、sort()、reverse()、splice()等数组方法会修改数组，它们在字符串上是无效的，且会报错</div><div class="line">数组的slice()方法将类数组对象变成真正的数组</div><div class="line">var arr = Array.prototype.slice.<span class="keyword">call</span>(arrayLike);</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h4 id="七-参考来源"><a href="#七-参考来源" class="headerlink" title="七.参考来源"></a>七.参考来源</h4><p><a href="http://www.cnblogs.com/xiaohuochai/p/5682621.html" target="_blank" rel="external">小火柴的蓝色理想：数组的22种方法</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Array" target="_blank" rel="external">MDN JavaScript标准库Array</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;1.png&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;数组：相同数据类型按照一定顺序排列的集合&lt;/li&gt;
+&lt;li&gt;稀疏数组：所谓稀疏数组就是数组中大部分的内容值都未被使用(或为零),在数组中仅有少部分的空间使用&lt;/li&gt;
+&lt;li
+    
+    </summary>
+    
+      <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
+    
+    
+      <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
+    
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
+    
+      <category term="数组" scheme="https://double1000.github.io/blog/tags/%E6%95%B0%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>情书|王小波，爱你就像爱生命。</title>
+    <link href="https://double1000.github.io/blog/2017/04/04/%E4%BD%A0%E6%98%AF%E6%88%91%E5%94%AF%E4%B8%80%E6%83%B3%E8%A6%81%E7%9A%84%E4%BA%86%E8%A7%A3/"/>
+    <id>https://double1000.github.io/blog/2017/04/04/你是我唯一想要的了解/</id>
+    <published>2017-04-04T15:38:05.000Z</published>
+    <updated>2017-04-06T02:54:33.978Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>“我是爱你的，看见就爱上了。我爱你爱到不自私的地步。就像一个人手里一只鸽子飞走了，他从心里祝福那鸽子的飞翔。你也飞吧。我会难过，也会高兴，到底会怎么 样我也不知道。”“静下来想你，觉得一切都美好得不可思议，以前我不知道爱情这么美好。爱到深处这么美好。真不想让任何人来管我们。谁也管不着，和谁都无关。告诉你，一想到你，我这张丑脸就泛起微笑”</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>我把我整个灵魂都给你，连同它的怪癖，耍小脾气，忽明忽暗，一千八百种坏毛病。它真讨厌，只有一点好，爱你。</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>当我跨过沉沦的一切，向着永恒开战的时候，你是我的军旗。</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>我很讨厌我自己不温不凉的思虑过度，也许我是个坏人，不过我只要你吻我一下就会变好呢。</p>
+</blockquote>
+<hr>
+<blockquote class="blockquote-center"><p>我的灵魂里是有很多地方玩世不恭 ，对人傲慢无礼，但是它是有一个核心的，这个核心害怕黑暗，柔弱得像是绵羊一样。只有顶平等的友爱才能使他得到安慰。你对我是属于这个核心的。</p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;“我是爱你的，看见就爱上了。我爱你爱到不自私的地步。就像一个人手里一只鸽子飞走了，他从心里祝福那鸽子的飞翔。你也飞吧。我会难过，也会高兴，到底会怎么 样我也不知道。”“静下来想你，觉得一切都美好得不
+    
+    </summary>
+    
+      <category term="哀吾生之须臾,羡长江之无穷" scheme="https://double1000.github.io/blog/categories/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE-%E7%BE%A1%E9%95%BF%E6%B1%9F%E4%B9%8B%E6%97%A0%E7%A9%B7/"/>
+    
+    
+      <category term="王小波" scheme="https://double1000.github.io/blog/tags/%E7%8E%8B%E5%B0%8F%E6%B3%A2/"/>
+    
+      <category term="附庸风雅" scheme="https://double1000.github.io/blog/tags/%E9%99%84%E5%BA%B8%E9%A3%8E%E9%9B%85/"/>
+    
+      <category term="情书" scheme="https://double1000.github.io/blog/tags/%E6%83%85%E4%B9%A6/"/>
+    
+      <category term="语录" scheme="https://double1000.github.io/blog/tags/%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   

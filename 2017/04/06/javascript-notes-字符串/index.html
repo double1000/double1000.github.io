@@ -1,0 +1,843 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="hURnC-1VtFyi-v7OYQhy-5eOj-XZW3BAIs6iqzQcQj8" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="JavaScript,字符串,Notes," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="胡温柔|瞎扯的地方" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="一.字符串的属性 length:字符串的每个实例都有一个length属性,表示字符串中的字符个数,由于字符串是不变的，所以字符串的长度也不可变 特性:字符串的length属性不会再for/in循环中枚举,也不能通过delete删除,索引从0开始 二.字符串通用方法String类型是与字符串对象的包装类型,继承了Object的通用方法   toString();该方法返回string的原始字符串值">
+<meta name="keywords" content="JavaScript,字符串,Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript Notes|字符串">
+<meta property="og:url" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/index.html">
+<meta property="og:site_name" content="胡温柔|瞎扯的地方">
+<meta property="og:description" content="一.字符串的属性 length:字符串的每个实例都有一个length属性,表示字符串中的字符个数,由于字符串是不变的，所以字符串的长度也不可变 特性:字符串的length属性不会再for/in循环中枚举,也不能通过delete删除,索引从0开始 二.字符串通用方法String类型是与字符串对象的包装类型,继承了Object的通用方法   toString();该方法返回string的原始字符串值">
+<meta property="og:image" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/1.jpg">
+<meta property="og:updated_time" content="2017-04-06T03:53:38.789Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript Notes|字符串">
+<meta name="twitter:description" content="一.字符串的属性 length:字符串的每个实例都有一个length属性,表示字符串中的字符个数,由于字符串是不变的，所以字符串的长度也不可变 特性:字符串的length属性不会再for/in循环中枚举,也不能通过delete删除,索引从0开始 二.字符串通用方法String类型是与字符串对象的包装类型,继承了Object的通用方法   toString();该方法返回string的原始字符串值">
+<meta name="twitter:image" content="https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/1.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":50,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/"/>
+
+
+
+
+
+  <title> JavaScript Notes|字符串 | 胡温柔|瞎扯的地方 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-67800719-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?7a046e8db6a48f2ab46b7812ba612789";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">胡温柔|瞎扯的地方</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">醉后不知天在水,满船清梦压星河</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="https://double1000.github.io/blog/2017/04/06/javascript-notes-字符串/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="胡温柔">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="胡温柔|瞎扯的地方">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                JavaScript Notes|字符串
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-06T11:48:28+08:00">
+                2017-04-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/寄蜉蝣于天地-渺沧海之一粟/" itemprop="url" rel="index">
+                    <span itemprop="name">寄蜉蝣于天地,渺沧海之一粟</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="1.jpg" class="full-image"></p>
+<h4 id="一-字符串的属性"><a href="#一-字符串的属性" class="headerlink" title="一.字符串的属性"></a>一.字符串的属性</h4><ol>
+<li>length:字符串的每个实例都有一个length属性,表示字符串中的字符个数,由于字符串是不变的，所以字符串的长度也不可变<blockquote>
+<p>特性:字符串的length属性不会再<code>for/in</code>循环中枚举,也不能通过<code>delete</code>删除,索引从0开始</p>
+<h4 id="二-字符串通用方法"><a href="#二-字符串通用方法" class="headerlink" title="二.字符串通用方法"></a>二.字符串通用方法</h4><p><code>String</code>类型是与字符串对象的包装类型,继承了Object的通用方法</p>
+</blockquote>
+</li>
+<li>toString();该方法返回string的原始字符串值。</li>
+<li>toLocaleString();该方法返回string的原始字符串值。</li>
+<li>valueOf();该方法返回string的原始字符串值<h4 id="三-字符串实例方法"><a href="#三-字符串实例方法" class="headerlink" title="三.字符串实例方法"></a>三.字符串实例方法</h4><h5 id="1-访问字符方法"><a href="#1-访问字符方法" class="headerlink" title="1. 访问字符方法"></a>1. 访问字符方法</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.charAt(number);</div><div class="line">1-1. charAt()方法接受一个基于0的字符串位置的参数,返回指定位置的字符。</div><div class="line">1-2. 当参数为空或者NaN时,默认参数为0</div><div class="line">1-3. 当参数超出范围时,则返回一个空字符串</div><div class="line"></div><div class="line">var str = &apos;hello&apos;;</div><div class="line">console.log(str.charAt(NaN)); // h</div><div class="line">注意：charAt()方法涉及到Number()函数的隐式类型转换,如果转换为数值,如果转换为NaN,则输出第0个字符</div><div class="line">注意: str.charAt(pos)与str.substring(pos, pos+1)、str.substr(pos,1)、str.slice(pos,pos+1)的结果相等</div><div class="line"></div><div class="line">2. [number]中括号</div><div class="line">2-1. ES5,使用方括号加数字索引来访问字符串中的特定字符。</div><div class="line">2-2. 如果参数超出范围或是NaN时,则输出undefined;没有参数,会报错</div><div class="line">2-3. 该方法没有Number()转型函数的隐式转换,但参数为单数值数组时可转换为数值</div><div class="line"></div><div class="line">3. String.prototype.charCodeAt(number);</div><div class="line">3-1. 类似charAt()方法,返回的是指定位置的字符16位Unicode编码</div><div class="line">3-2. 返回值是一个16位的整数,在0~65525之间,即0x0000 - 0xffff之间</div><div class="line">3-3. 参数为空或NaN时,默认参数为0,当参数超出范围时,则返回NaN</div><div class="line">3-4. 注意:charCodeAt()方法涉及到Number()函数的隐式类型转换,如果转换为数值,则按照上述规则输出相应值;如果转换为NaN,则输出第0个字符的字符编码</div><div class="line"></div><div class="line">4. String.fromCharCode();</div><div class="line">4-1. 这是一个属于String的静态方法</div><div class="line">4-2. 这个方法的任务是接受一个或多个字符编码,然后把它们转换成一个字符串。</div><div class="line">4-3. 从本质上看,这个方法与实例方法charCodeAt()执行的是相反的操作,若参数为空NaN时,则返回空字符串</div><div class="line">4-4. 若参数超出0~65535的范围,则输出字符不可控</div><div class="line">注意:如果一个字符占用四字节,则需要拆分两个字符表示</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="2-字符串拼接"><a href="#2-字符串拼接" class="headerlink" title="2.字符串拼接"></a>2.字符串拼接</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.concat();</div><div class="line">1-1. concat()方法用于将一个或多个字符串拼接起来,返回拼接得到的新字符串</div><div class="line">1-2. 返回拼接得到的新字符串,而源字符串不发生改变</div><div class="line">1-3. 若参数(第一个参数除外)不是字符串,则听过String()方法隐士转换为字符串,再进行字符串拼接</div><div class="line">注意:第一个参数只能是字符串,如果是其他类型(数组除外)则报错</div><div class="line">注意:由于数组也存在concat()方法,参数会按照首先出现的参数是数组还是字符串来决定如何转换</div><div class="line"></div><div class="line">2. +(加号运算符)</div><div class="line">2-1. 实践中使用更多的还是加号运算符。使用加号运算符再许多时候都比concat简单易行</div><div class="line">注意:当操作数其中一个是字符串,或者对象转换为字符串时,才进行字符串拼接</div></pre></td></tr></table></figure>
+<h5 id="3-创建子字符串"><a href="#3-创建子字符串" class="headerlink" title="3.创建子字符串"></a>3.创建子字符串</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.slice();</div><div class="line">1-1. slice(start,end),返回这个字符串中从start位置的字符到(但不包含)end位置的字符的一个子字符串.</div><div class="line">1-2. 如果end为end为undefined或不存在,则返回从start位置到字符串结尾的所有字符</div><div class="line">1-3. 如果start是负数,则start=max(length + start,0);</div><div class="line">1-4. 如果end是负数,则end=max(length + end,0);</div><div class="line">注意:slice()方法涉及到Number()转型函数的隐式类型转换，当start被转换为NaN时，相当于start = 0；当end被转换为NaN时(end为undefined除外)，则输出空字符串</div><div class="line"></div><div class="line">2. String.prototype.substring();</div><div class="line">2-1. substring(start,end)返回这个字符串中从start位置的字符到(但不包含)end位置的字符的一个子字符串；</div><div class="line">2-2. 如果end为undefined或不存在，则返回从start位置到字符串结尾的所有字符。</div><div class="line">2-3. 同样地，substring()方法也涉及到Number()转型函数的隐式类型转换</div><div class="line">注意:如果任一参数是NaN或负数，则被0取代</div><div class="line">注意:如果任一参数大于字符串长度，则被字符串长度取代</div><div class="line">注意:如果start 大于 end，则交换它们的值</div><div class="line"></div><div class="line">3.String.prototype.substr();</div><div class="line">3-1. substr(start,end)end代表返回的子字符串的字符个数,该方法返回这个字符串中从start位置的字符开始的end个字符的一个子字符串</div><div class="line">3-2. 如果end为undefined或不存在，则返回从start位置到字符串结尾的所有字符</div><div class="line">3-3. 如果start是负数，则start = max(length + start,0)</div><div class="line">3-4. 如果start是NaN，则相当于start = 0</div><div class="line">注意:如果end是负数或NaN，则end = 0，因此会返回空字符串</div><div class="line">注意:start和end无法交换位置</div><div class="line">注意:该方法不是ECMAScript标准，已经被弃用</div><div class="line">注意:substr()方法也涉及到Number()转型函数的隐式类型转换</div></pre></td></tr></table></figure>
+<h5 id="3-大小写转换"><a href="#3-大小写转换" class="headerlink" title="3.大小写转换"></a>3.大小写转换</h5><ol>
+<li>toUpperCase()方法将字符串转换成大写;</li>
+<li>toLowerCase()方法将字符串转换成小写;</li>
+<li>toLocaleUpperCase()方法将字符串转换成大写(针对地区);</li>
+<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="keyword">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="4-查找子串位置"><a href="#4-查找子串位置" class="headerlink" title="4.查找子串位置"></a>4.查找子串位置</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">有两个从字符串中查找子字符串位置的方法:indexOf()和lastIndexOf()。</div><div class="line">查找子串位置的方法同访问字符方法charAt()和中括号[]方法有相反的地方，一个通过字符串查找位置，一个则是通过位置查找字符</div><div class="line"></div><div class="line">1. String.prototype.indexOf();</div><div class="line">1-1. indexOf(searchString,start)方法接收searchString和start两个参数，返回searchString首次出现的位置，如果没有找到则返回-1</div><div class="line">1-2. 该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">1-3. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN或负数时，start = 0</div><div class="line"></div><div class="line">2.String.prototype.lastIndexOf();</div><div class="line">2-1. 与indexOf()不同，lastIndexOf()从右向左查找</div><div class="line">2-2. lastIndexOf(searchString,start)方法接收searchString和start两个参数，返回searchString第一次出现的位置，如果没有找到则返回-1</div><div class="line">2-3. 同样地，该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">2-4. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN时，start = length - 1；若start为负数，start = 0</div><div class="line"></div><div class="line">**例子:查找出字符串所有符合条件的子字符串**</div><div class="line">function allIndexOf(str,value)&#123;</div><div class="line">    var result = [];</div><div class="line">    var pos = str.indexOf(value);</div><div class="line">    while(pos &gt; -1)&#123;</div><div class="line">        result.push(pos);</div><div class="line">        pos = str.indexOf(value,pos+value.length);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(allIndexOf(&apos;helllhelllhelll&apos;,&apos;ll&apos;));//[2,7,12]</div></pre></td></tr></table></figure>
+<h5 id="5-正则匹配方法"><a href="#5-正则匹配方法" class="headerlink" title="5.正则匹配方法"></a>5.正则匹配方法</h5><p>javascript中的一些正则操作如查找和测试等可以通过RegExp的方法实现，而切分和替换等另一些操作可以通过String类的方法实现String类共有match()、search()、replace()、split()这4种正则匹配方法<br><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">1. String.prototype.match();</div><div class="line">1-2. match()方法只接受一个为正则或字符串的参数，并以数组的形式返回匹配的内容。</div><div class="line">1-3. 这个方法类似于正则表达式RegExp的exec()方法，只是调换了RegExp和String对象的位置</div><div class="line">1-4. 若匹配失败,则match()方法返回null</div><div class="line"></div><div class="line">&apos;x&apos;.match(/y/);//null</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var pattern = /.at/g;</div><div class="line">var matches = string.match(pattern);</div><div class="line">console.log(matches,matches.index,matches.input);//[&quot;cat&quot;, &quot;bat&quot;, &quot;sat&quot;, &quot;fat&quot;] undefined undefined</div><div class="line">var matches = string.match(pattern);</div><div class="line">console.log(matches,matches.index,matches.input);//[&quot;cat&quot;, &quot;bat&quot;, &quot;sat&quot;, &quot;fat&quot;] undefined undefined</div><div class="line"></div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var pattern = /.at/;</div><div class="line">var exec = pattern.exec(string);</div><div class="line">console.log(exec,exec.index,exec.input);//[&apos;cat&apos;] 0 &apos;cat,bat,sat,fat&apos;</div><div class="line">var exec = pattern.exec(string);</div><div class="line">console.log(exec,exec.index,exec.input);//[&apos;cat&apos;] 0 &apos;cat,bat,sat,fat&apos;</div><div class="line"></div><div class="line">例子：找出字符串中所有的数字</div><div class="line">var str1 = &apos;j1h342jg24g234j 3g24j1&apos;;</div><div class="line">array = str1.match(/\d+/g);</div><div class="line">console.log(array);//[&quot;1&quot;, &quot;342&quot;, &quot;24&quot;, &quot;234&quot;, &quot;3&quot;, &quot;24&quot;, &quot;1&quot;]</div><div class="line"></div><div class="line">注意:若不设置全局标志，match()方法和exec()方法结果相同</div><div class="line">注意:设置全局标志后,exec()方法依然返回单次的匹配结果，而match()方法会返回一个字符串数组,其中包括各次成功匹配的文本，但没有index和input属性</div><div class="line">注意:match()方法作为字符串String的方法，接受参数为字符串，结果与不设置全局标志的正则表达式为参数相同，只返回第一个匹配项，且具有index和input属性</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">2. String.prototype.search();</div><div class="line">2-1. search()方法接受一个正则或字符串的参数,返回匹配的内容在字符串中首次出现的位置,</div><div class="line">2-2.类似于不能设置起始位置的indexOf,找不到返回-1</div><div class="line">注意:search()方法不执行全局匹配，忽略全局标志g，也会忽略RegExp对象的lastIndex属性，总是从字符串的开始位置开始搜索</div><div class="line"></div><div class="line">例子：找出匹配的所有位置</div><div class="line">function fnAllSearch(str,pattern)&#123;</div><div class="line">    var pos = str.search(pattern);</div><div class="line">    var length = str.match(pattern)[0].length;</div><div class="line">    var index = pos+length;</div><div class="line">    var result = [];</div><div class="line">    var last = index;</div><div class="line">    result.push(pos);</div><div class="line">    while(true)&#123;</div><div class="line">        str = str.substr(index);</div><div class="line">        pos = str.search(pattern);</div><div class="line">        if(pos === -1)&#123;</div><div class="line">            break;</div><div class="line">        &#125;</div><div class="line">        length = str.match(pattern)[0].length;</div><div class="line">        index = pos+length;</div><div class="line">        result.push(last+pos);</div><div class="line">        last += index;</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(fnAllSearch(&apos;cat23fbat246565sa3dftf44at&apos;,/\d+/));//[3,9,17,22]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">3. String.prototype.replace();</div><div class="line">3-1. replace()方法用于替换一个或多个子字符串。它接收两个参数：第一个是正则表达式或字符串，表示待查找的内容；第二个是字符串或函数，表示替换内容。</div><div class="line">3-2. 返回替换后的字符串</div><div class="line"></div><div class="line">注意:字符串替换，只能替换第一个子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(&apos;at&apos;,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bat,sat,fat&apos;</div><div class="line">注意:不设置全局标志g，也只能替换第一个子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(/at/,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bat,sat,fat&apos;</div><div class="line">注意:设置全局标志g，替换所有匹配的子字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var result = string.replace(/at/g,&apos;ond&apos;);</div><div class="line">console.log(result);//&apos;cond,bond,sond,fond&apos;</div><div class="line"></div><div class="line">replace()方法的第二个参数可以是函数，这样文本的处理更加灵活</div><div class="line">如果在只有一个匹配项的情况下，该方法会向这个函数传递3个参数：模式的匹配项、模式匹配项在字符串中的位置、原始字符串</div><div class="line">var string = &apos;cat,bat,sat,fat&apos;;</div><div class="line">var index = 0;</div><div class="line">var matchArray = [];</div><div class="line">var posArray = [];</div><div class="line">var text = &apos;&apos;;</div><div class="line">var result = string.replace(/at/g,function(match,pos,originalText)&#123;</div><div class="line">    matchArray.push(match);</div><div class="line">    posArray.push(pos);</div><div class="line">    text = originalText;</div><div class="line">    index++;</div><div class="line">    if(index % 2)&#123;</div><div class="line">        return &apos;wow&apos;;</div><div class="line">    &#125;else&#123;</div><div class="line">        return &apos;0&apos;;</div><div class="line">    &#125;</div><div class="line">&#125;);</div><div class="line">console.log(matchArray);//[&quot;at&quot;, &quot;at&quot;, &quot;at&quot;, &quot;at&quot;]</div><div class="line">console.log(posArray);//[1, 5, 9, 13]</div><div class="line">console.log(text);//&apos;cat,bat,sat,fat&apos;</div><div class="line">console.log(result);//&apos;cwow,b0,swow,f0&apos;</div><div class="line"></div><div class="line">例子:日期格式化</div><div class="line">var array = [&apos;2015.7.28&apos;,&apos;2015-7-28&apos;,&apos;2015/7/28&apos;,&apos;2015.7-28&apos;,&apos;2015-7.28&apos;,&apos;2015/7---28&apos;];</div><div class="line">function formatDate(date)&#123;</div><div class="line">    return date.replace(/(\d+)\D+(\d+)\D+(\d+)/,&apos;$1年$2月$3日&apos;)</div><div class="line">&#125;</div><div class="line">var result = [];</div><div class="line">for(var i = 0 ; i &lt; array.length; i++)&#123;</div><div class="line">    result.push(formatDate(array[i]));</div><div class="line">&#125;</div><div class="line">console.log(result);//[&quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;, &quot;2015年7月28日&quot;]</div><div class="line">例子:找出重复项最多的字符和个数</div><div class="line">var str = &apos;aaaaabbbbbdddddaaaaaaaffffffffffffffffffgggggcccccce&apos;;</div><div class="line">var pattern = /(\w)\1+/g;</div><div class="line">var maxLength = 0;</div><div class="line">var maxValue = &apos;&apos;;</div><div class="line">var result = str.replace(pattern,function(match,match1,pos,originalText)&#123;</div><div class="line">    if(match.length &gt; maxLength)&#123;</div><div class="line">        maxLength = match.length;</div><div class="line">        maxValue = match1;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">console.log(maxLength,maxValue);//18 &quot;f&quot;</div></pre></td></tr></table></figure>
+<h5 id="六-split-方法"><a href="#六-split-方法" class="headerlink" title="六.split()方法"></a>六.split()方法</h5><ol>
+<li>split()方法基于指定的分隔符将一个字符串分割成多个字符串，并将结果放在一个数组中，分隔符可以是字符串，也可以是一个RegExp</li>
+<li>该方法可以接受第二个参数(可选)用于指定数组的大小，如果第二个参数为0-array.length范围内的值时按照指定参数输出，其他情况将所有结果都输出</li>
+<li>若指定分隔符没有出现在字符串中，则以数组的形式返回原字符串的值</li>
+<li>参数中的正则表达式是否使用全局标志g对结果没有影响<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var colorText = &apos;red,blue,green,yellow&apos;;</div><div class="line">console.log(colorText.split(&apos;&apos;));//[&quot;r&quot;, &quot;e&quot;, &quot;d&quot;, &quot;,&quot;, &quot;b&quot;, &quot;l&quot;, &quot;u&quot;, &quot;e&quot;, &quot;,&quot;, &quot;g&quot;, &quot;r&quot;, &quot;e&quot;, &quot;e&quot;, &quot;n&quot;, &quot;,&quot;, &quot;y&quot;, &quot;e&quot;, &quot;l&quot;, &quot;l&quot;, &quot;o&quot;, &quot;w&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;,2));//[&quot;red&quot;, &quot;blue&quot;]</div><div class="line">console.log(colorText.split(&apos;,&apos;,6));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(&apos;-&apos;));//[&quot;red,blue,green,yellow&quot;]</div><div class="line">console.log(colorText.split(/\,/));//[&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;, &quot;yellow&quot;]</div><div class="line">console.log(colorText.split(/e/));//[&quot;r&quot;, &quot;d,blu&quot;, &quot;,gr&quot;, &quot;&quot;, &quot;n,y&quot;, &quot;llow&quot;]</div><div class="line">console.log(colorText.split(/[^\,]+/));//将除去逗号以外的字符串变为分隔符[&quot;&quot;, &quot;,&quot;, &quot;,&quot;, &quot;,&quot;, &quot;&quot;],IE8-会识别为[&quot;,&quot;,&quot;,&quot;,&quot;,&quot;]</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="七-去除首尾空格trim"><a href="#七-去除首尾空格trim" class="headerlink" title="七.去除首尾空格trim()"></a>七.去除首尾空格trim()</h5><ol>
+<li>ECMAScript5为所有字符串定义了trim()方法。这个方法会创建一个字符串的副本，删除前置及后缀的所有空白字符，然后返回结果</li>
+<li>由于trim()方法返回的是字符串的副本，所以原始字符串中的前置及后缀空格会保持不变,意思就是不改变原字符串<figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">正则模拟去除字符串首尾空格</div><div class="line">function fnTrim(str)&#123;</div><div class="line">    return str.replace(/^\s+|\s+$/,&apos;&apos;)</div><div class="line">&#125;</div><div class="line">console.log(fnTrim(&apos;hello world&apos;));//&apos;hello world&apos;</div></pre></td></tr></table></figure></li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/字符串/" rel="tag"># 字符串</a>
+          
+            <a href="/tags/Notes/" rel="tag"># Notes</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/06/javascript-notes-函数/" rel="prev" title="JavaScript Notes | 函数">
+                JavaScript Notes | 函数 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+  <a class="jiathis_button_tsina"></a>
+  <a class="jiathis_button_tqq"></a>
+  <a class="jiathis_button_weixin"></a>
+  <a class="jiathis_button_cqq"></a>
+  <a class="jiathis_button_douban"></a>
+  <a class="jiathis_button_renren"></a>
+  <a class="jiathis_button_qzone"></a>
+  <a class="jiathis_button_kaixin001"></a>
+  <a class="jiathis_button_copy"></a>
+  <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank"></a>
+  <a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+  var jiathis_config={
+    hideMore:false
+  }
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="胡温柔" />
+          <p class="site-author-name" itemprop="name">胡温柔</p>
+           
+              <p class="site-description motion-element" itemprop="description">快点好起来呀!混蛋</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+          <div class="feed-link motion-element">
+            <a href="/atom.xml" rel="alternate">
+              <i class="fa fa-rss"></i>
+              RSS
+            </a>
+          </div>
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/double1000" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/your-user-name" target="_blank" title="微博">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/hu-bu-lai/activities" target="_blank" title="知乎">
+                  
+                    <i class="fa fa-fw fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-字符串的属性"><span class="nav-number">1.</span> <span class="nav-text">一.字符串的属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-字符串通用方法"><span class="nav-number">2.</span> <span class="nav-text">二.字符串通用方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三-字符串实例方法"><span class="nav-number">3.</span> <span class="nav-text">三.字符串实例方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-访问字符方法"><span class="nav-number">3.1.</span> <span class="nav-text">1. 访问字符方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-字符串拼接"><span class="nav-number">3.2.</span> <span class="nav-text">2.字符串拼接</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-创建子字符串"><span class="nav-number">3.3.</span> <span class="nav-text">3.创建子字符串</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-大小写转换"><span class="nav-number">3.4.</span> <span class="nav-text">3.大小写转换</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-查找子串位置"><span class="nav-number">3.5.</span> <span class="nav-text">4.查找子串位置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#5-正则匹配方法"><span class="nav-number">3.6.</span> <span class="nav-text">5.正则匹配方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#六-split-方法"><span class="nav-number">3.7.</span> <span class="nav-text">六.split()方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#七-去除首尾空格trim"><span class="nav-number">3.8.</span> <span class="nav-text">七.去除首尾空格trim()</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">胡温柔</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
