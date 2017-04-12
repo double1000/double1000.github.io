@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://double1000.github.io/blog/"/>
-  <updated>2017-04-12T00:42:45.335Z</updated>
+  <updated>2017-04-12T05:23:31.156Z</updated>
   <id>https://double1000.github.io/blog/</id>
   
   <author>
@@ -16,13 +16,61 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>HTTP | 前端开发工程师应该知道的http协议知识</title>
+    <title>web | 前端相关术语</title>
+    <link href="https://double1000.github.io/blog/2017/04/12/web-%E5%89%8D%E7%AB%AF%E7%9B%B8%E5%85%B3%E5%90%8D%E5%AD%97%E4%BB%A5%E5%8F%8A%E8%A7%A3%E9%87%8A/"/>
+    <id>https://double1000.github.io/blog/2017/04/12/web-前端相关名字以及解释/</id>
+    <published>2017-04-12T04:58:11.000Z</published>
+    <updated>2017-04-12T05:23:31.156Z</updated>
+    
+    <content type="html"><![CDATA[<ul>
+<li>组件化<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">组件化就是基于可重用的目的，将一个大的软件系统按照分离关注点的形式，</div><div class="line">拆分成多个独立的组件，主要目的就是减少耦合。</div><div class="line">一个独立的组件可以是一个软件包、web服务、web资源或者是封装了一些函数的模块。</div><div class="line">这样，独立出来的组件可以单独维护和升级而不会影响到其他的组件。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/29735633" target="_blank" rel="external">知乎:什么叫组件化开发</a></p>
+<ul>
+<li>模块化<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">模块化的目的在于将一个程序按照其功能做拆分，分成相互独立的模块，</div><div class="line">便于每个模块只包含与其功能相关的内容，模块之间通过接口调用。</div><div class="line">将一个大的系统模块化之后，每个模块都可以被高度复用。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://www.zhihu.com/question/37649318" target="_blank" rel="external">知乎:前端开发的模块化和组件化的定义，以及两者的关系</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">模块化的目的是为了重用，模块化后可以方便重复使用和插拨到不同的平台，不同的业务逻辑过程中。</div><div class="line">组件化的目的是为了解耦，把系统拆分成多个组件，分离组件边界和责任，便于独立升级和维护。</div></pre></td></tr></table></figure>
+<ul>
+<li>同步跟异步<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">同步是阻塞模式，异步是非阻塞模式。 </div><div class="line">同步是指两个线程的运行是相关的，其中一个线程要阻塞等待另外一个线程的运行。</div><div class="line">异步的意思是两个线程毫无相关，自己运行自己的。 </div><div class="line"></div><div class="line">同步是指：发送方发出数据后，等接收方发回响应以后才发下一个数据包的通讯方式。 </div><div class="line">异步是指：发送方发出数据后，不等接收方发回响应，接着发送下个数据包的通讯方式。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://segmentfault.com/a/1190000004322358#articleHeader1" target="_blank" rel="external">彻底理解同步、异步和事件循环(Event Loop)</a><br><a href="http://blog.csdn.net/u013063153/article/details/52457307" target="_blank" rel="external">深入理解JavaScript编程中的同步与异步机制</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;ul&gt;
+&lt;li&gt;组件化&lt;figure class=&quot;highlight&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;
+    
+    </summary>
+    
+    
+      <category term="协议/标准" scheme="https://double1000.github.io/blog/tags/%E5%8D%8F%E8%AE%AE-%E6%A0%87%E5%87%86/"/>
+    
+      <category term="WEB" scheme="https://double1000.github.io/blog/tags/WEB/"/>
+    
+      <category term="[object Object]" scheme="https://double1000.github.io/blog/tags/object-Object/"/>
+    
+      <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/tags/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP | 前端开发工程师应该知道的HTTP协议知识</title>
     <link href="https://double1000.github.io/blog/2017/04/12/http-%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91%E5%B7%A5%E7%A8%8B%E5%B8%88%E5%BA%94%E8%AF%A5%E7%9F%A5%E9%81%93%E7%9A%84http%E5%8D%8F%E8%AE%AE%E7%9F%A5%E8%AF%86/"/>
     <id>https://double1000.github.io/blog/2017/04/12/http-前端开发工程师应该知道的http协议知识/</id>
     <published>2017-04-12T00:40:31.000Z</published>
-    <updated>2017-04-12T00:42:45.335Z</updated>
+    <updated>2017-04-12T04:50:59.758Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="参考来源"><a href="#参考来源" class="headerlink" title="参考来源"></a>参考来源</h3><p><a href="https://www.wikiwand.com/zh/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE" target="_blank" rel="external">维基百科</a><br><a href="http://xiaotank.blog.51cto.com/2461521/1191420" target="_blank" rel="external">HTTP详解</a><br><a href="http://www.imooc.com/article/14281" target="_blank" rel="external">从访问网页简单理解互联网数据交换的整个过程</a><br><a href="http://www.imooc.com/article/14397" target="_blank" rel="external">前端开发工程师应该知道的http协议知识</a></p>
+]]></content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;参考来源&quot;&gt;&lt;a href=&quot;#参考来源&quot; class=&quot;headerlink&quot; title=&quot;参考来源&quot;&gt;&lt;/a&gt;参考来源&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://www.wikiwand.com/zh/%E8%B6%85%E6%96%87%E6%9C%
     
     </summary>
     
@@ -163,22 +211,22 @@
     
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
-      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
-    
       <category term="作用域" scheme="https://double1000.github.io/blog/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
       <category term="闭包" scheme="https://double1000.github.io/blog/tags/%E9%97%AD%E5%8C%85/"/>
     
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
+    
   </entry>
   
   <entry>
-    <title>web | 开发流程环节</title>
+    <title>web | 开发流程环节/名词/规范</title>
     <link href="https://double1000.github.io/blog/2017/04/06/web-%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B%E7%8E%AF%E8%8A%82/"/>
     <id>https://double1000.github.io/blog/2017/04/06/web-开发流程环节/</id>
     <published>2017-04-06T07:30:17.000Z</published>
-    <updated>2017-04-12T01:00:12.232Z</updated>
+    <updated>2017-04-12T04:54:55.554Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="1.jpg" class="full-image"></p>
+    <content type="html"><![CDATA[<p><img src="1.jpg"></p>
 <h4 id="一-相关名词解释"><a href="#一-相关名词解释" class="headerlink" title="一.相关名词解释"></a>一.相关名词解释</h4><ol>
 <li>运维工程师 （代码部署工程服务） OP</li>
 <li>产品经理  PM （ProductManager) 对产品负责</li>
@@ -213,18 +261,20 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;1.jpg&quot; class=&quot;full-image&quot;&gt;&lt;/p&gt;
+      &lt;p&gt;&lt;img src=&quot;1.jpg&quot;&gt;&lt;/p&gt;
 &lt;h4 id=&quot;一-相关名词解释&quot;&gt;&lt;a href=&quot;#一-相关名词解释&quot; class=&quot;headerlink&quot; title=&quot;一.相关名词解释&quot;&gt;&lt;/a&gt;一.相关名词解释&lt;/h4&gt;&lt;ol&gt;
-
+&lt;li&gt;运维工程师 （代码部署工程服务
     
     </summary>
     
       <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
-      <category term="开发流程" scheme="https://double1000.github.io/blog/tags/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/"/>
+      <category term="协议/标准" scheme="https://double1000.github.io/blog/tags/%E5%8D%8F%E8%AE%AE-%E6%A0%87%E5%87%86/"/>
     
       <category term="WEB" scheme="https://double1000.github.io/blog/tags/WEB/"/>
+    
+      <category term="开发流程" scheme="https://double1000.github.io/blog/tags/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/"/>
     
   </entry>
   
@@ -301,11 +351,11 @@
       <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
-      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
-    
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
       <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
+    
+      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
     
   </entry>
   
@@ -451,7 +501,7 @@
 <li>toUpperCase()方法将字符串转换成大写;</li>
 <li>toLowerCase()方法将字符串转换成小写;</li>
 <li>toLocaleUpperCase()方法将字符串转换成大写(针对地区);</li>
-<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="keyword">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
+<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="built_in">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h5 id="4-查找子串位置"><a href="#4-查找子串位置" class="headerlink" title="4.查找子串位置"></a>4.查找子串位置</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">有两个从字符串中查找子字符串位置的方法:indexOf()和lastIndexOf()。</div><div class="line">查找子串位置的方法同访问字符方法charAt()和中括号[]方法有相反的地方，一个通过字符串查找位置，一个则是通过位置查找字符</div><div class="line"></div><div class="line">1. String.prototype.indexOf();</div><div class="line">1-1. indexOf(searchString,start)方法接收searchString和start两个参数，返回searchString首次出现的位置，如果没有找到则返回-1</div><div class="line">1-2. 该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">1-3. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN或负数时，start = 0</div><div class="line"></div><div class="line">2.String.prototype.lastIndexOf();</div><div class="line">2-1. 与indexOf()不同，lastIndexOf()从右向左查找</div><div class="line">2-2. lastIndexOf(searchString,start)方法接收searchString和start两个参数，返回searchString第一次出现的位置，如果没有找到则返回-1</div><div class="line">2-3. 同样地，该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">2-4. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN时，start = length - 1；若start为负数，start = 0</div><div class="line"></div><div class="line">**例子:查找出字符串所有符合条件的子字符串**</div><div class="line">function allIndexOf(str,value)&#123;</div><div class="line">    var result = [];</div><div class="line">    var pos = str.indexOf(value);</div><div class="line">    while(pos &gt; -1)&#123;</div><div class="line">        result.push(pos);</div><div class="line">        pos = str.indexOf(value,pos+value.length);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(allIndexOf(&apos;helllhelllhelll&apos;,&apos;ll&apos;));//[2,7,12]</div></pre></td></tr></table></figure>
@@ -502,7 +552,7 @@
 <li>函数是一段代码,它只定义一次，但可以被执行或调用多次</li>
 <li>函数即对象,每个函数都是Function构造函数的实例,因此函数名实际上也是一个指向函数对象的指针,不会与某个函数绑定</li>
 </ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名<span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span><span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="function"><span class="keyword">Function</span>构造函数<span class="params">(不推荐)</span></span></div><div class="line"><span class="title">var</span> 函数名 = <span class="title">new</span> <span class="title">Function</span><span class="params">(形参,返回值)</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="built_in">Function</span>构造函数(不推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(形参,返回值);</div></pre></td></tr></table></figure>
 <h4 id="二-函数特性"><a href="#二-函数特性" class="headerlink" title="二.函数特性"></a>二.函数特性</h4><ol>
 <li>由于函数名仅仅是指向函数的指针,因此函数名与包含对象指针的其他变量没有声什么不同,换句话说。一个函数可能会有多个名字</li>
 <li>函数没有重载,后声明的函数会覆盖前面的函数</li>
@@ -520,7 +570,7 @@
 </blockquote>
 </li>
 <li><p><code>arguments</code>对象下面有一个<code>callee</code>的属性,该属性是一个指针,指向拥有这个<code>arguments</code>对象的函数</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line">function factorial(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">num</span>*arguments.callee(<span class="built_in">num</span><span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>this</code>引用的是函数据以执行的环境对象</p>
 </li>
@@ -693,30 +743,6 @@
       <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
     
       <category term="数组" scheme="https://double1000.github.io/blog/tags/%E6%95%B0%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>情书 | 王小波，爱你就像爱生命。</title>
-    <link href="https://double1000.github.io/blog/2017/04/04/%E6%83%85%E4%B9%A6-%E7%8E%8B%E5%B0%8F%E6%B3%A2%EF%BC%8C%E7%88%B1%E4%BD%A0%E5%B0%B1%E5%83%8F%E7%88%B1%E7%94%9F%E5%91%BD/"/>
-    <id>https://double1000.github.io/blog/2017/04/04/情书-王小波，爱你就像爱生命/</id>
-    <published>2017-04-04T15:38:05.000Z</published>
-    <updated>2017-04-12T01:07:46.950Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="哀吾生之须臾,羡长江之无穷" scheme="https://double1000.github.io/blog/categories/%E5%93%80%E5%90%BE%E7%94%9F%E4%B9%8B%E9%A1%BB%E8%87%BE-%E7%BE%A1%E9%95%BF%E6%B1%9F%E4%B9%8B%E6%97%A0%E7%A9%B7/"/>
-    
-    
-      <category term="王小波" scheme="https://double1000.github.io/blog/tags/%E7%8E%8B%E5%B0%8F%E6%B3%A2/"/>
-    
-      <category term="附庸风雅" scheme="https://double1000.github.io/blog/tags/%E9%99%84%E5%BA%B8%E9%A3%8E%E9%9B%85/"/>
-    
-      <category term="情书" scheme="https://double1000.github.io/blog/tags/%E6%83%85%E4%B9%A6/"/>
-    
-      <category term="语录" scheme="https://double1000.github.io/blog/tags/%E8%AF%AD%E5%BD%95/"/>
     
   </entry>
   

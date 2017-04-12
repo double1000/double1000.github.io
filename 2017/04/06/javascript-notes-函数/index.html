@@ -376,7 +376,7 @@
 <li>函数是一段代码,它只定义一次，但可以被执行或调用多次</li>
 <li>函数即对象,每个函数都是Function构造函数的实例,因此函数名实际上也是一个指向函数对象的指针,不会与某个函数绑定</li>
 </ul>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名<span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span><span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="function"><span class="keyword">Function</span>构造函数<span class="params">(不推荐)</span></span></div><div class="line"><span class="title">var</span> 函数名 = <span class="title">new</span> <span class="title">Function</span><span class="params">(形参,返回值)</span>;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="built_in">Function</span>构造函数(不推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(形参,返回值);</div></pre></td></tr></table></figure>
 <h4 id="二-函数特性"><a href="#二-函数特性" class="headerlink" title="二.函数特性"></a>二.函数特性</h4><ol>
 <li>由于函数名仅仅是指向函数的指针,因此函数名与包含对象指针的其他变量没有声什么不同,换句话说。一个函数可能会有多个名字</li>
 <li>函数没有重载,后声明的函数会覆盖前面的函数</li>
@@ -394,7 +394,7 @@
 </blockquote>
 </li>
 <li><p><code>arguments</code>对象下面有一个<code>callee</code>的属性,该属性是一个指针,指向拥有这个<code>arguments</code>对象的函数</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line">function factorial(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">num</span>*arguments.callee(<span class="built_in">num</span><span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>this</code>引用的是函数据以执行的环境对象</p>
 </li>
@@ -577,7 +577,7 @@
             </a>
             <ul class="dropdown-menu">
                 <li>
-                <a class="sidebar_archives-link" href="/categories/哀吾生之须臾-羡长江之无穷/">哀吾生之须臾,羡长江之无穷<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/categories/寄蜉蝣于天地-渺沧海之一粟/">寄蜉蝣于天地,渺沧海之一粟<span class="sidebar_archives-count">8</span></a>
+                <a class="sidebar_archives-link" href="/categories/寄蜉蝣于天地-渺沧海之一粟/">寄蜉蝣于天地,渺沧海之一粟<span class="sidebar_archives-count">8</span></a>
             </ul>
         </li>
         
@@ -586,16 +586,6 @@
     
 
     <!-- Pages  -->
-    
-        <li>
-            <a href="/about" title="About">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                About
-            </a>
-        </li>
-        
     
 
     <!-- Article Number  -->
