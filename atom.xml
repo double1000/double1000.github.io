@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://double1000.github.io/blog/"/>
-  <updated>2017-04-18T12:03:59.888Z</updated>
+  <updated>2017-04-18T12:25:18.147Z</updated>
   <id>https://double1000.github.io/blog/</id>
   
   <author>
@@ -20,10 +20,10 @@
     <link href="https://double1000.github.io/blog/2017/04/18/web-%E5%89%8D%E7%AB%AF%E5%8D%9A%E5%AE%A2-%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/"/>
     <id>https://double1000.github.io/blog/2017/04/18/web-前端博客-资源收集/</id>
     <published>2017-04-18T11:26:44.000Z</published>
-    <updated>2017-04-18T12:03:59.888Z</updated>
+    <updated>2017-04-18T12:25:18.147Z</updated>
     
     <content type="html"><![CDATA[<h3 id="高质量值得长期关注的博客-社区"><a href="#高质量值得长期关注的博客-社区" class="headerlink" title="高质量值得长期关注的博客/社区"></a>高质量值得长期关注的博客/社区</h3><hr>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="external">高质量的入门指南 - JavaScript|MDN</a><br><a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/#array.constructor" target="_blank" rel="external">JavaScript|秘密花园 - 一些古怪用法的文档</a><br><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰个人网站 - 一个不错的学习博客</a><br><a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="external">阮一峰的个人网站 - 知其然,知其所以然</a><br><a href="http://www.zhangxinxu.com/" target="_blank" rel="external">张鑫旭的个人主页 - 深度广度都可以有</a><br><a href="https://fequan.com/" target="_blank" rel="external">前端圈 - 打造专业的前端技术会议</a><br><a href="http://caibaojian.com/" target="_blank" rel="external">网站|前端开发博客</a><br><a href="http://www.w3cplus.com/" target="_blank" rel="external">网站|w3cplus - 推荐/一个不错的社区</a><br><a href="https://juejin.im/" target="_blank" rel="external">网站|掘金 - 推荐/高质量的社区</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="external">高质量的入门指南 - JavaScript|MDN</a><br><a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/#array.constructor" target="_blank" rel="external">JavaScript|秘密花园 - 一些古怪用法的文档</a><br><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰个人网站 - 一个不错的学习博客</a><br><a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="external">阮一峰的个人网站 - 知其然,知其所以然</a><br><a href="http://www.zhangxinxu.com/" target="_blank" rel="external">张鑫旭的个人主页 - 深度广度都可以有</a><br><a href="https://fequan.com/" target="_blank" rel="external">前端圈 - 打造专业的前端技术会议</a><br><a href="http://yanhaijing.com/" target="_blank" rel="external">颜海镜 - 专注Web前端</a><br><a href="http://caibaojian.com/" target="_blank" rel="external">网站|前端开发博客</a><br><a href="http://www.w3cplus.com/" target="_blank" rel="external">网站|w3cplus - 推荐/一个不错的社区</a><br><a href="https://juejin.im/" target="_blank" rel="external">网站|掘金 - 推荐/高质量的社区</a></p>
 <h3 id="一些常用到的问题解决方案"><a href="#一些常用到的问题解决方案" class="headerlink" title="一些常用到的问题解决方案"></a>一些常用到的问题解决方案</h3><hr>
 <p><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">一些怪异行为-css解决方案</a><br><a href="http://browserhacks.com/" target="_blank" rel="external">浏览器一些hack大全</a></p>
 <h3 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h3><hr>
@@ -303,9 +303,9 @@
     
       <category term="协议/标准" scheme="https://double1000.github.io/blog/tags/%E5%8D%8F%E8%AE%AE-%E6%A0%87%E5%87%86/"/>
     
-      <category term="WEB" scheme="https://double1000.github.io/blog/tags/WEB/"/>
-    
       <category term="开发流程" scheme="https://double1000.github.io/blog/tags/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B/"/>
+    
+      <category term="WEB" scheme="https://double1000.github.io/blog/tags/WEB/"/>
     
   </entry>
   
@@ -382,11 +382,11 @@
       <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
-      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
-    
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
       <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
+    
+      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
     
   </entry>
   
@@ -652,9 +652,9 @@
     
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
-      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
-    
       <category term="函数" scheme="https://double1000.github.io/blog/tags/%E5%87%BD%E6%95%B0/"/>
+    
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
     
   </entry>
   
