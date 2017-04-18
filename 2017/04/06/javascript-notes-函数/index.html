@@ -242,7 +242,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一-函数定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">一.函数定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二-函数特性"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.函数特性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三-函数声明与函数表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">三.函数声明与函数表达式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四-arguments和this"><span class="post-toc-number">4.</span> <span class="post-toc-text">四.arguments和this</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#五-函数的属性"><span class="post-toc-number">5.</span> <span class="post-toc-text">五.函数的属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六-函数的方法"><span class="post-toc-number">6.</span> <span class="post-toc-text">六.函数的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七-函数返回值-return"><span class="post-toc-number">7.</span> <span class="post-toc-text">七.函数返回值 return</span></a></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一-函数定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">一.函数定义</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二-函数特性"><span class="post-toc-number">2.</span> <span class="post-toc-text">二.函数特性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三-函数声明与函数表达式"><span class="post-toc-number">3.</span> <span class="post-toc-text">三.函数声明与函数表达式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四-arguments和this"><span class="post-toc-number">4.</span> <span class="post-toc-text">四.arguments和this</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#五-函数的属性"><span class="post-toc-number">5.</span> <span class="post-toc-text">五.函数的属性</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#六-函数的方法"><span class="post-toc-number">6.</span> <span class="post-toc-text">六.函数的方法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#七-函数返回值-return"><span class="post-toc-number">7.</span> <span class="post-toc-text">七.函数返回值 return</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#八-递归。"><span class="post-toc-number">8.</span> <span class="post-toc-text">八.递归。</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#八-参考来源"><span class="post-toc-number">9.</span> <span class="post-toc-text">八.参考来源</span></a></li></ol>
 
         <!--
         <li class="mdl-menu__item">
@@ -375,17 +375,20 @@
 <h4 id="一-函数定义"><a href="#一-函数定义" class="headerlink" title="一.函数定义"></a>一.函数定义</h4><ul>
 <li>函数是一段代码,它只定义一次，但可以被执行或调用多次</li>
 <li>函数即对象,每个函数都是Function构造函数的实例,因此函数名实际上也是一个指向函数对象的指针,不会与某个函数绑定</li>
+<li>函数是搭建JavaScript的基本构件之一。一个函数就是一段JavaScript程序——包含用于执行某一任务或计算的一系列语句。</li>
+<li>要使用某一个函数，你必需在想要调用这个函数的执行域的某处定义它。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="built_in">Function</span>构造函数(不推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(形参,返回值);</div></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名<span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span><span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="function"><span class="keyword">Function</span>构造函数<span class="params">(不推荐)</span></span></div><div class="line"><span class="title">var</span> 函数名 = <span class="title">new</span> <span class="title">Function</span><span class="params">(形参,返回值)</span>;</div></pre></td></tr></table></figure>
 <h4 id="二-函数特性"><a href="#二-函数特性" class="headerlink" title="二.函数特性"></a>二.函数特性</h4><ol>
 <li>由于函数名仅仅是指向函数的指针,因此函数名与包含对象指针的其他变量没有声什么不同,换句话说。一个函数可能会有多个名字</li>
 <li>函数没有重载,后声明的函数会覆盖前面的函数</li>
 <li>作为值的函数</li>
 </ol>
 <h4 id="三-函数声明与函数表达式"><a href="#三-函数声明与函数表达式" class="headerlink" title="三.函数声明与函数表达式"></a>三.函数声明与函数表达式</h4><ol>
-<li>解析器在向执行环境中加载数据时对[函数声明][函数表达式]不一样.</li>
+<li>对于函数，只有函数声明会被提升到顶部，而不包括函数表达式</li>
 <li>解析器会率先读取<strong>函数声明</strong>,并让其在执行代码之前可用</li>
 <li>解析器对于<strong>函数表达式</strong>则必须等到执行到它所在的代码行,才会真正被解释执行</li>
+<li>函数表达式   表达式定义的函数，称为匿名函数。匿名函数没有函数提升</li>
 </ol>
 <h4 id="四-arguments和this"><a href="#四-arguments和this" class="headerlink" title="四.arguments和this"></a>四.arguments和this</h4><ul>
 <li>函数的内部有两个特殊对象<code>arguments</code>和<code>this</code></li>
@@ -394,7 +397,7 @@
 </blockquote>
 </li>
 <li><p><code>arguments</code>对象下面有一个<code>callee</code>的属性,该属性是一个指针,指向拥有这个<code>arguments</code>对象的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line">function factorial(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">num</span>*arguments.callee(<span class="built_in">num</span><span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>this</code>引用的是函数据以执行的环境对象</p>
 </li>
@@ -423,6 +426,10 @@
 <li>函数可以没有return,结果:<code>undefined</code></li>
 <li>函数返回值(函数可以把一些东西传到外面来)和函数传参(把一些东西传到函数里边去)</li>
 </ol>
+<h4 id="八-递归。"><a href="#八-递归。" class="headerlink" title="八.递归。"></a>八.递归。</h4><ul>
+<li>一个函数可以指向并调用自身(call itself)。有三种方法可以达到这个目的：</li>
+</ul>
+<h4 id="八-参考来源"><a href="#八-参考来源" class="headerlink" title="八.参考来源"></a>八.参考来源</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Functions" target="_blank" rel="external">MDN-Function</a></p>
 
     
 
@@ -557,7 +564,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">9</span></a>
+                <a class="sidebar_archives-link" href="/archives/2017/04/">四月 2017<span class="sidebar_archives-count">10</span></a>
             </ul>
         </li>
         
@@ -593,7 +600,7 @@
         <li>
             <a href="/archives">
                 文章总数
-                <span class="sidebar-badge">9</span>
+                <span class="sidebar-badge">10</span>
             </a>
         </li>
         

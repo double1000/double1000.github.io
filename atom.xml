@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://double1000.github.io/blog/"/>
-  <updated>2017-04-12T05:23:31.156Z</updated>
+  <updated>2017-04-18T12:03:59.888Z</updated>
   <id>https://double1000.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>web | 前端博客/资源收集</title>
+    <link href="https://double1000.github.io/blog/2017/04/18/web-%E5%89%8D%E7%AB%AF%E5%8D%9A%E5%AE%A2-%E8%B5%84%E6%BA%90%E6%94%B6%E9%9B%86/"/>
+    <id>https://double1000.github.io/blog/2017/04/18/web-前端博客-资源收集/</id>
+    <published>2017-04-18T11:26:44.000Z</published>
+    <updated>2017-04-18T12:03:59.888Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="高质量值得长期关注的博客-社区"><a href="#高质量值得长期关注的博客-社区" class="headerlink" title="高质量值得长期关注的博客/社区"></a>高质量值得长期关注的博客/社区</h3><hr>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript" target="_blank" rel="external">高质量的入门指南 - JavaScript|MDN</a><br><a href="http://www.jb51.net/onlineread/JavaScript-Garden-CN/#array.constructor" target="_blank" rel="external">JavaScript|秘密花园 - 一些古怪用法的文档</a><br><a href="http://www.liaoxuefeng.com/" target="_blank" rel="external">廖雪峰个人网站 - 一个不错的学习博客</a><br><a href="http://www.ruanyifeng.com/home.html" target="_blank" rel="external">阮一峰的个人网站 - 知其然,知其所以然</a><br><a href="http://www.zhangxinxu.com/" target="_blank" rel="external">张鑫旭的个人主页 - 深度广度都可以有</a><br><a href="https://fequan.com/" target="_blank" rel="external">前端圈 - 打造专业的前端技术会议</a><br><a href="http://caibaojian.com/" target="_blank" rel="external">网站|前端开发博客</a><br><a href="http://www.w3cplus.com/" target="_blank" rel="external">网站|w3cplus - 推荐/一个不错的社区</a><br><a href="https://juejin.im/" target="_blank" rel="external">网站|掘金 - 推荐/高质量的社区</a></p>
+<h3 id="一些常用到的问题解决方案"><a href="#一些常用到的问题解决方案" class="headerlink" title="一些常用到的问题解决方案"></a>一些常用到的问题解决方案</h3><hr>
+<p><a href="http://www.w3cplus.com/solution/index/index.html" target="_blank" rel="external">一些怪异行为-css解决方案</a><br><a href="http://browserhacks.com/" target="_blank" rel="external">浏览器一些hack大全</a></p>
+<h3 id="学习网站"><a href="#学习网站" class="headerlink" title="学习网站"></a>学习网站</h3><hr>
+<p><a href="http://www.imooc.com/" target="_blank" rel="external">慕课网 | 最喜欢的学习网站</a><br><a href="http://thecodeplayer.com/" target="_blank" rel="external">Learn HTML5, CSS3, Javascript | 推荐</a><br><a href="http://codepen.io/" target="_blank" rel="external">codepen|代码笔 - 推荐</a><br><a href="http://www.jikexueyuan.com/" target="_blank" rel="external">极客学院 | 基础/一般推荐</a><br><a href="http://study.163.com/" target="_blank" rel="external">网易云课堂 | 各种类型/值得常关注</a><br><a href="https://open.163.com/" target="_blank" rel="external">网易公开课 | 各种TED/演讲</a><br><a href="http://www.gogoup.com/" target="_blank" rel="external">高高手 | 一个高质量的设计PS网站</a><br><a href="http://www.xsteach.com/" target="_blank" rel="external">刑帅教育 | 一般推荐/杂</a><br><a href="https://jirengu.com/" target="_blank" rel="external">饥人谷 | 一般推荐</a></p>
+<h3 id="其它杂类"><a href="#其它杂类" class="headerlink" title="其它杂类/"></a>其它杂类/</h3><hr>
+<p><a href="http://www.108js.com/" target="_blank" rel="external">JavaScript|探索者 - 不推荐,乱七八糟的一些小例子</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;高质量值得长期关注的博客-社区&quot;&gt;&lt;a href=&quot;#高质量值得长期关注的博客-社区&quot; class=&quot;headerlink&quot; title=&quot;高质量值得长期关注的博客/社区&quot;&gt;&lt;/a&gt;高质量值得长期关注的博客/社区&lt;/h3&gt;&lt;hr&gt;
+&lt;p&gt;&lt;a href=&quot;http
+    
+    </summary>
+    
+    
+      <category term="web" scheme="https://double1000.github.io/blog/tags/web/"/>
+    
+      <category term="博客" scheme="https://double1000.github.io/blog/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
   
   <entry>
     <title>web | 前端相关术语</title>
@@ -211,11 +242,11 @@
     
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
+      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
+    
       <category term="作用域" scheme="https://double1000.github.io/blog/tags/%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
     
       <category term="闭包" scheme="https://double1000.github.io/blog/tags/%E9%97%AD%E5%8C%85/"/>
-    
-      <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
     
   </entry>
   
@@ -351,11 +382,11 @@
       <category term="寄蜉蝣于天地,渺沧海之一粟" scheme="https://double1000.github.io/blog/categories/%E5%AF%84%E8%9C%89%E8%9D%A3%E4%BA%8E%E5%A4%A9%E5%9C%B0-%E6%B8%BA%E6%B2%A7%E6%B5%B7%E4%B9%8B%E4%B8%80%E7%B2%9F/"/>
     
     
+      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
+    
       <category term="JavaScript" scheme="https://double1000.github.io/blog/tags/JavaScript/"/>
     
       <category term="Notes" scheme="https://double1000.github.io/blog/tags/Notes/"/>
-    
-      <category term="JSON" scheme="https://double1000.github.io/blog/tags/JSON/"/>
     
   </entry>
   
@@ -501,7 +532,7 @@
 <li>toUpperCase()方法将字符串转换成大写;</li>
 <li>toLowerCase()方法将字符串转换成小写;</li>
 <li>toLocaleUpperCase()方法将字符串转换成大写(针对地区);</li>
-<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="built_in">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
+<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="keyword">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h5 id="4-查找子串位置"><a href="#4-查找子串位置" class="headerlink" title="4.查找子串位置"></a>4.查找子串位置</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">有两个从字符串中查找子字符串位置的方法:indexOf()和lastIndexOf()。</div><div class="line">查找子串位置的方法同访问字符方法charAt()和中括号[]方法有相反的地方，一个通过字符串查找位置，一个则是通过位置查找字符</div><div class="line"></div><div class="line">1. String.prototype.indexOf();</div><div class="line">1-1. indexOf(searchString,start)方法接收searchString和start两个参数，返回searchString首次出现的位置，如果没有找到则返回-1</div><div class="line">1-2. 该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">1-3. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN或负数时，start = 0</div><div class="line"></div><div class="line">2.String.prototype.lastIndexOf();</div><div class="line">2-1. 与indexOf()不同，lastIndexOf()从右向左查找</div><div class="line">2-2. lastIndexOf(searchString,start)方法接收searchString和start两个参数，返回searchString第一次出现的位置，如果没有找到则返回-1</div><div class="line">2-3. 同样地，该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">2-4. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN时，start = length - 1；若start为负数，start = 0</div><div class="line"></div><div class="line">**例子:查找出字符串所有符合条件的子字符串**</div><div class="line">function allIndexOf(str,value)&#123;</div><div class="line">    var result = [];</div><div class="line">    var pos = str.indexOf(value);</div><div class="line">    while(pos &gt; -1)&#123;</div><div class="line">        result.push(pos);</div><div class="line">        pos = str.indexOf(value,pos+value.length);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(allIndexOf(&apos;helllhelllhelll&apos;,&apos;ll&apos;));//[2,7,12]</div></pre></td></tr></table></figure>
@@ -545,23 +576,26 @@
     <link href="https://double1000.github.io/blog/2017/04/06/javascript-notes-%E5%87%BD%E6%95%B0/"/>
     <id>https://double1000.github.io/blog/2017/04/06/javascript-notes-函数/</id>
     <published>2017-04-06T03:23:02.000Z</published>
-    <updated>2017-04-12T01:06:49.806Z</updated>
+    <updated>2017-04-12T10:15:09.102Z</updated>
     
     <content type="html"><![CDATA[<p><img src="1.jpg"></p>
 <h4 id="一-函数定义"><a href="#一-函数定义" class="headerlink" title="一.函数定义"></a>一.函数定义</h4><ul>
 <li>函数是一段代码,它只定义一次，但可以被执行或调用多次</li>
 <li>函数即对象,每个函数都是Function构造函数的实例,因此函数名实际上也是一个指向函数对象的指针,不会与某个函数绑定</li>
+<li>函数是搭建JavaScript的基本构件之一。一个函数就是一段JavaScript程序——包含用于执行某一任务或计算的一系列语句。</li>
+<li>要使用某一个函数，你必需在想要调用这个函数的执行域的某处定义它。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span>(<span class="params">形参</span>)</span>&#123;</div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="built_in">Function</span>构造函数(不推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="keyword">new</span> <span class="built_in">Function</span>(形参,返回值);</div></pre></td></tr></table></figure>
+<figure class="highlight delphi"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">写法一:函数声明(推荐)</div><div class="line"><span class="function"><span class="keyword">function</span> 函数名<span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法二:函数表达式(推荐)</div><div class="line"><span class="keyword">var</span> 函数名 = <span class="function"><span class="keyword">function</span><span class="params">(形参)</span><span class="comment">&#123;</span></span></div><div class="line">    函数体;</div><div class="line">    返回值;</div><div class="line">&#125;</div><div class="line">写法三:<span class="function"><span class="keyword">Function</span>构造函数<span class="params">(不推荐)</span></span></div><div class="line"><span class="title">var</span> 函数名 = <span class="title">new</span> <span class="title">Function</span><span class="params">(形参,返回值)</span>;</div></pre></td></tr></table></figure>
 <h4 id="二-函数特性"><a href="#二-函数特性" class="headerlink" title="二.函数特性"></a>二.函数特性</h4><ol>
 <li>由于函数名仅仅是指向函数的指针,因此函数名与包含对象指针的其他变量没有声什么不同,换句话说。一个函数可能会有多个名字</li>
 <li>函数没有重载,后声明的函数会覆盖前面的函数</li>
 <li>作为值的函数</li>
 </ol>
 <h4 id="三-函数声明与函数表达式"><a href="#三-函数声明与函数表达式" class="headerlink" title="三.函数声明与函数表达式"></a>三.函数声明与函数表达式</h4><ol>
-<li>解析器在向执行环境中加载数据时对[函数声明][函数表达式]不一样.</li>
+<li>对于函数，只有函数声明会被提升到顶部，而不包括函数表达式</li>
 <li>解析器会率先读取<strong>函数声明</strong>,并让其在执行代码之前可用</li>
 <li>解析器对于<strong>函数表达式</strong>则必须等到执行到它所在的代码行,才会真正被解释执行</li>
+<li>函数表达式   表达式定义的函数，称为匿名函数。匿名函数没有函数提升</li>
 </ol>
 <h4 id="四-arguments和this"><a href="#四-arguments和this" class="headerlink" title="四.arguments和this"></a>四.arguments和this</h4><ul>
 <li>函数的内部有两个特殊对象<code>arguments</code>和<code>this</code></li>
@@ -570,7 +604,7 @@
 </blockquote>
 </li>
 <li><p><code>arguments</code>对象下面有一个<code>callee</code>的属性,该属性是一个指针,指向拥有这个<code>arguments</code>对象的函数</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorial</span>(<span class="params">num</span>)</span>&#123;</div><div class="line">    <span class="keyword">if</span>(num &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> num*<span class="built_in">arguments</span>.callee(num<span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">经典的阶乘函数</div><div class="line">function factorial(<span class="built_in">num</span>)&#123;</div><div class="line">    <span class="keyword">if</span>(<span class="built_in">num</span> &lt;= <span class="number">1</span>)&#123;</div><div class="line">        <span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">    &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="built_in">num</span>*arguments.callee(<span class="built_in">num</span><span class="number">-1</span>); <span class="comment">//消除耦合</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
 <li><p><code>this</code>引用的是函数据以执行的环境对象</p>
 </li>
@@ -599,6 +633,10 @@
 <li>函数可以没有return,结果:<code>undefined</code></li>
 <li>函数返回值(函数可以把一些东西传到外面来)和函数传参(把一些东西传到函数里边去)</li>
 </ol>
+<h4 id="八-递归。"><a href="#八-递归。" class="headerlink" title="八.递归。"></a>八.递归。</h4><ul>
+<li>一个函数可以指向并调用自身(call itself)。有三种方法可以达到这个目的：</li>
+</ul>
+<h4 id="八-参考来源"><a href="#八-参考来源" class="headerlink" title="八.参考来源"></a>八.参考来源</h4><p><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Functions" target="_blank" rel="external">MDN-Function</a></p>
 ]]></content>
     
     <summary type="html">
