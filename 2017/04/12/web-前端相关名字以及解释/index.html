@@ -146,7 +146,7 @@
 
     <style>
       body{
-        background-image: url(/img/bg.png);
+        background-image: url(/img/bg.jpg);
       }
     </style>
 
@@ -387,6 +387,11 @@
 </li>
 </ul>
 <p><a href="https://segmentfault.com/a/1190000004322358#articleHeader1" target="_blank" rel="external">彻底理解同步、异步和事件循环(Event Loop)</a><br><a href="http://blog.csdn.net/u013063153/article/details/52457307" target="_blank" rel="external">深入理解JavaScript编程中的同步与异步机制</a></p>
+<ul>
+<li>阻塞与非阻塞<figure class="highlight lsl"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">阻塞和非阻塞关注的是程序在等待调用结果（消息，返回值）时的状态。</div><div class="line">阻塞调用是指调用结果返回之前，当前线程会被挂起。调用线程只有在得到结果之后才会返回。</div><div class="line">非阻塞调用指在不能立刻得到结果之前，该调用不会阻塞当前线程。</div><div class="line"></div><div class="line">示例：</div><div class="line">以打电话让书店老板查找某本书为例来讲：</div><div class="line">同步通信机制：老板说，“你稍等，我查下”，然后查好后（可能会<span class="number">5</span>秒或者<span class="number">1</span>天）告诉你结果（返回结果）。</div><div class="line">异步通信机制：老板说，“我查好后打电话你”，然后直接挂电话（无返回结果）。查好后打电话你（“回电”这种方式回调/通知你）。</div><div class="line">阻塞式调用：打电话给老板时，你会一直把自己“挂起”，直到结果返回。</div><div class="line">非阻塞式调用：打电话给老板时，不管老板有没有告诉你，你自己先一边玩了，但可能会每过几分钟跟老板check一下有没有返回结果。</div><div class="line"></div><div class="line">总结：阻塞与非阻塞 与 是否同步异步无关（跟老板通过什么方式回答你无关）。</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><a href="https://github.com/creeperyang/blog/issues/15" target="_blank" rel="external">编程资源（概念解释/优秀博文/其它)</a><br><a href="https://www.zhihu.com/question/19732473/answer/20851256" target="_blank" rel="external">知乎:怎样理解阻塞非阻塞与同步异步的区别？</a></p>
 
     
 
