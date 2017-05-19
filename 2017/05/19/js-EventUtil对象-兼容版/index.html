@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript | 完美的eventutil对象 | 岁月如冰河</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="GO SPURS GO" />
+  
+  
+  
+  
+  <meta name="description" content="EventUtil API/**  EventUtil对象; EventUtil : { addHandler(元素,事件类型,事件处理句柄) – {添加事件处理程序} removeHandler(元素,事件类型,事件处理句柄) – {移除事件处理程序} getEvent(event) event对象 – {跨浏览器兼容event对象} getTarget(event) – {返回事件的实际目标}">
+<meta name="keywords" content="JavaScript,EventUtil,Tools">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript | 完美的EventUtil对象">
+<meta property="og:url" content="https://double1000.github.io/blog/2017/05/19/js-EventUtil对象-兼容版/index.html">
+<meta property="og:site_name" content="岁月如冰河">
+<meta property="og:description" content="EventUtil API/**  EventUtil对象; EventUtil : { addHandler(元素,事件类型,事件处理句柄) – {添加事件处理程序} removeHandler(元素,事件类型,事件处理句柄) – {移除事件处理程序} getEvent(event) event对象 – {跨浏览器兼容event对象} getTarget(event) – {返回事件的实际目标}">
+<meta property="og:updated_time" content="2017-05-19T06:40:35.953Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript | 完美的EventUtil对象">
+<meta name="twitter:description" content="EventUtil API/**  EventUtil对象; EventUtil : { addHandler(元素,事件类型,事件处理句柄) – {添加事件处理程序} removeHandler(元素,事件类型,事件处理句柄) – {移除事件处理程序} getEvent(event) event对象 – {跨浏览器兼容event对象} getTarget(event) – {返回事件的实际目标}">
+  
+    <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-js-EventUtil对象-兼容版" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JavaScript | 完美的EventUtil对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/05/19/js-EventUtil对象-兼容版/" class="article-date">
+	  <time datetime="2017-05-19T06:33:37.000Z" itemprop="datePublished">2017-05-19</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/寄蜉蝣于天地-渺沧海之一粟/">寄蜉蝣于天地,渺沧海之一粟</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="EventUtil-API"><a href="#EventUtil-API" class="headerlink" title="EventUtil API"></a>EventUtil API</h4><p>/**</p>
+<ul>
+<li>EventUtil对象;</li>
+<li>EventUtil : {</li>
+<li>addHandler(元素,事件类型,事件处理句柄) – {添加事件处理程序}</li>
+<li>removeHandler(元素,事件类型,事件处理句柄) – {移除事件处理程序}</li>
+<li>getEvent(event) event对象 – {跨浏览器兼容event对象}</li>
+<li>getTarget(event) – {返回事件的实际目标}</li>
+<li>preventDefault(event) – {阻止事件的默认行为}</li>
+<li>stopPropagation(event) – {立即停止事件在DOM中的传播}</li>
+<li>getRelatedTarget(event) – {获取mouseover 和 mouseout相关元素}</li>
+<li>getButton(event) – {获取mousedown或mouseup按下或释放的按钮是鼠标中的哪一个}</li>
+<li>getWheelDelta(event) – {获取表示鼠标滚轮滚动方向的数值}</li>
+<li>getCharCode(event) – {以跨浏览取得相同的字符编码，需在keypress事件中使用</li>
+<li>}<br>*/</li>
+</ul>
+<hr>
+<h4 id="EventUtil-Coding"><a href="#EventUtil-Coding" class="headerlink" title="EventUtil Coding"></a>EventUtil Coding</h4><figure class="highlight verilog"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> EventUtil = &#123;</div><div class="line">    <span class="comment">/* &#123;添加事件处理程序&#125; -- EventUtil.addHandler(div,'click',fn);*/</span></div><div class="line">    addHandler : <span class="keyword">function</span> (element,<span class="keyword">type</span>,handler) &#123;</div><div class="line">        <span class="keyword">if</span>(element<span class="variable">.addEventListener</span>)&#123;</div><div class="line">            <span class="keyword">return</span> element<span class="variable">.addEventListener</span>(<span class="keyword">type</span>,handler,false);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element<span class="variable">.attachEvent</span>) &#123;</div><div class="line">            <span class="keyword">return</span> element<span class="variable">.attachEvent</span>('on' + <span class="keyword">type</span>, handler);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">/*兼容DOM 0级事件处理程序*/</span></div><div class="line">            <span class="keyword">return</span> element['on'+<span class="keyword">type</span>] = handler;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;移除事件处理程序&#125; -- EventUtil.removeHandler(div,'click',fn);*/</span></div><div class="line">    removeHandler : <span class="keyword">function</span> (element,<span class="keyword">type</span>,handler) &#123;</div><div class="line">        <span class="keyword">if</span>(element<span class="variable">.removeEventListener</span>)&#123;</div><div class="line">            <span class="keyword">return</span> element<span class="variable">.removeEventListener</span>(<span class="keyword">type</span>,handler,false);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(element<span class="variable">.detachEvent</span>)&#123;</div><div class="line">            <span class="keyword">return</span> element<span class="variable">.detachEvent</span>('on'+<span class="keyword">type</span>,handler);</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="comment">/*兼容DOM 0级事件处理程序*/</span></div><div class="line">            <span class="keyword">return</span> element['on'+<span class="keyword">type</span>] = <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;跨浏览器兼容event对象&#125; -- 使用一般先用一个变量来保存 var e = EventUtil.getEvent(event)*/</span></div><div class="line">    getEvent : <span class="keyword">function</span> (<span class="keyword">event</span>) &#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">event</span>? <span class="keyword">event</span>:window<span class="variable">.event</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;返回事件的实际目标&#125; -- 使用之前先保存 var itatget = EventUtil.getTarget(event)*/</span></div><div class="line">    getTarget : <span class="keyword">function</span> (<span class="keyword">event</span>) &#123;</div><div class="line">        <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.target</span> || <span class="keyword">event</span><span class="variable">.srcElement</span>;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;阻止事件的默认行为&#125; -- 直接使用 EventUtil.preventDefault(event)*/</span></div><div class="line">    preventDefault : <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;   <span class="comment">//</span></div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.preventDefault</span>)&#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.preventDefault</span>();</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.returnValue</span>=false;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;立即停止事件在DOM中的传播&#125; -- 直接使用 EventUtil.stopPropagation(event)*/</span></div><div class="line">    stopPropagation : <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="comment">//避免触发注册在document.body上面的事件处理程序</span></div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.stopPropagation</span>)&#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.stopPropagation</span>();</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">event</span><span class="variable">.cancelBubble</span>=true;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">/*&#123;获取mouseover和mouseout相关元素&#125; -- 直接使用*/</span></div><div class="line">    getRelatedTarget : <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.relatedTarget</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.relatedTarget</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.toElement</span>)&#123;      <span class="comment">//兼容IE8-</span></div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.toElement</span>;</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.formElement</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.formElement</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;获取mousedown或mouseup按下或释放的按钮是鼠标中的哪一个&#125; -- EventUtil.getButton(event)*/</span></div><div class="line">    getButton : <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(document<span class="variable">.implementation</span><span class="variable">.hasFeature</span>(<span class="string">"MouseEvents"</span>,<span class="string">"2.0"</span>))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.button</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            switch(<span class="keyword">event</span><span class="variable">.button</span>)&#123;   <span class="comment">//将IE模型下的button属性映射为DOM模型下的button属性</span></div><div class="line">                <span class="keyword">case</span> <span class="number">0</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">1</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">3</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">5</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">7</span>:</div><div class="line">                    <span class="keyword">return</span> <span class="number">0</span>;  <span class="comment">//按下的是鼠标主按钮（一般是左键）</span></div><div class="line">                <span class="keyword">case</span> <span class="number">2</span>:</div><div class="line">                <span class="keyword">case</span> <span class="number">6</span>:</div><div class="line">                    <span class="keyword">return</span> <span class="number">2</span>;  <span class="comment">//按下的是中间的鼠标按钮</span></div><div class="line">                <span class="keyword">case</span> <span class="number">4</span>:</div><div class="line">                    <span class="keyword">return</span> <span class="number">1</span>;  <span class="comment">//鼠标次按钮（一般是右键）</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;获取表示鼠标滚轮滚动方向的数值&#125; -- EventUtil.getWheelDelta(event)*/</span></div><div class="line">    getWheelDelta : <span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">event</span><span class="variable">.wheelDelta</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.wheelDelta</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> -<span class="keyword">event</span><span class="variable">.detail</span>*<span class="number">40</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;,</div><div class="line"></div><div class="line">    <span class="comment">/*&#123;以跨浏览器取得相同的字符编码，需在keypress事件中使用&#125; -- EventUtil.getCharCode(event)*/</span></div><div class="line">    getCharCode:<span class="keyword">function</span>(<span class="keyword">event</span>)&#123;</div><div class="line">        <span class="keyword">if</span>(typeof <span class="keyword">event</span><span class="variable">.charCode</span>==<span class="string">"number"</span>)&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.charCode</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">return</span> <span class="keyword">event</span><span class="variable">.keyCode</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/EventUtil/">EventUtil</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Tools/">Tools</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/19/js-技巧收集-6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JavaScript | 常用函数/技巧 - Chapter 6
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#EventUtil-API"><span class="nav-number">1.</span> <span class="nav-text">EventUtil API</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#EventUtil-Coding"><span class="nav-number">2.</span> <span class="nav-text">EventUtil Coding</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 岁月如冰河 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            岁月如冰河
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 胡温柔 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=70312&web_id=70312" language="JavaScript"></script>
+  </div>
+
+
+</body>
+</html>
