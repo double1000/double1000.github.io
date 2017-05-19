@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript | 常用函数/技巧 - chapter 5 | 岁月如冰河</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="GO SPURS GO" />
+  
+  
+  
+  
+  <meta name="description" content="数组去重,生成范围类的随机数,矩形的碰撞区域检测,兼容获取属性...... 生成范围类的随机数1234function randomValue(max,min) &amp;#123;    var x = Math.floor(Math.random() * (max - min + 1)) + min;    return x;&amp;#125; 兼容获取属性123456function getStyle(o">
+<meta name="keywords" content="JavaScript,技巧">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript | 常用函数/技巧 - Chapter 5">
+<meta property="og:url" content="https://double1000.github.io/blog/2017/05/18/js-技巧收集-5/index.html">
+<meta property="og:site_name" content="岁月如冰河">
+<meta property="og:description" content="数组去重,生成范围类的随机数,矩形的碰撞区域检测,兼容获取属性...... 生成范围类的随机数1234function randomValue(max,min) &amp;#123;    var x = Math.floor(Math.random() * (max - min + 1)) + min;    return x;&amp;#125; 兼容获取属性123456function getStyle(o">
+<meta property="og:updated_time" content="2017-05-19T03:28:40.122Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript | 常用函数/技巧 - Chapter 5">
+<meta name="twitter:description" content="数组去重,生成范围类的随机数,矩形的碰撞区域检测,兼容获取属性...... 生成范围类的随机数1234function randomValue(max,min) &amp;#123;    var x = Math.floor(Math.random() * (max - min + 1)) + min;    return x;&amp;#125; 兼容获取属性123456function getStyle(o">
+  
+    <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-js-技巧收集-5" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      JavaScript | 常用函数/技巧 - Chapter 5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/05/18/js-技巧收集-5/" class="article-date">
+	  <time datetime="2017-05-18T00:44:09.000Z" itemprop="datePublished">2017-05-18</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/JavaScript-常用函数收集系列/">JavaScript | 常用函数收集系列</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>数组去重,生成范围类的随机数,矩形的碰撞区域检测,兼容获取属性......
+</code></pre><h4 id="生成范围类的随机数"><a href="#生成范围类的随机数" class="headerlink" title="生成范围类的随机数"></a>生成范围类的随机数</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">function randomValue(max,min) &#123;</div><div class="line">    var x = Math.floor(Math.random() * (max - min + 1)) + min;</div><div class="line">    return x;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="兼容获取属性"><a href="#兼容获取属性" class="headerlink" title="兼容获取属性"></a>兼容获取属性</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function getStyle(obj,attr)&#123;</div><div class="line">    if(window.getComputedStyle)&#123;</div><div class="line">        return getComputedStyle(obj,null)[attr];</div><div class="line">    &#125;</div><div class="line">    return obj.currentStyle[attr];</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="矩形的碰撞区域检测-碰撞到返回true-没碰到返回false"><a href="#矩形的碰撞区域检测-碰撞到返回true-没碰到返回false" class="headerlink" title="矩形的碰撞区域检测 碰撞到返回true 没碰到返回false"></a>矩形的碰撞区域检测 碰撞到返回true 没碰到返回false</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function pz(obj1,obj2)&#123;</div><div class="line">    var L1 = obj1.offsetLeft;</div><div class="line">    var R1 = obj1.offsetLeft + obj1.offsetWidth;</div><div class="line">    var T1 = obj1.offsetTop;</div><div class="line">    var B1 = obj1.offsetTop + obj1.offsetHeight;</div><div class="line"></div><div class="line">    var L2 = obj2.offsetLeft;</div><div class="line">    var R2 = obj2.offsetLeft + obj2.offsetWidth;</div><div class="line">    var T2 = obj2.offsetTop;</div><div class="line">    var B2 = obj2.offsetTop + obj2.offsetHeight;</div><div class="line"></div><div class="line">    if( R1&lt;L2 || L1&gt;R2 || B1&lt;T2 || T1&gt;B2 )&#123;</div><div class="line">        return false;</div><div class="line">    &#125;</div><div class="line">    else&#123;</div><div class="line">        return true;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>#### </p>
+<h4 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line">第一种：indexof</div><div class="line">function unique(a) &#123;</div><div class="line">  var res = [];</div><div class="line"> </div><div class="line">  for (var i = 0, len = a.length; i &lt; len; i++) &#123;</div><div class="line">    var item = a[i];</div><div class="line">    (res.indexOf(item) === -1) &amp;&amp; res.push(item);</div><div class="line">  &#125;</div><div class="line">  return res;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var a = [1, 1, &apos;1&apos;, &apos;2&apos;, 1];</div><div class="line">var ans = unique(a);</div><div class="line">console.log(ans); // =&gt; [1, &quot;1&quot;, &quot;2&quot;]</div><div class="line"></div><div class="line">第二种：两层循环检测重复元素法</div><div class="line">function distinct(arr) &#123;</div><div class="line">    var ret = [],</div><div class="line">        length = arr.length;</div><div class="line">    for(var i = 0;i &lt; length; i++)&#123;</div><div class="line">        for(j = i+1; j&lt;length;j++)&#123;</div><div class="line">            if(arr[i] === arr[j])&#123;</div><div class="line">                j = ++i;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        ret.push(arr[i]);</div><div class="line">    &#125;</div><div class="line">    return ret;</div><div class="line">&#125;</div><div class="line">var arra = [1,2,3,4,4,1,1,2,1,1,1];</div><div class="line">distinct(arra); //返回[3,4,2,1]</div><div class="line"></div><div class="line">第三种：indexof</div><div class="line">function unique(array)&#123;</div><div class="line">    var n = [];//临时数组</div><div class="line">    for(var i = 0;i &lt; array.length; i++)&#123;</div><div class="line">        if(n.indexOf(array[i]) == -1) n.push(array[i]);</div><div class="line">    &#125;</div><div class="line">    return n;</div><div class="line">&#125;</div><div class="line"></div><div class="line">第四种： ES6</div><div class="line">function unique (arr) &#123;</div><div class="line">  const seen = new Map()</div><div class="line">  return arr.filter((a) =&gt; !seen.has(a) &amp;&amp; seen.set(a, 1))</div><div class="line">&#125;</div><div class="line">// or</div><div class="line">function unique (arr) &#123;</div><div class="line">  return Array.from(new Set(arr))</div><div class="line">&#125;</div><div class="line"></div><div class="line">第五种：对象KEY值去重</div><div class="line">Array.prototype.unique3 = function()&#123;</div><div class="line"> var res = [];</div><div class="line"> var json = &#123;&#125;;</div><div class="line"> for(var i = 0; i &lt; this.length; i++)&#123;</div><div class="line">  if(!json[this[i]])&#123;</div><div class="line">   res.push(this[i]);</div><div class="line">   json[this[i]] = 1;</div><div class="line">  &#125;</div><div class="line"> &#125;</div><div class="line"> return res;</div><div class="line">&#125;</div><div class="line">var arr = [112,112,34,&apos;你好&apos;,112,112,34,&apos;你好&apos;,&apos;str&apos;,&apos;str1&apos;];</div><div class="line">alert(arr.unique3());</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/18/js-技巧收集-3/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JavaScript | 常用函数/技巧 - Chapter 3
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/05/18/js-常见实用技巧-1/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">JavaScript | 常用函数/技巧 - Chapter 1</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成范围类的随机数"><span class="nav-number">1.</span> <span class="nav-text">生成范围类的随机数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#兼容获取属性"><span class="nav-number">2.</span> <span class="nav-text">兼容获取属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矩形的碰撞区域检测-碰撞到返回true-没碰到返回false"><span class="nav-number">3.</span> <span class="nav-text">矩形的碰撞区域检测 碰撞到返回true 没碰到返回false</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数组去重"><span class="nav-number">4.</span> <span class="nav-text">数组去重</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 岁月如冰河 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            岁月如冰河
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 胡温柔 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260716016&web_id=1260716016" language="JavaScript"></script>
+  </div>
+
+
+</body>
+</html>

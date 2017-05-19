@@ -11,17 +11,17 @@
   
   
   
-  <meta name="description" content="浅深拷贝的实现,原生extend实现,函数节流防抖…… 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
+  <meta name="description" content="浅深拷贝的实现,原生extend实现,函数节流防抖...... 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
 <meta name="keywords" content="JavaScript,技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript | 常用函数/技巧 - Chapter 4">
 <meta property="og:url" content="https://double1000.github.io/blog/2017/05/18/js-技巧收集-3-1/index.html">
 <meta property="og:site_name" content="岁月如冰河">
-<meta property="og:description" content="浅深拷贝的实现,原生extend实现,函数节流防抖…… 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
-<meta property="og:updated_time" content="2017-05-19T01:13:27.960Z">
+<meta property="og:description" content="浅深拷贝的实现,原生extend实现,函数节流防抖...... 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
+<meta property="og:updated_time" content="2017-05-19T03:11:45.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript | 常用函数/技巧 - Chapter 4">
-<meta name="twitter:description" content="浅深拷贝的实现,原生extend实现,函数节流防抖…… 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
+<meta name="twitter:description" content="浅深拷贝的实现,原生extend实现,函数节流防抖...... 一个简单浅复制的实现123456789101112var  obj = &amp;#123;a:&amp;apos;1&amp;apos;,arr:[2,3]&amp;#125;;  var shadowObj = shadowCopy(obj);  function shadowCopy(src) &amp;#123;    var dst = &amp;#123;&amp;#125;;">
   
     <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
   
@@ -177,8 +177,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>浅深拷贝的实现,原生extend实现,函数节流防抖……</p>
-<h4 id="一个简单浅复制的实现"><a href="#一个简单浅复制的实现" class="headerlink" title="一个简单浅复制的实现"></a>一个简单浅复制的实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var  obj = &#123;a:&apos;1&apos;,arr:[2,3]&#125;;</div><div class="line">  var shadowObj = shadowCopy(obj);</div><div class="line"></div><div class="line">  function shadowCopy(src) &#123;</div><div class="line">    var dst = &#123;&#125;;</div><div class="line">    for(var prop in src)&#123;</div><div class="line">      if(src.hasOwnProperty(prop))&#123;</div><div class="line">        dst[prop] =  src[prop];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return dst;</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
+        <pre><code>浅深拷贝的实现,原生extend实现,函数节流防抖......
+</code></pre><h4 id="一个简单浅复制的实现"><a href="#一个简单浅复制的实现" class="headerlink" title="一个简单浅复制的实现"></a>一个简单浅复制的实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var  obj = &#123;a:&apos;1&apos;,arr:[2,3]&#125;;</div><div class="line">  var shadowObj = shadowCopy(obj);</div><div class="line"></div><div class="line">  function shadowCopy(src) &#123;</div><div class="line">    var dst = &#123;&#125;;</div><div class="line">    for(var prop in src)&#123;</div><div class="line">      if(src.hasOwnProperty(prop))&#123;</div><div class="line">        dst[prop] =  src[prop];</div><div class="line">      &#125;</div><div class="line">    &#125;</div><div class="line">    return dst;</div><div class="line">  &#125;;</div></pre></td></tr></table></figure>
 <h4 id="深拷贝的实现"><a href="#深拷贝的实现" class="headerlink" title="深拷贝的实现"></a>深拷贝的实现</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function deepCopy(obj)&#123;</div><div class="line">    var str,</div><div class="line">        newObj = obj.constructor === Array ? [] : &#123;&#125;;</div><div class="line">    if(typeof obj != &apos;object&apos;)&#123;</div><div class="line">        return;</div><div class="line">    &#125;else if(window.JSON)&#123;</div><div class="line">        str = JSON.stringify(obj);</div><div class="line">        // 序列化对象</div><div class="line">        newObj = JSON.parse(str);</div><div class="line">        // 还原</div><div class="line">    &#125;else&#123;</div><div class="line">        for(var i in obj)&#123;</div><div class="line">            newObj[i] = typeof obj[i] === &apos;object&apos; ? deepCopy(obj) : obj[i];</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return newObj;</div><div class="line">&#125;</div><div class="line"></div><div class="line">1.首先深复制和浅复制只针对像Object,Array这种复杂对象的</div><div class="line">2.简单来说，浅复制只复制呢一层对象的属性，而深复制则是递归的复制了所有层级</div></pre></td></tr></table></figure>
 <h4 id="原生js实现复制对象、扩展对象-类似jquery中的extend-方法"><a href="#原生js实现复制对象、扩展对象-类似jquery中的extend-方法" class="headerlink" title="原生js实现复制对象、扩展对象 类似jquery中的extend()方法"></a>原生js实现复制对象、扩展对象 类似jquery中的extend()方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">var o1 = &#123;hello:1,old:555&#125;,</div><div class="line">        o2 = &#123;abc:555555,hello:2,fun:function () &#123;alert(&apos;111&apos;);&#125;&#125;,</div><div class="line">        o3 = &#123;third:9999&#125;;</div><div class="line">    /*复制对象方法*/</div><div class="line">    function cloneObj(oldObj) &#123;</div><div class="line">        var newObj = &#123;&#125;;</div><div class="line">        if(typeof oldObj != &apos;Object&apos; || oldObj == null) return oldObj;</div><div class="line">        for(var i in oldObj) &#123;</div><div class="line">            newObj[i] = cloneObj(oldObj[i]);</div><div class="line">        &#125;</div><div class="line">        return newObj;</div><div class="line">    &#125;</div><div class="line">    /*扩展对象*/</div><div class="line">    function extend() &#123;</div><div class="line">        var args = arguments;</div><div class="line">       if(args.length &lt; 2) return;</div><div class="line">       // 调用复制对象方法</div><div class="line">       var temp = cloneObj(args[0]);</div><div class="line">       for(var n = 1;n&lt;args.length;n++) &#123;</div><div class="line">           for(var i in args[n])&#123;</div><div class="line">               temp[i] = args[n][i];</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       return temp;</div><div class="line">    &#125;</div><div class="line">   extend(o1,o2,o3);</div></pre></td></tr></table></figure>
 <h4 id="函数节流-throttle"><a href="#函数节流-throttle" class="headerlink" title="函数节流 throttle"></a>函数节流 throttle</h4><p><code>应用点:</code>保证每 X 毫秒恒定的执行次数，比如每200ms检查下滚动位置，并触发 CSS 动画。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line"> * 函数节流:只允许一个函数在 X 毫秒内执行一次。且再Time时间内必须执行一次</div><div class="line"> * @param fun 要执行的函数</div><div class="line"> * @param delay 延迟多久时间执行一次</div><div class="line"> * @param time  在timer时间内必须执行一次</div><div class="line"> * @returns &#123;Function&#125;</div><div class="line"> */</div><div class="line"> </div><div class="line">var throttle = function (fun,delay,time) &#123;</div><div class="line">    var timeout,</div><div class="line">        startTime = new Date();</div><div class="line">    return function () &#123;</div><div class="line">        var context = this,</div><div class="line">            args = arguments,</div><div class="line">            curTime = new Date();</div><div class="line">        clearTimeout(timeout);</div><div class="line">        // 如果达到了规定的触发时间间隔，触发handler</div><div class="line">        if(curTime - startTime &gt;= time)&#123;</div><div class="line">            fun.apply(context,args);</div><div class="line">            startTime = curTime;</div><div class="line">            // 没达到出发间隔，重写设定定时器</div><div class="line">        &#125;else&#123;</div><div class="line">            timeout = setTimeout(fun,delay);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
@@ -189,34 +189,6 @@
     </div>
     <footer class="article-footer">
       
-        
-	<section id="comments" class="comment">
-	  <div id="disqus_thread">
-	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	  </div>
-	</section>
-
-	<script type="text/javascript">
-	var disqus_shortname = 'iTimeTraveler';
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	</script>
-
-
-
-      
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
 
@@ -226,11 +198,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/18/web-前端博客-资源收集/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/18/js-技巧收集-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          web | 前端博客/资源收集
+          JavaScript | 常用函数/技巧 - Chapter 2
         
       </div>
     </a>

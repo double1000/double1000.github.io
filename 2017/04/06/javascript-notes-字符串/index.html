@@ -197,7 +197,7 @@
 <li>toUpperCase()方法将字符串转换成大写;</li>
 <li>toLowerCase()方法将字符串转换成小写;</li>
 <li>toLocaleUpperCase()方法将字符串转换成大写(针对地区);</li>
-<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="keyword">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
+<li>toLocaleLowerCase()方法将字符串转换成小写(针对地区);<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">注意:在不知道自己的代码将在哪个语言环境中运行的情况下，使用针对地区的方法更稳妥</div><div class="line">注意:这<span class="number">4</span>种方法均不支持<span class="built_in">String</span>()隐式类型转换，只支持字符串类型</div><div class="line">注意:大小写转换方法可以连续使用</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <h5 id="4-查找子串位置"><a href="#4-查找子串位置" class="headerlink" title="4.查找子串位置"></a>4.查找子串位置</h5><figure class="highlight plain"><figcaption><span>js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">有两个从字符串中查找子字符串位置的方法:indexOf()和lastIndexOf()。</div><div class="line">查找子串位置的方法同访问字符方法charAt()和中括号[]方法有相反的地方，一个通过字符串查找位置，一个则是通过位置查找字符</div><div class="line"></div><div class="line">1. String.prototype.indexOf();</div><div class="line">1-1. indexOf(searchString,start)方法接收searchString和start两个参数，返回searchString首次出现的位置，如果没有找到则返回-1</div><div class="line">1-2. 该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">1-3. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN或负数时，start = 0</div><div class="line"></div><div class="line">2.String.prototype.lastIndexOf();</div><div class="line">2-1. 与indexOf()不同，lastIndexOf()从右向左查找</div><div class="line">2-2. lastIndexOf(searchString,start)方法接收searchString和start两个参数，返回searchString第一次出现的位置，如果没有找到则返回-1</div><div class="line">2-3. 同样地，该方法会隐式调用String()转型函数，将searchString非字符串值转换为字符串；隐式调用Number()转型函数，将start非数字值(undefined除外)转换为数值</div><div class="line">2-4. searchString表示要搜索的子字符串；start表示该搜索的开始位置，若忽略该参数或该参数为undefined、NaN时，start = length - 1；若start为负数，start = 0</div><div class="line"></div><div class="line">**例子:查找出字符串所有符合条件的子字符串**</div><div class="line">function allIndexOf(str,value)&#123;</div><div class="line">    var result = [];</div><div class="line">    var pos = str.indexOf(value);</div><div class="line">    while(pos &gt; -1)&#123;</div><div class="line">        result.push(pos);</div><div class="line">        pos = str.indexOf(value,pos+value.length);</div><div class="line">    &#125;</div><div class="line">    return result;</div><div class="line">&#125;</div><div class="line">console.log(allIndexOf(&apos;helllhelllhelll&apos;,&apos;ll&apos;));//[2,7,12]</div></pre></td></tr></table></figure>
@@ -219,34 +219,6 @@
       
     </div>
     <footer class="article-footer">
-      
-        
-	<section id="comments" class="comment">
-	  <div id="disqus_thread">
-	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	  </div>
-	</section>
-
-	<script type="text/javascript">
-	var disqus_shortname = 'iTimeTraveler';
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	</script>
-
-
-
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/字符串/">字符串</a></li></ul>

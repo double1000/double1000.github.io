@@ -11,17 +11,17 @@
   
   
   
-  <meta name="description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额…… 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(&amp;apo">
+  <meta name="description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额...... 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(">
 <meta name="keywords" content="JavaScript,技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript | 常用函数/技巧 - Chapter 3">
 <meta property="og:url" content="https://double1000.github.io/blog/2017/05/18/js-技巧收集-3/index.html">
 <meta property="og:site_name" content="岁月如冰河">
-<meta property="og:description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额…… 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(&amp;apo">
-<meta property="og:updated_time" content="2017-05-19T01:15:31.917Z">
+<meta property="og:description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额...... 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(">
+<meta property="og:updated_time" content="2017-05-19T03:18:32.044Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript | 常用函数/技巧 - Chapter 3">
-<meta name="twitter:description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额…… 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(&amp;apo">
+<meta name="twitter:description" content="常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额...... 操作DOM类1234567891011121314151617// 判断某个对象是否有指定的classNamefunction hasClass(ele,cls) &amp;#123;    return ele.className.match(new RegExp(">
   
     <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
   
@@ -177,8 +177,9 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额……</p>
-<h4 id="操作DOM类"><a href="#操作DOM类" class="headerlink" title="操作DOM类"></a>操作DOM类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 判断某个对象是否有指定的className</div><div class="line">function hasClass(ele,cls) &#123;</div><div class="line">    return ele.className.match(new RegExp(&apos;(\\s|^)&apos;+cls+&apos;(\\s|$)&apos;));</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// 给指定对象添加className</div><div class="line">function addClass(ele,cls) &#123;</div><div class="line">    if (!this.hasClass(ele,cls)) ele.className += &quot; &quot;+cls;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// 删除className</div><div class="line">function removeClass(ele,cls) &#123;</div><div class="line">    if (hasClass(ele,cls)) &#123;</div><div class="line">        var reg = new RegExp(&apos;(\\s|^)&apos;+cls+&apos;(\\s|$)&apos;);</div><div class="line">        ele.className=ele.className.replace(reg,&apos; &apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <pre><code>常用的正则表达式,操作DOM类,getByClass，getById，getByTag,实现base64解码,格式化数字，金额......
+</code></pre><h4 id="操作DOM类"><a href="#操作DOM类" class="headerlink" title="操作DOM类"></a>操作DOM类</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 判断某个对象是否有指定的className</div><div class="line">function hasClass(ele,cls) &#123;</div><div class="line">    return ele.className.match(new RegExp(&apos;(\\s|^)&apos;+cls+&apos;(\\s|$)&apos;));</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// 给指定对象添加className</div><div class="line">function addClass(ele,cls) &#123;</div><div class="line">    if (!this.hasClass(ele,cls)) ele.className += &quot; &quot;+cls;</div><div class="line">&#125;</div><div class="line"> </div><div class="line">// 删除className</div><div class="line">function removeClass(ele,cls) &#123;</div><div class="line">    if (hasClass(ele,cls)) &#123;</div><div class="line">        var reg = new RegExp(&apos;(\\s|^)&apos;+cls+&apos;(\\s|$)&apos;);</div><div class="line">        ele.className=ele.className.replace(reg,&apos; &apos;);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="DOM-操作-根据获元素的class获取相应元素"><a href="#DOM-操作-根据获元素的class获取相应元素" class="headerlink" title="DOM 操作 根据获元素的class获取相应元素"></a>DOM 操作 根据获元素的class获取相应元素</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function getByClass(oParent,sClass) &#123;</div><div class="line">    var aEle = oParent.getElementsByTagName(&apos;*&apos;);</div><div class="line">    var aResult = [];</div><div class="line">    var re=new RegExp(&apos;\\b&apos;+sClass+&apos;\\b&apos;, &apos;i&apos;);</div><div class="line">    for(var i=0; i&lt;aEle.length;i++) &#123;</div><div class="line">        if(aEle[i].className.search(re)!=-1) &#123;</div><div class="line">            aResult.push(aEle[i]);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    return aResult;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="getByClass，getById，getByTag"><a href="#getByClass，getById，getByTag" class="headerlink" title="getByClass，getById，getByTag"></a>getByClass，getById，getByTag</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">var get=&#123;</div><div class="line">  byId:function(id)&#123;</div><div class="line">    return document.getElementById(id);</div><div class="line">  &#125;,</div><div class="line">  byClass:function(oParent,sClass)&#123;</div><div class="line">    if(oParent.getElementsByClass)&#123;</div><div class="line">      retuen (oParent||document).getElementsByClass(sClass);</div><div class="line">    &#125;else&#123;</div><div class="line">      var aClass=[];</div><div class="line">      var reClass=new  RegExp(&quot;(^|)&quot;+sClass+&quot;( |$)&quot;);</div><div class="line">      var aElem=this.byTag(oParent,&quot;*&quot;);</div><div class="line">      for(var i=0;i&lt;aElem.length;i++)&#123;</div><div class="line">        // reClass.test(aElem[i].className) &amp;&amp; aClass.push(aElem[i]);</div><div class="line">        if(reClass.test(aElem[i].className))&#123;</div><div class="line">          aClass.push(aElem[i]);</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">      return aClass;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  byTag:function(obj,elem)&#123;</div><div class="line">    return (obj||document).getElementsByTagName(elem);</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">// demo:</div><div class="line">var oNav = get.byId(&quot;nav&quot;);</div><div class="line">var aLi = get.byTagName(&quot;li&quot;, oNav);</div><div class="line">var aSubNav = get.byClass(&quot;subnav&quot;, oNav);</div></pre></td></tr></table></figure>
 <h4 id="实现base64解码"><a href="#实现base64解码" class="headerlink" title="实现base64解码"></a>实现base64解码</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line">function base64_decode(data)&#123;</div><div class="line">    var b64 = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=&quot;;</div><div class="line">    var o1, o2, o3, h1, h2, h3, h4, bits, i = 0,ac = 0,dec = &quot;&quot;,tmp_arr = [];</div><div class="line">    if (!data) &#123; return data; &#125;</div><div class="line">    data += &apos;&apos;;</div><div class="line">    do &#123;</div><div class="line">        h1 = b64.indexOf(data.charAt(i++));</div><div class="line">        h2 = b64.indexOf(data.charAt(i++));</div><div class="line">        h3 = b64.indexOf(data.charAt(i++));</div><div class="line">        h4 = b64.indexOf(data.charAt(i++));</div><div class="line">        bits = h1 &lt;&lt; 18 | h2 &lt;&lt; 12 | h3 &lt;&lt; 6 | h4;</div><div class="line">        o1 = bits &gt;&gt; 16 &amp; 0xff;</div><div class="line">        o2 = bits &gt;&gt; 8 &amp; 0xff;</div><div class="line">        o3 = bits &amp; 0xff;</div><div class="line">        if (h3 == 64) &#123;</div><div class="line">            tmp_arr[ac++] = String.fromCharCode(o1);</div><div class="line">        &#125; else if (h4 == 64) &#123;</div><div class="line">            tmp_arr[ac++] = String.fromCharCode(o1, o2);</div><div class="line">        &#125; else &#123;</div><div class="line">            tmp_arr[ac++] = String.fromCharCode(o1, o2, o3);</div><div class="line">        &#125;</div><div class="line">    &#125; while (i &lt; data.length);</div><div class="line">    dec = tmp_arr.join(&apos;&apos;);</div><div class="line">    dec = utf8_decode(dec);</div><div class="line">    return dec;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h4 id="获取当前元素样式"><a href="#获取当前元素样式" class="headerlink" title="获取当前元素样式"></a>获取当前元素样式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function getStyle(oElm, strCssRule)&#123;</div><div class="line">    var strValue = &quot;&quot;;</div><div class="line">    if(document.defaultView &amp;&amp; document.defaultView.getComputedStyle)&#123;</div><div class="line">        strValue = document.defaultView.getComputedStyle(oElm, &quot;&quot;).getPropertyValue(strCssRule);</div><div class="line">    &#125;</div><div class="line">    else if(oElm.currentStyle)&#123;</div><div class="line">        strCssRule = strCssRule.replace(/\-(\w)/g, function (strMatch, p1)&#123;</div><div class="line">            return p1.toUpperCase();</div><div class="line">        &#125;);</div><div class="line">        strValue = oElm.currentStyle[strCssRule];</div><div class="line">    &#125;</div><div class="line">    return strValue;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -187,34 +188,6 @@
       
     </div>
     <footer class="article-footer">
-      
-        
-	<section id="comments" class="comment">
-	  <div id="disqus_thread">
-	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	  </div>
-	</section>
-
-	<script type="text/javascript">
-	var disqus_shortname = 'iTimeTraveler';
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	</script>
-
-
-
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
@@ -235,9 +208,9 @@
     </a>
   
   
-    <a href="/2017/05/18/js-技巧收集-2/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/05/18/js-技巧收集-5/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">JavaScript | 常用函数/技巧 - Chapter 2</div>
+      <div class="article-nav-title">JavaScript | 常用函数/技巧 - Chapter 5</div>
     </a>
   
 </nav>
@@ -251,7 +224,7 @@
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
     
-        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作DOM类"><span class="nav-number">1.</span> <span class="nav-text">操作DOM类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getByClass，getById，getByTag"><span class="nav-number">2.</span> <span class="nav-text">getByClass，getById，getByTag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现base64解码"><span class="nav-number">3.</span> <span class="nav-text">实现base64解码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前元素样式"><span class="nav-number">4.</span> <span class="nav-text">获取当前元素样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的正则表达式"><span class="nav-number">5.</span> <span class="nav-text">常用的正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化数字，金额"><span class="nav-number">6.</span> <span class="nav-text">格式化数字，金额</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#操作DOM类"><span class="nav-number">1.</span> <span class="nav-text">操作DOM类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#DOM-操作-根据获元素的class获取相应元素"><span class="nav-number">2.</span> <span class="nav-text">DOM 操作 根据获元素的class获取相应元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#getByClass，getById，getByTag"><span class="nav-number">3.</span> <span class="nav-text">getByClass，getById，getByTag</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#实现base64解码"><span class="nav-number">4.</span> <span class="nav-text">实现base64解码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#获取当前元素样式"><span class="nav-number">5.</span> <span class="nav-text">获取当前元素样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的正则表达式"><span class="nav-number">6.</span> <span class="nav-text">常用的正则表达式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#格式化数字，金额"><span class="nav-number">7.</span> <span class="nav-text">格式化数字，金额</span></a></li></ol>
     
     </div>
   </aside>

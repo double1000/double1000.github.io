@@ -11,17 +11,17 @@
   
   
   
-  <meta name="description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值…… ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。">
+  <meta name="description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值...... ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据">
 <meta name="keywords" content="JavaScript,技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript | 常用函数/技巧 - Chapter 1">
 <meta property="og:url" content="https://double1000.github.io/blog/2017/05/18/js-常见实用技巧-1/index.html">
 <meta property="og:site_name" content="岁月如冰河">
-<meta property="og:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值…… ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。">
-<meta property="og:updated_time" content="2017-05-19T01:20:26.435Z">
+<meta property="og:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值...... ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据">
+<meta property="og:updated_time" content="2017-05-19T03:11:38.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript | 常用函数/技巧 - Chapter 1">
-<meta name="twitter:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值…… ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。">
+<meta name="twitter:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值...... ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据">
   
     <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
   
@@ -177,8 +177,8 @@
     </div>
     <div class="article-entry" itemprop="articleBody">
       
-        <p>金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值……</p>
-<h4 id="”金钱“格式转换"><a href="#”金钱“格式转换" class="headerlink" title="”金钱“格式转换"></a>”金钱“格式转换</h4><p><code>运用点：</code>所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~<br><code>例子:</code>数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。下面来看下怎么实现的 这个是正则，把字符串转换成数字之后，能直接进行运算:如把1,561,124转换成1561124<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">下面的这个是数字转换成金钱格式的函数，也很容易理解</div><div class="line">function formatCash(cash)&#123;</div><div class="line">    var str_cash = cash + &quot;&quot;;//转换成字符串</div><div class="line">    var ret_cash = &quot;&quot;;</div><div class="line">    var counter = 0;</div><div class="line">    for(var i=str_cash.length-1;i&gt;=0;i--)&#123;</div><div class="line">        ret_cash = str_cash.charAt(i) + ret_cash;</div><div class="line">        counter++;</div><div class="line">        if(counter==3)&#123;</div><div class="line">            counter = 0;</div><div class="line">            if(i!=0)&#123;</div><div class="line">            ret_cash = &quot;,&quot; + ret_cash;</div><div class="line">            &#125;</div><div class="line">        &#125;&#125;</div><div class="line">    return ret_cash;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// demo:</div><div class="line">var num = 1012145;</div><div class="line">formatCash(num);   //1,012,145</div></pre></td></tr></table></figure></p>
+        <pre><code>金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值......
+</code></pre><h4 id="”金钱“格式转换"><a href="#”金钱“格式转换" class="headerlink" title="”金钱“格式转换"></a>”金钱“格式转换</h4><p><code>运用点：</code>所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~<br><code>例子:</code>数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。下面来看下怎么实现的 这个是正则，把字符串转换成数字之后，能直接进行运算:如把1,561,124转换成1561124<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">下面的这个是数字转换成金钱格式的函数，也很容易理解</div><div class="line">function formatCash(cash)&#123;</div><div class="line">    var str_cash = cash + &quot;&quot;;//转换成字符串</div><div class="line">    var ret_cash = &quot;&quot;;</div><div class="line">    var counter = 0;</div><div class="line">    for(var i=str_cash.length-1;i&gt;=0;i--)&#123;</div><div class="line">        ret_cash = str_cash.charAt(i) + ret_cash;</div><div class="line">        counter++;</div><div class="line">        if(counter==3)&#123;</div><div class="line">            counter = 0;</div><div class="line">            if(i!=0)&#123;</div><div class="line">            ret_cash = &quot;,&quot; + ret_cash;</div><div class="line">            &#125;</div><div class="line">        &#125;&#125;</div><div class="line">    return ret_cash;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// demo:</div><div class="line">var num = 1012145;</div><div class="line">formatCash(num);   //1,012,145</div></pre></td></tr></table></figure></p>
 <h4 id="window-onload使用多次"><a href="#window-onload使用多次" class="headerlink" title="window.onload使用多次"></a>window.onload使用多次</h4><p><code>运用点：</code>window.onload只能使用一次，而不像JQ那样能只用多次，下面的这个函数就可以实现多次使用onload的功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function addLoadEvent(func) &#123;</div><div class="line">    var oldonload = window.onload;</div><div class="line">    if (typeof window.onload != &apos;function&apos;) &#123;</div><div class="line">        window.onload = func;</div><div class="line">    &#125; else &#123;</div><div class="line">        window.onload = function() &#123;</div><div class="line">            oldonload();</div><div class="line">            func();</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">// demo：</div><div class="line">addLoadEvent(fnName);  //可使用多次</div></pre></td></tr></table></figure></p>
 <h4 id="insertafter在结点后面插入内容"><a href="#insertafter在结点后面插入内容" class="headerlink" title="insertafter在结点后面插入内容"></a>insertafter在结点后面插入内容</h4><p><code>运用点：</code>js给我们提供了insertbefore，没有after，下面这个函数就实现了这个功能<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">// insertAfter</div><div class="line">    function insertAfter(newElement,targetElement)&#123;</div><div class="line">        var parent=targetElement.parentNode;</div><div class="line">        if(parent.lastChild==targetElement)&#123;</div><div class="line">            parent.appendChild(newElement);</div><div class="line">           &#125; else &#123;</div><div class="line">            parent.insertBefore(newElement,targetElement.nextSibling);</div><div class="line">        &#125;</div><div class="line">     &#125;</div></pre></td></tr></table></figure></p>
 <h4 id="实现字符串长度截取并在结尾添加…"><a href="#实现字符串长度截取并在结尾添加…" class="headerlink" title="实现字符串长度截取并在结尾添加…"></a>实现字符串长度截取并在结尾添加…</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">cutstr</span>(<span class="params">str, len</span>) </span>&#123;</div><div class="line"><span class="keyword">var</span> temp;</div><div class="line"><span class="keyword">var</span> icount = <span class="number">0</span>;</div><div class="line"><span class="keyword">var</span> patrn = <span class="regexp">/[^\x00-\xff]/</span>;  <span class="comment">//表示汉字或者全角，即ASCII 编码不在0-255的字符</span></div><div class="line"><span class="keyword">var</span> strre = <span class="string">""</span>;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; str.length; i++) &#123;</div><div class="line">    <span class="keyword">if</span> (icount &lt; len) &#123;</div><div class="line">        <span class="comment">// 每次截取一个字符</span></div><div class="line">        temp = str.substr(i, <span class="number">1</span>);</div><div class="line">        <span class="keyword">if</span> (patrn.exec(temp) == <span class="literal">null</span>) &#123;</div><div class="line">            <span class="comment">// 如果是英文、半角</span></div><div class="line">            icount = icount + <span class="number">1</span></div><div class="line">        &#125; <span class="keyword">else</span> &#123;</div><div class="line">            <span class="comment">// 如果是中文、全角</span></div><div class="line">            icount = icount + <span class="number">2</span></div><div class="line">        &#125;</div><div class="line">        <span class="comment">// 字符串连接</span></div><div class="line">        strre += temp</div><div class="line">    &#125; <span class="keyword">else</span> &#123;</div><div class="line">        <span class="keyword">break</span></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> strre + <span class="string">"..."</span></div><div class="line">&#125;</div><div class="line"><span class="comment">// demo:</span></div><div class="line">cutstr(<span class="string">"xuanfeng"</span>, <span class="number">2</span>)  <span class="comment">//xu...</span></div><div class="line">cutstr(<span class="string">"轩枫阁"</span>, <span class="number">3</span>)    <span class="comment">//轩枫...</span></div></pre></td></tr></table></figure>
@@ -190,34 +190,6 @@
     </div>
     <footer class="article-footer">
       
-        
-	<section id="comments" class="comment">
-	  <div id="disqus_thread">
-	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-	  </div>
-	</section>
-
-	<script type="text/javascript">
-	var disqus_shortname = 'iTimeTraveler';
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	(function(){
-	  var dsq = document.createElement('script');
-	  dsq.type = 'text/javascript';
-	  dsq.async = true;
-	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
-	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	}());
-	</script>
-
-
-
-      
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技巧/">技巧</a></li></ul>
 
@@ -227,11 +199,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/05/18/js-技巧收集-2/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/18/js-技巧收集-5/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          JavaScript | 常用函数/技巧 - Chapter 2
+          JavaScript | 常用函数/技巧 - Chapter 5
         
       </div>
     </a>
