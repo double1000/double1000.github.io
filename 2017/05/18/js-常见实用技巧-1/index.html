@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>javascript | 常用函数/技巧 - chapter 1 | 似水流年才是一个人的一切,其余的全是片刻的欢娱和不幸</title>
+  <title>javascript | 常用函数/技巧 - chapter 1 | 岁月如冰河</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="GO SPURS GO" />
@@ -16,14 +16,14 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript | 常用函数/技巧 - Chapter 1">
 <meta property="og:url" content="https://double1000.github.io/blog/2017/05/18/js-常见实用技巧-1/index.html">
-<meta property="og:site_name" content="似水流年才是一个人的一切,其余的全是片刻的欢娱和不幸">
+<meta property="og:site_name" content="岁月如冰河">
 <meta property="og:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值…… ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。">
 <meta property="og:updated_time" content="2017-05-19T01:20:26.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript | 常用函数/技巧 - Chapter 1">
 <meta name="twitter:description" content="金钱“格式转换,获取主域名,window.onload使用多次,insertafter在结点后面插入内容,实现字符串长度截取并在结尾添加,设置获取cookie值…… ”金钱“格式转换运用点：所谓的金钱格式转换就是把数字转换成三位数加一个逗号的格式，使数据变得很直观明了~例子:数据是字符串的，加减钱需要用正则转换成数字，但是再显示最后结果时，也需要再次转换成金钱的格式，再通过ajax实现数据的交互。">
   
-    <link rel="alternate" href="/atom.xml" title="似水流年才是一个人的一切,其余的全是片刻的欢娱和不幸" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
   
   <link rel="icon" href="/css/images/mylogo.jpg">
   <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
@@ -191,26 +191,30 @@
     <footer class="article-footer">
       
         
-	<div id="comment">
-	
-	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2017/05/18/js-常见实用技巧-1/" data-title="JavaScript | 常用函数/技巧 - Chapter 1" data-url="https://double1000.github.io/blog/2017/05/18/js-常见实用技巧-1/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
+
 	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"iTimeTraveler"};
-	  (function() {
-	    var ds = document.createElement('script');
-	    ds.type = 'text/javascript';ds.async = true;
-	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	    ds.charset = 'UTF-8';
-	    (document.getElementsByTagName('head')[0] 
-	     || document.getElementsByTagName('body')[0]).appendChild(ds);
-	  })();
-	  </script>
-	<!-- 多说公共JS代码 end -->
-	
-	</div>
+	var disqus_shortname = 'iTimeTraveler';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
 
 
       
@@ -223,20 +227,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/04/18/web-前端博客-资源收集/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/05/18/js-技巧收集-2/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">上一篇</strong>
       <div class="article-nav-title">
         
-          web | 前端博客/资源收集
+          JavaScript | 常用函数/技巧 - Chapter 2
         
       </div>
     </a>
   
-  
-    <a href="/2017/05/18/js-技巧收集-3-1/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">下一篇</strong>
-      <div class="article-nav-title">JavaScript | 常用函数/技巧 - Chapter 4</div>
-    </a>
   
 </nav>
 
@@ -263,7 +262,7 @@
   <div class="container">
       	<div class="row">
 	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
-	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 似水流年才是一个人的一切,其余的全是片刻的欢娱和不幸 All Rights Reserved.</p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 岁月如冰河 All Rights Reserved.</p>
 	      
 	      
     		<p class="busuanzi_uv">
@@ -407,7 +406,7 @@
         </div>
          <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
           <div class="panel-body">
-            似水流年才是一个人的一切,其余的全是片刻的欢娱和不幸
+            岁月如冰河
           </div>
           <div class="panel-body">
             Copyright © 2017 胡温柔 All Rights Reserved.
