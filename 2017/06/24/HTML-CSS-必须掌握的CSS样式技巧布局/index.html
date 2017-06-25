@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>html/css | css样式技巧布局 - grade 1 | 岁月如冰河</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="GO SPURS GO" />
+  
+  
+  
+  
+  <meta name="description" content="文本单行溢出隐藏12345.sugar-text-single-hide&amp;#123;    text-overflow: ellipsis;    white-space: nowrap;    overflow: hidden;&amp;#125; 文本多行溢出隐藏123456.sugar-text-more-hide&amp;#123;    overflow: hidden;    display: -we">
+<meta name="keywords" content="CSS,CSS技巧,Notes">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML/CSS | CSS样式技巧布局 - Grade 1">
+<meta property="og:url" content="https://double1000.github.io/blog/2017/06/24/HTML-CSS-必须掌握的CSS样式技巧布局/index.html">
+<meta property="og:site_name" content="岁月如冰河">
+<meta property="og:description" content="文本单行溢出隐藏12345.sugar-text-single-hide&amp;#123;    text-overflow: ellipsis;    white-space: nowrap;    overflow: hidden;&amp;#125; 文本多行溢出隐藏123456.sugar-text-more-hide&amp;#123;    overflow: hidden;    display: -we">
+<meta property="og:updated_time" content="2017-06-25T02:48:53.971Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML/CSS | CSS样式技巧布局 - Grade 1">
+<meta name="twitter:description" content="文本单行溢出隐藏12345.sugar-text-single-hide&amp;#123;    text-overflow: ellipsis;    white-space: nowrap;    overflow: hidden;&amp;#125; 文本多行溢出隐藏123456.sugar-text-more-hide&amp;#123;    overflow: hidden;    display: -we">
+  
+    <link rel="alternate" href="/atom.xml" title="岁月如冰河" type="application/atom+xml">
+  
+  <link rel="icon" href="/css/images/mylogo.jpg">
+  <link rel="apple-touch-icon" href="/css/images/mylogo.jpg">
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans|Montserrat:700" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic" rel="stylesheet" type="text/css">
+  <link href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+  <style type="text/css">
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/9749f0/00000000000000000001008f/27/l?subset_id=2&fvd=n5) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/90cf9f/000000000000000000010091/27/l?subset_id=2&fvd=n7) format("woff2");font-weight:500;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/8a5494/000000000000000000013365/27/l?subset_id=2&fvd=n4) format("woff2");font-weight:lighter;font-style:normal;}
+    @font-face{font-family:futura-pt;src:url(https://use.typekit.net/af/d337d8/000000000000000000010095/27/l?subset_id=2&fvd=i4) format("woff2");font-weight:400;font-style:italic;}</style>
+  <link rel="stylesheet" href="/css/style.css">
+
+  <script src="/js/jquery-3.1.1.min.js"></script>
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.css" >
+
+  
+    <link rel="stylesheet" href="/css/dialog.css">
+  
+
+  
+    <link rel="stylesheet" href="/css/header-post.css" >
+  
+
+  
+
+</head>
+
+
+
+  <body data-spy="scroll" data-target="#toc" data-offset="50">
+
+
+  
+  <div id="container">
+    <div id="wrap">
+      
+        <header>
+
+    <div id="allheader" class="navbar navbar-default navbar-static-top" role="navigation">
+        <div class="navbar-inner">
+          
+          <div class="container"> 
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+
+            
+              <a class="brand" style="
+                 margin-top: 0px;"  
+                href="#" data-toggle="modal" data-target="#myModal" >
+                  <img width="124px" height="124px" alt="Hike News" src="/css/images/mylogo.jpg">
+              </a>
+            
+            
+            <div class="navbar-collapse collapse">
+              <ul class="hnav navbar-nav">
+                
+                  <li> <a class="main-nav-link" href="/">首页</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/archives">归档</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/categories">分类</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/tags">标签</a> </li>
+                
+                  <li> <a class="main-nav-link" href="/about">关于</a> </li>
+                
+                  <li><div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="请输入关键词..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(无标题)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div></li>
+            </div>
+          </div>
+                
+      </div>
+    </div>
+
+</header>
+
+
+
+      
+            
+      <div id="content" class="outer">
+        
+          <section id="main" style="float:none;"><article id="post-HTML-CSS-必须掌握的CSS样式技巧布局" style="width: 75%; float:left;" class="article article-type-post" itemscope itemprop="blogPost" >
+  <div id="articleInner" class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="thumb" class="article-title" itemprop="name">
+      HTML/CSS | CSS样式技巧布局 - Grade 1
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-meta">
+      
+	<a href="/2017/06/24/HTML-CSS-必须掌握的CSS样式技巧布局/" class="article-date">
+	  <time datetime="2017-06-24T15:08:50.000Z" itemprop="datePublished">2017-06-24</time>
+	</a>
+
+      
+    <a class="article-category-link" href="/categories/寄蜉蝣于天地-渺沧海之一粟/">寄蜉蝣于天地,渺沧海之一粟</a>
+
+    </div>
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="文本单行溢出隐藏"><a href="#文本单行溢出隐藏" class="headerlink" title="文本单行溢出隐藏"></a>文本单行溢出隐藏</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-text-single-hide</span>&#123;</div><div class="line">    <span class="attribute">text-overflow</span>: ellipsis;</div><div class="line">    <span class="attribute">white-space</span>: nowrap;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="文本多行溢出隐藏"><a href="#文本多行溢出隐藏" class="headerlink" title="文本多行溢出隐藏"></a>文本多行溢出隐藏</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-text-more-hide</span>&#123;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">    <span class="attribute">display</span>: -webkit-box;</div><div class="line">    <span class="attribute">-webkit-line-clamp</span>: <span class="number">2</span>;</div><div class="line">    <span class="attribute">-webkit-box-orient</span>: vertical;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="文本多余四行显示查看更多，少于显示全部"><a href="#文本多余四行显示查看更多，少于显示全部" class="headerlink" title="文本多余四行显示查看更多，少于显示全部"></a>文本多余四行显示查看更多，少于显示全部</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-text-more</span>&#123;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="垂直对齐"><a href="#垂直对齐" class="headerlink" title="垂直对齐"></a>垂直对齐</h3><p><code>垂直对齐容器中的元素,日用CSS3的Transfrom</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-vertical-center</span>&#123;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">    <span class="attribute">top</span>:<span class="number">50%</span>;</div><div class="line">    <span class="attribute">-webkit-transform</span>:<span class="built_in">translateY</span>(-50%);</div><div class="line">    <span class="attribute">transform</span>:<span class="built_in">translateY</span>(-50%);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="只在一边或两边显示盒子阴影"><a href="#只在一边或两边显示盒子阴影" class="headerlink" title="只在一边或两边显示盒子阴影"></a>只在一边或两边显示盒子阴影</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-box-shadow</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>: <span class="number">#FF8020</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">160px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">90px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: -<span class="number">45px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">80px</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.sugar-box-shadow</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">""</span>;</div><div class="line">    <span class="attribute">width</span>: <span class="number">150px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">1px</span>;</div><div class="line">    <span class="attribute">margin-top</span>: <span class="number">88px</span>;</div><div class="line">    <span class="attribute">margin-left</span>: -<span class="number">75px</span>;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">left</span>: <span class="number">50%</span>;</div><div class="line">    <span class="attribute">z-index</span>: -<span class="number">1</span>;</div><div class="line">    <span class="attribute">-webkit-box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">8px</span> <span class="number">2px</span> <span class="number">#000000</span>;</div><div class="line">    <span class="attribute">-moz-box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">8px</span> <span class="number">2px</span> <span class="number">#000000</span>;    <span class="attribute">box-shadow</span>: <span class="number">0px</span> <span class="number">0px</span> <span class="number">8px</span> <span class="number">2px</span> <span class="number">#000000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="用CSS动画实现省略号动画"><a href="#用CSS动画实现省略号动画" class="headerlink" title="用CSS动画实现省略号动画"></a>用CSS动画实现省略号动画</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-loading</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">    <span class="attribute">overflow</span>: hidden;</div><div class="line">    <span class="attribute">display</span>: inline-block;</div><div class="line">    <span class="attribute">vertical-align</span>: bottom;</div><div class="line">    <span class="attribute">animation</span>: ellipsis <span class="number">2s</span> infinite;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"\2026"</span>; <span class="comment">/* ascii code for the ellipsis character */</span></div><div class="line">&#125;</div><div class="line">@<span class="keyword">keyframes</span> ellipsis &#123;</div><div class="line">    <span class="selector-tag">from</span> &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">2px</span>;</div><div class="line">    &#125;</div><div class="line">    <span class="selector-tag">to</span> &#123;</div><div class="line">        <span class="attribute">width</span>: <span class="number">15px</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="制造模糊文本"><a href="#制造模糊文本" class="headerlink" title="制造模糊文本"></a>制造模糊文本</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.sugar-text-blurry&#123;</div><div class="line">   font-size: 28px;</div><div class="line">   font-family: arial;</div><div class="line">   font-weight:bold;</div><div class="line">   color: transparent;</div><div class="line">   text-shadow: 0 0 5px rgba(0,0,0,0.5);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="跨浏览器的透明"><a href="#跨浏览器的透明" class="headerlink" title="跨浏览器的透明"></a>跨浏览器的透明</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-transparent</span> &#123;</div><div class="line">    <span class="attribute">filter</span>: <span class="built_in">alpha</span>(opacity=50); <span class="comment">/* internet explorer */</span></div><div class="line">    <span class="attribute">-khtml-opacity</span>: <span class="number">0.5</span>;      <span class="comment">/* khtml, old safari */</span></div><div class="line">    <span class="attribute">-moz-opacity</span>: <span class="number">0.5</span>;       <span class="comment">/* mozilla, netscape */</span></div><div class="line">    <span class="attribute">opacity</span>: <span class="number">0.5</span>;           <span class="comment">/* fx, safari, opera */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="自定义文本的选择"><a href="#自定义文本的选择" class="headerlink" title="自定义文本的选择"></a>自定义文本的选择</h3><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">::selection &#123; background:</span> #e2eae2; &#125;</div><div class="line"><span class="meta">::-moz-selection &#123; background:</span> #e2eae2; &#125;</div><div class="line"><span class="meta">::-webkit-selection &#123; background:</span> #e2eae2; &#125;</div></pre></td></tr></table></figure>
+<h3 id="为logo隐藏H1"><a href="#为logo隐藏H1" class="headerlink" title="为logo隐藏H1"></a>为logo隐藏H1</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-hide-h1</span> &#123;</div><div class="line">    <span class="attribute">text-indent</span>: -<span class="number">9999px</span>;</div><div class="line">    <span class="attribute">margin</span>: <span class="number">0</span> auto;</div><div class="line">    <span class="attribute">width</span>: <span class="number">320px</span>;</div><div class="line">    <span class="attribute">height</span>: <span class="number">85px</span>;</div><div class="line">    <span class="attribute">background</span>: transparent <span class="built_in">url</span>(<span class="string">"images/logo.png"</span>) no-repeat scroll;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="图片边框偏光"><a href="#图片边框偏光" class="headerlink" title="图片边框偏光"></a>图片边框偏光</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.sugar-img-polaroid</span> &#123;</div><div class="line">    <span class="attribute">background</span>:<span class="number">#000</span>; <span class="comment">/*Change this to a background image or remove*/</span></div><div class="line">    <span class="attribute">border</span>:solid <span class="number">#fff</span>;</div><div class="line">    <span class="attribute">border-width</span>:<span class="number">6px</span> <span class="number">6px</span> <span class="number">20px</span> <span class="number">6px</span>;</div><div class="line">    <span class="attribute">box-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">5px</span> <span class="number">#333</span>; <span class="comment">/* Standard blur at 5px. Increase for more depth */</span></div><div class="line">    <span class="attribute">-webkit-box-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">    <span class="attribute">-moz-box-shadow</span>:<span class="number">1px</span> <span class="number">1px</span> <span class="number">5px</span> <span class="number">#333</span>;</div><div class="line">    <span class="attribute">height</span>:<span class="number">200px</span>; <span class="comment">/*Set to height of your image or desired div*/</span></div><div class="line">    <span class="attribute">width</span>:<span class="number">200px</span>; <span class="comment">/*Set to width of your image or desired div*/</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="锚链接伪类"><a href="#锚链接伪类" class="headerlink" title="锚链接伪类"></a>锚链接伪类</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:link</span> &#123; <span class="attribute">color</span>: blue; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:visited</span> &#123; <span class="attribute">color</span>: purple; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123; <span class="attribute">color</span>: red; &#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:active</span> &#123; <span class="attribute">color</span>: yellow; &#125;</div></pre></td></tr></table></figure>
+<h3 id="CSS3：全屏背景"><a href="#CSS3：全屏背景" class="headerlink" title="CSS3：全屏背景"></a>CSS3：全屏背景</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'images/bg.jpg'</span>) no-repeat center center fixed; </div><div class="line">    <span class="attribute">-webkit-background-size</span>: cover;</div><div class="line">    <span class="attribute">-moz-background-size</span>: cover;</div><div class="line">    <span class="attribute">-o-background-size</span>: cover;</div><div class="line">    <span class="attribute">background-size</span>: cover;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="强制出现垂直滚动条"><a href="#强制出现垂直滚动条" class="headerlink" title="强制出现垂直滚动条"></a>强制出现垂直滚动条</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">html</span> &#123; </div><div class="line">    <span class="attribute">height</span>: <span class="number">101%</span> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="font-face模板"><a href="#font-face模板" class="headerlink" title="@font-face模板"></a>@font-face模板</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">font-face</span> &#123;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">'MyWebFont'</span>;</div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'webfont.eot'</span>); <span class="comment">/* IE9 Compat Modes */</span></div><div class="line">    <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'webfont.eot?#iefix'</span>) <span class="built_in">format</span>(<span class="string">'embedded-opentype'</span>), <span class="comment">/* IE6-IE8 */</span></div><div class="line">    <span class="built_in">url</span>(<span class="string">'webfont.woff'</span>) <span class="built_in">format</span>(<span class="string">'woff'</span>), <span class="comment">/* Modern Browsers */</span></div><div class="line">    <span class="built_in">url</span>(<span class="string">'webfont.ttf'</span>)  <span class="built_in">format</span>(<span class="string">'truetype'</span>), <span class="comment">/* Safari, Android, iOS */</span></div><div class="line">    <span class="built_in">url</span>(<span class="string">'webfont.svg#svgFontName'</span>) <span class="built_in">format</span>(<span class="string">'svg'</span>); <span class="comment">/* Legacy iOS */</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">font-family</span>: <span class="string">'MyWebFont'</span>, Arial, sans-serif;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="基于文件类型的链接样式"><a href="#基于文件类型的链接样式" class="headerlink" title="基于文件类型的链接样式"></a>基于文件类型的链接样式</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* external links */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="http://"]</span> &#123;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">13px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'external.gif'</span>) no-repeat center right;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* emails */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href^="mailto:"]</span> &#123;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">20px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'email.png'</span>) no-repeat center right;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* pdfs */</span></div><div class="line"><span class="selector-tag">a</span><span class="selector-attr">[href$=".pdf"]</span> &#123;</div><div class="line">    <span class="attribute">padding-right</span>: <span class="number">18px</span>;</div><div class="line">    <span class="attribute">background</span>: <span class="built_in">url</span>(<span class="string">'acrobat.png'</span>) no-repeat center right;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="在可点击的项目上强制手型"><a href="#在可点击的项目上强制手型" class="headerlink" title="在可点击的项目上强制手型"></a>在可点击的项目上强制手型</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span>[href], <span class="selector-tag">input</span>[type=<span class="string">'submit'</span>], <span class="selector-tag">input</span>[type=<span class="string">'image'</span>], <span class="selector-tag">label</span>[<span class="keyword">for</span>], select, <span class="selector-tag">button</span>, <span class="selector-class">.pointer</span> &#123;</div><div class="line">    <span class="attribute">cursor</span>: pointer;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="禁用移动Webkit的选择高亮"><a href="#禁用移动Webkit的选择高亮" class="headerlink" title="禁用移动Webkit的选择高亮"></a>禁用移动Webkit的选择高亮</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span> &#123;</div><div class="line">    <span class="attribute">-webkit-touch-callout</span>: none;</div><div class="line">    <span class="attribute">-webkit-user-select</span>: none;</div><div class="line">    <span class="attribute">-khtml-user-select</span>: none;</div><div class="line">    <span class="attribute">-moz-user-select</span>: none;</div><div class="line">    <span class="attribute">-ms-user-select</span>: none;</div><div class="line">    <span class="attribute">user-select</span>: none;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="CSS-font属性缩写"><a href="#CSS-font属性缩写" class="headerlink" title="CSS font属性缩写"></a>CSS font属性缩写</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">  <span class="attribute">font</span>: italic small-caps bold <span class="number">1.2em</span>/<span class="number">1.0em</span> Arial, Tahoma, Helvetica;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="比较完美的清除浮动"><a href="#比较完美的清除浮动" class="headerlink" title="比较完美的清除浮动"></a>比较完美的清除浮动</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.clearfix</span>:after &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"\200B"</span>;</div><div class="line">    <span class="attribute">display</span>: block;</div><div class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">    <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clearfix</span> &#123;</div><div class="line">    *zoom: <span class="number">1</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="现代字体栈"><a href="#现代字体栈" class="headerlink" title="现代字体栈"></a>现代字体栈</h3><figure class="highlight scss"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Times New Roman-based serif */</span></div><div class="line"><span class="attribute">font-family</span>: Cambria, <span class="string">"Hoefler Text"</span>, Utopia, <span class="string">"Liberation Serif"</span>, <span class="string">"Nimbus Roman No9 L Regular"</span>, Times, <span class="string">"Times New Roman"</span>, serif;</div><div class="line"></div><div class="line"><span class="comment">/* A modern Georgia-based serif */</span></div><div class="line"><span class="attribute">font-family</span>: Constantia, <span class="string">"Lucida Bright"</span>, Lucidabright, <span class="string">"Lucida Serif"</span>, Lucida, <span class="string">"DejaVu Serif,"</span> <span class="string">"Bitstream Vera Serif"</span>, <span class="string">"Liberation Serif"</span>, Georgia, serif;</div><div class="line"></div><div class="line"><span class="comment">/*A more traditional Garamond-based serif */</span></div><div class="line"><span class="attribute">font-family</span>: <span class="string">"Palatino Linotype"</span>, Palatino, Palladio, <span class="string">"URW Palladio L"</span>, <span class="string">"Book Antiqua"</span>, Baskerville, <span class="string">"Bookman Old Style"</span>, <span class="string">"Bitstream Charter"</span>, <span class="string">"Nimbus Roman No9 L"</span>, Garamond, <span class="string">"Apple Garamond"</span>, <span class="string">"ITC Garamond Narrow"</span>, <span class="string">"New Century Schoolbook"</span>, <span class="string">"Century Schoolbook"</span>, <span class="string">"Century Schoolbook L"</span>, Georgia, serif;</div><div class="line"></div><div class="line"><span class="comment">/*The Helvetica/Arial-based sans serif */</span></div><div class="line"><span class="attribute">font-family</span>: Frutiger, <span class="string">"Frutiger Linotype"</span>, Univers, Calibri, <span class="string">"Gill Sans"</span>, <span class="string">"Gill Sans MT"</span>, <span class="string">"Myriad Pro"</span>, Myriad, <span class="string">"DejaVu Sans Condensed"</span>, <span class="string">"Liberation Sans"</span>, <span class="string">"Nimbus Sans L"</span>, Tahoma, Geneva, <span class="string">"Helvetica Neue"</span>, Helvetica, Arial, sans-serif;</div><div class="line"></div><div class="line"><span class="comment">/*The Verdana-based sans serif */</span></div><div class="line"><span class="attribute">font-family</span>: Corbel, <span class="string">"Lucida Grande"</span>, <span class="string">"Lucida Sans Unicode"</span>, <span class="string">"Lucida Sans"</span>, <span class="string">"DejaVu Sans"</span>, <span class="string">"Bitstream Vera Sans"</span>, <span class="string">"Liberation Sans"</span>, Verdana, <span class="string">"Verdana Ref"</span>, sans-serif;</div><div class="line"></div><div class="line"><span class="comment">/*The Trebuchet-based sans serif */</span></div><div class="line"><span class="attribute">font-family</span>: <span class="string">"Segoe UI"</span>, Candara, <span class="string">"Bitstream Vera Sans"</span>, <span class="string">"DejaVu Sans"</span>, <span class="string">"Bitstream Vera Sans"</span>, <span class="string">"Trebuchet MS"</span>, Verdana, <span class="string">"Verdana Ref"</span>, sans-serif;</div><div class="line"></div><div class="line"><span class="comment">/*The heavier "Impact" sans serif */</span></div><div class="line"><span class="attribute">font-family</span>: Impact, Haettenschweiler, <span class="string">"Franklin Gothic Bold"</span>, Charcoal, <span class="string">"Helvetica Inserat"</span>, <span class="string">"Bitstream Vera Sans Bold"</span>, <span class="string">"Arial Black"</span>, sans-serif;</div><div class="line"></div><div class="line"><span class="comment">/*The monospace */</span></div><div class="line"><span class="attribute">font-family</span>: Consolas, <span class="string">"Andale Mono WT"</span>, <span class="string">"Andale Mono"</span>, <span class="string">"Lucida Console"</span>, <span class="string">"Lucida Sans Typewriter"</span>, <span class="string">"DejaVu Sans Mono"</span>, <span class="string">"Bitstream Vera Sans Mono"</span>, <span class="string">"Liberation Mono"</span>, <span class="string">"Nimbus Mono L"</span>, Monaco, <span class="string">"Courier New"</span>, Courier, monospace;</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS技巧/">CSS技巧</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Notes/">Notes</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/05/19/js-完美运动框架startMove-js/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">上一篇</strong>
+      <div class="article-nav-title">
+        
+          JavaScript | 完美运动框架startMove.js
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/25/HTML-CSS-必须掌握的CSS样式技巧布局-中级篇章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">下一篇</strong>
+      <div class="article-nav-title">HTML/CSS | CSS样式技巧布局 - Grade 2</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+<!-- Table of Contents -->
+
+  <aside id="toc-sidebar">
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    
+        <ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#文本单行溢出隐藏"><span class="nav-number">1.</span> <span class="nav-text">文本单行溢出隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本多行溢出隐藏"><span class="nav-number">2.</span> <span class="nav-text">文本多行溢出隐藏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文本多余四行显示查看更多，少于显示全部"><span class="nav-number">3.</span> <span class="nav-text">文本多余四行显示查看更多，少于显示全部</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直对齐"><span class="nav-number">4.</span> <span class="nav-text">垂直对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只在一边或两边显示盒子阴影"><span class="nav-number">5.</span> <span class="nav-text">只在一边或两边显示盒子阴影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用CSS动画实现省略号动画"><span class="nav-number">6.</span> <span class="nav-text">用CSS动画实现省略号动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#制造模糊文本"><span class="nav-number">7.</span> <span class="nav-text">制造模糊文本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跨浏览器的透明"><span class="nav-number">8.</span> <span class="nav-text">跨浏览器的透明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自定义文本的选择"><span class="nav-number">9.</span> <span class="nav-text">自定义文本的选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为logo隐藏H1"><span class="nav-number">10.</span> <span class="nav-text">为logo隐藏H1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图片边框偏光"><span class="nav-number">11.</span> <span class="nav-text">图片边框偏光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锚链接伪类"><span class="nav-number">12.</span> <span class="nav-text">锚链接伪类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3：全屏背景"><span class="nav-number">13.</span> <span class="nav-text">CSS3：全屏背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#强制出现垂直滚动条"><span class="nav-number">14.</span> <span class="nav-text">强制出现垂直滚动条</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font-face模板"><span class="nav-number">15.</span> <span class="nav-text">@font-face模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于文件类型的链接样式"><span class="nav-number">16.</span> <span class="nav-text">基于文件类型的链接样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#在可点击的项目上强制手型"><span class="nav-number">17.</span> <span class="nav-text">在可点击的项目上强制手型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#禁用移动Webkit的选择高亮"><span class="nav-number">18.</span> <span class="nav-text">禁用移动Webkit的选择高亮</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS-font属性缩写"><span class="nav-number">19.</span> <span class="nav-text">CSS font属性缩写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#比较完美的清除浮动"><span class="nav-number">20.</span> <span class="nav-text">比较完美的清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#现代字体栈"><span class="nav-number">21.</span> <span class="nav-text">现代字体栈</span></a></li></ol>
+    
+    </div>
+  </aside>
+</section>
+        
+      </div>
+      
+      <footer id="footer">
+  
+
+  <div class="container">
+      	<div class="row">
+	      <p> Powered by <a href="http://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/iTimeTraveler/hexo-theme-hiker" target="_blank">Hexo-theme-hiker</a> </p>
+	      <p id="copyRightEn">Copyright &copy; 2013 - 2017 岁月如冰河 All Rights Reserved.</p>
+	      
+	      
+    		<p class="busuanzi_uv">
+				访客数 : <span id="busuanzi_value_site_uv"></span> |  
+				访问量 : <span id="busuanzi_value_site_pv"></span>
+		    </p>
+  		   
+		</div>
+
+		
+  </div>
+</footer>
+
+
+<!-- min height -->
+
+<script>
+    var wrapdiv = document.getElementById("wrap");
+    var contentdiv = document.getElementById("content");
+    var allheader = document.getElementById("allheader");
+
+    wrapdiv.style.minHeight = document.body.offsetHeight + "px";
+    if (allheader != null) {
+      contentdiv.style.minHeight = document.body.offsetHeight - allheader.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    } else {
+      contentdiv.style.minHeight = document.body.offsetHeight - document.getElementById("footer").offsetHeight + "px";
+    }
+</script>
+    </div>
+    <!-- <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/about" class="mobile-nav-link">About</a>
+  
+</nav> -->
+    
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+  <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+<script src="/js/bootstrap.js"></script>
+
+
+
+
+  <script src="/js/dialog.js"></script>
+
+
+
+
+
+
+  </div>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="myModalLabel">设置</h2>
+      </div>
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+
+
+      <div class="modal-body">
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" onclick="javascript:setFontSize();" aria-expanded="true" aria-controls="collapseOne">
+              正文字号大小
+            </a>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+          <div class="panel-body">
+            您已调整页面字体大小
+          </div>
+        </div>
+      
+
+
+          <div style="margin:6px;">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" onclick="javascript:setBackground();" aria-expanded="true" aria-controls="collapseTwo">
+              夜间护眼模式
+            </a>
+        </div>
+          <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="panel-body">
+            夜间模式已经开启，再次单击按钮即可关闭 
+          </div>
+        </div>
+
+        <div>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="true" aria-controls="collapseThree">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;关 于&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+          <div class="panel-body">
+            岁月如冰河
+          </div>
+          <div class="panel-body">
+            Copyright © 2017 胡温柔 All Rights Reserved.
+          </div>
+        </div>
+      </div>
+
+
+      <hr style="margin-top:0px; margin-bottom:0px; width:80%; border-top: 1px solid #000;">
+      <hr style="margin-top:2px; margin-bottom:0px; width:80%; border-top: 3px solid #000;">
+      <div class="modal-footer">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+  <a id="rocket" href="#top" class=""></a>
+  <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
+  
+
+	<div style="display: none;">
+    <script src="https://s95.cnzz.com/z_stat.php?id=70312&web_id=70312" language="JavaScript"></script>
+  </div>
+
+
+</body>
+</html>
